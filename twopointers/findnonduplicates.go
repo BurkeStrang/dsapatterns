@@ -1,5 +1,6 @@
 package twopointers
 
+// import "fmt"
 // Given an array of sorted numbers, move all non-duplicate number instances at the beginning of the array in-place.
 // The non-duplicate numbers should be sorted and you should not use any extra space so that the solution has constant space complexity i.e., O(1).
 //
@@ -33,6 +34,7 @@ func moveElements(arr []int) int {
 			// Increment the nextNonDuplicate pointer.
 			nextNonDuplicate++
 		}
+		// fmt.Println("i:", i, "arr:", arr)
 	}
 	// Return the length of the modified slice without duplicates.
 	return nextNonDuplicate
