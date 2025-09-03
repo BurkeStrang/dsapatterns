@@ -10,7 +10,9 @@ func TestFindNonDuplicates(t *testing.T) {
 		expected []int
 		length   int
 	}{
-		{[]int{1, 1, 2}, []int{1, 2}, 2},
+		{[]int{2, 3, 3, 3, 6, 9, 9}, []int{2, 3, 6, 9}, 4},
+		{[]int{2, 2, 2, 11}, []int{2, 11}, 2},
+		{[]int{1, 2, 2}, []int{1, 2}, 2},
 		{[]int{0, 0, 1, 1, 1, 2, 2, 3, 3, 4}, []int{0, 1, 2, 3, 4}, 5},
 		{[]int{1}, []int{1}, 1},
 		{[]int{1, 2, 3}, []int{1, 2, 3}, 3},
