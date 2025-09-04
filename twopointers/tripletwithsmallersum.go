@@ -1,5 +1,26 @@
 package twopointers
 
+// Given an array arr of unsorted numbers and a target sum, count all triplets in it such that arr[i] + arr[j] + arr[k] < target where i, j, and k
+// are three different indices. Write a function to return the count of such triplets.
+//
+// Example 1:
+//
+// Input: [-1, 0, 2, 3], target=3 
+// Output: 2
+// Explanation: There are two triplets whose sum is less than the target: [-1, 0, 3], [-1, 0, 2]
+// Example 2:
+//
+// Input: [-1, 4, 2, 1, 3], target=5 
+// Output: 4
+// Explanation: There are four triplets whose sum is less than the target: 
+// [-1, 1, 4], [-1, 1, 3], [-1, 1, 2], [-1, 2, 3]
+// Constraints:
+//
+// n == arr.length
+// 0 <= n <= 3500
+// -100 <= arr[i] <= 100
+// -100 <= target <= 100
+
 import "sort"
 
 func findTriplets(arr []int, target int) int {
@@ -15,7 +36,6 @@ func findTriplets(arr []int, target int) int {
 	return count
 }
 
-// searchPair method as per the Java version
 func getPair(arr []int, targetSum int, first int) int {
 	count := 0
 	left, right := first+1, len(arr)-1
