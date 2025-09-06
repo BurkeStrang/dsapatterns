@@ -16,13 +16,11 @@ func findCycleLength(head *ListNode) int {
 }
 
 func calcCycleDistance(slow *ListNode) int {
-	current := slow
-	currentCount := 0
-	for {
-		if current == slow {
-			return currentCount
-		}
+	current := slow.Next
+	currentCount := 1
+	for current != slow {
 		current = current.Next
 		currentCount++
 	}
+	return currentCount
 }
