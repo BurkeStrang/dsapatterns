@@ -2,7 +2,7 @@ package twopointers
 
 import "testing"
 
-func TestFindTriplets(t *testing.T) {
+func TestTripletsSmallerSum(t *testing.T) {
 	tests := []struct {
 		arr      []int
 		target   int
