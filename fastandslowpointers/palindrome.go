@@ -21,7 +21,6 @@ package fastandslowpointers
 func isPalindrome(head *ListNode) bool {
 	if head == nil || head.Next == nil {
 		return true
-
 	}
 
 	// find middle of the LinkedList
