@@ -1,7 +1,5 @@
 package slidingwindow
 
-import "math"
-
 // Given a string, find the length of the longest substring in it with no more than K distinct characters.
 // You can assume that K is less than or equal to the length of the given string.
 //
@@ -41,8 +39,7 @@ func findLength(str string, k int) int {
 			windowStart++ // shrink the window
 		}
 		// remember the maximum length so far
-		maxLength = int(math.Max(float64(maxLength), float64(windowEnd-windowStart+1)))
+		maxLength = max(maxLength, windowEnd-windowStart+1)
 	}
 	return maxLength
 }
-
