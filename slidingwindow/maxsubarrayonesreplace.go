@@ -41,9 +41,7 @@ func maxOnesLength(arr []int, k int) int {
 			}
 			windowStart++
 		}
-
 		maxLength = max(maxLength, windowEnd-windowStart+1)
 	}
-
 	return maxLength
 }
