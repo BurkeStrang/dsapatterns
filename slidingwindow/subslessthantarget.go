@@ -26,7 +26,6 @@ func findSubarrays(arr []int, target int) [][]int {
 	var result [][]int
 	// Variable to store the product of elements in the current subarray.
 	product := 1
-
 	// Left boundary of the current subarray.
 	left := 0
 	// Iterate over the array using 'right' as the right boundary of the current
