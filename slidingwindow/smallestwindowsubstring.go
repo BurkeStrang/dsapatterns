@@ -8,17 +8,16 @@ package slidingwindow
 // Explanation: The smallest substring having all characters of the pattern is "abdec"
 //
 // Example 2:
-//
 // Input: String="aabdec", Pattern="abac"
 // Output: "aabdec"
 // Explanation: The smallest substring having all characters occurrences of the pattern is "aabdec"
-// Example 3:
 //
+// Example 3:
 // Input: String="abdbca", Pattern="abc"
 // Output: "bca"
 // Explanation: The smallest substring having all characters of the pattern is "bca".
-// Example 4:
 //
+// Example 4:
 // Input: String="adcad", Pattern="abc"
 // Output: ""
 // Explanation: No substring in the given string has all characters of the pattern
