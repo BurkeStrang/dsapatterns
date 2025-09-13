@@ -29,37 +29,45 @@ package slidingwindow
 // String and Pattern consist of uppercase and lowercase English letters.
 
 func findSubstring(str string, pattern string) string {
-	patternFreq := make(map[byte]int)
-	for i := range pattern {
-		patternFreq[pattern[i]]++
+	windowStart, matched, minLength, subStrStart := 0, 0, len(str)+1, 0
+	charFrequencyMap := make(map[rune]int)
+
+	for _, chr := range pattern {
+		charFrequencyMap[chr]++
 	}
 
-	start, matched, minLen, subStrStart := 0, 0, len(str)+1, 0
-	windowFreq := make(map[byte]int)
-
-	for end := range len(str) {
-		rightChar := str[end]
-		windowFreq[rightChar]++
-		if patternFreq[rightChar] > 0 && windowFreq[rightChar] <= patternFreq[rightChar] {
-			matched++
+	// try to extend the range [windowStart, windowEnd]
+	for windowEnd, rightChar := range str {
+		if _, ok := charFrequencyMap[rightChar]; ok {
+			charFrequencyMap[rightChar]--
+			if charFrequencyMap[rightChar] >= 0 {
+				matched++
+			}
 		}
 
+		// shrink the window if we can, finish as soon as we remove a matched character
 		for matched == len(pattern) {
-			if end-start+1 < minLen {
-				minLen = end - start + 1
-				subStrStart = start
+			if minLength > windowEnd-windowStart+1 {
+				minLength = windowEnd - windowStart + 1
+				subStrStart = windowStart
 			}
-			leftChar := str[start]
-			windowFreq[leftChar]--
-			if patternFreq[leftChar] > 0 && windowFreq[leftChar] < patternFreq[leftChar] {
-				matched--
+
+			leftChar := rune(str[windowStart])
+			windowStart++
+			if _, ok := charFrequencyMap[leftChar]; ok {
+				// note that we could have redundant matching characters, therefore we'll
+				// decrement the matched count only when a useful occurrence of a matched
+				// character is going out of the window
+				if charFrequencyMap[leftChar] == 0 {
+					matched--
+				}
+				charFrequencyMap[leftChar]++
 			}
-			start++
 		}
 	}
 
-	if minLen > len(str) {
+	if minLength > len(str) {
 		return ""
 	}
-	return str[subStrStart : subStrStart+minLen]
+	return str[subStrStart : subStrStart+minLength]
 }
