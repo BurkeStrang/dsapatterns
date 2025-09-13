@@ -29,6 +29,37 @@ package slidingwindow
 // String and Pattern consist of uppercase and lowercase English letters.
 
 func findSubstring(str string, pattern string) string {
-	// TODO: Write your code here
-	return ""
+	patternFreq := make(map[byte]int)
+	for i := range pattern {
+		patternFreq[pattern[i]]++
+	}
+
+	start, matched, minLen, subStrStart := 0, 0, len(str)+1, 0
+	windowFreq := make(map[byte]int)
+
+	for end := range len(str) {
+		rightChar := str[end]
+		windowFreq[rightChar]++
+		if patternFreq[rightChar] > 0 && windowFreq[rightChar] <= patternFreq[rightChar] {
+			matched++
+		}
+
+		for matched == len(pattern) {
+			if end-start+1 < minLen {
+				minLen = end - start + 1
+				subStrStart = start
+			}
+			leftChar := str[start]
+			windowFreq[leftChar]--
+			if patternFreq[leftChar] > 0 && windowFreq[leftChar] < patternFreq[leftChar] {
+				matched--
+			}
+			start++
+		}
+	}
+
+	if minLen > len(str) {
+		return ""
+	}
+	return str[subStrStart : subStrStart+minLen]
 }
