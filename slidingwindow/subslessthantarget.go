@@ -31,22 +31,21 @@ func findSubarrays(nums []int, target int) int {
 	}
 	totalCount := 0
 	// Variable to store the product of elements in the current subarray.
-	product := 1.0
+	product := 1
 	// Left boundary of the current subarray.
 	left := 0
 	// Iterate over the array using 'right' as the right boundary of the current
 	// subarray.
 	for right := range nums {
 		// Update the product with the current element.
-		product *= float64(nums[right])
+		product *= nums[right]
 
 		// If the product is greater than or equal to the target, slide the left
 		// boundary to the right until product is less than target.
-		for product >= float64(target) && left < len(nums) {
-			product /= float64(nums[left])
+		for product >= target && left < len(nums) {
+			product /= nums[left]
 			left++
 		}
-
 		// Update the total count by adding the number of valid subarrays with the current window size
 		totalCount += right - left + 1 // right - left + 1 represents the current window size
 	}
