@@ -30,8 +30,8 @@ func merge(intervals []Interval) []Interval {
 	}
 
 	// sort the intervals by start time
-	sort.Slice(intervals, func(i, j int) bool {
-		return intervals[i].Start < intervals[j].Start
+	sort.Slice(intervals, func(a, b int) bool {
+		return intervals[a].Start < intervals[b].Start
 	})
 
 	var mergedIntervals []Interval
