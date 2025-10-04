@@ -22,7 +22,6 @@ import (
 // Output: [5,7]
 // Explanation: All employees are free between [5,7].
 
-// EmployeeInterval struct representing an employee's working interval
 type EmployeeInterval struct {
 	interval      *Interval
 	employeeIndex int
@@ -32,9 +31,15 @@ type EmployeeInterval struct {
 // EmployeeIntervalHeap type for priority queue
 type EmployeeIntervalHeap []*EmployeeInterval
 
-func (h EmployeeIntervalHeap) Len() int           { return len(h) }
-func (h EmployeeIntervalHeap) Less(i, j int) bool { return h[i].interval.Start < h[j].interval.Start }
-func (h EmployeeIntervalHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+func (h EmployeeIntervalHeap) Len() int {
+	return len(h)
+}
+func (h EmployeeIntervalHeap) Less(i, j int) bool {
+	return h[i].interval.Start < h[j].interval.Start
+}
+func (h EmployeeIntervalHeap) Swap(i, j int) {
+	h[i], h[j] = h[j], h[i]
+}
 
 func (h *EmployeeIntervalHeap) Push(x any) {
 	*h = append(*h, x.(*EmployeeInterval))
