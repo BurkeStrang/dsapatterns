@@ -49,11 +49,11 @@ func (h MeetingHeap) Len() int           { return len(h) }
 func (h MeetingHeap) Less(i, j int) bool { return h[i].End < h[j].End }
 func (h MeetingHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
 
-func (h *MeetingHeap) Push(x interface{}) {
+func (h *MeetingHeap) Push(x any) {
 	*h = append(*h, x.(Meeting))
 }
 
-func (h *MeetingHeap) Pop() interface{} {
+func (h *MeetingHeap) Pop() any {
 	old := *h
 	n := len(old)
 	x := old[n-1]
