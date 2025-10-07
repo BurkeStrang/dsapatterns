@@ -1,6 +1,7 @@
 package cyclicalsort
 
-// We are given an array containing n distinct numbers taken from the range 0 to n. Since the array has only n numbers out of the total n+1 numbers, find the missing number.
+// We are given an array containing n distinct numbers taken from the range 0 to n.
+// Since the array has only n numbers out of the total n+1 numbers, find the missing number.
 //
 // Example 1:
 // Input: [4, 0, 3, 1]
