@@ -4,8 +4,7 @@ import "testing"
 
 func Test_findDups(t *testing.T) {
 	tests := []struct {
-		name string // description of this test case
-		// Named input parameters for target function.
+		name string
 		nums []int
 		want []int
 	}{
