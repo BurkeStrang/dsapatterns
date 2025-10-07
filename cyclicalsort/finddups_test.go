@@ -11,12 +11,12 @@ func Test_findDups(t *testing.T) {
 		{
 			name: "Example 1",
 			nums: []int{3, 4, 4, 5, 5},
-			want: []int{4, 5},
+			want: []int{5, 4},
 		},
 		{
 			name: "Example 2",
 			nums: []int{5, 4, 7, 2, 3, 5, 3},
-			want: []int{5, 3},
+			want: []int{3, 5},
 		},
 	}
 	for _, tt := range tests {
