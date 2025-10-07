@@ -1,3 +1,4 @@
+//Package mergeintervals
 package mergeintervals
 
 import (
