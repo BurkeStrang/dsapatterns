@@ -37,7 +37,7 @@ func isPalindrome(head *ListNode) bool {
 
 	// compare the first and the second half
 	for head != nil && headSecondHalf != nil {
-		if head.Value != headSecondHalf.Value {
+		if head.Val != headSecondHalf.Val {
 			break // not a palindrome
 		}
 		head = head.Next

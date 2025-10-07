@@ -4,7 +4,7 @@ import "testing"
 
 func equalList(a, b *ListNode) bool {
 	for a != nil && b != nil {
-		if a.Value != b.Value {
+		if a.Val != b.Val {
 			return false
 		}
 		a = a.Next
@@ -22,18 +22,18 @@ func Test_rearangeList(t *testing.T) {
 	}{
 		{
 			name: "even length list",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3, Next: &ListNode{Value: 4}}}},
-			want: &ListNode{Value: 1, Next: &ListNode{Value: 4, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3}}}},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4}}}},
+			want: &ListNode{Val: 1, Next: &ListNode{Val: 4, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3}}}},
 		},
 		{
 			name: "odd length list",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3}}},
-			want: &ListNode{Value: 1, Next: &ListNode{Value: 3, Next: &ListNode{Value: 2}}},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3}}},
+			want: &ListNode{Val: 1, Next: &ListNode{Val: 3, Next: &ListNode{Val: 2}}},
 		},
 		{
 			name: "single node",
-			head: &ListNode{Value: 1},
-			want: &ListNode{Value: 1},
+			head: &ListNode{Val: 1},
+			want: &ListNode{Val: 1},
 		},
 		{
 			name: "empty list",

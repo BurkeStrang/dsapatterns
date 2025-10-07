@@ -12,10 +12,10 @@ func Test_findCycleLength(t *testing.T) {
  		{
 			name: "cycle of length 3",
 			head: func() *ListNode {
-				n1 := &ListNode{Value: 1}
-				n2 := &ListNode{Value: 2}
-				n3 := &ListNode{Value: 3}
-				n4 := &ListNode{Value: 4}
+				n1 := &ListNode{Val: 1}
+				n2 := &ListNode{Val: 2}
+				n3 := &ListNode{Val: 3}
+				n4 := &ListNode{Val: 4}
 				n1.Next = n2
 				n2.Next = n3
 				n3.Next = n4
@@ -27,9 +27,9 @@ func Test_findCycleLength(t *testing.T) {
 		{
 			name: "no cycle",
 			head: func() *ListNode {
-				n1 := &ListNode{Value: 1}
-				n2 := &ListNode{Value: 2}
-				n3 := &ListNode{Value: 3}
+				n1 := &ListNode{Val: 1}
+				n2 := &ListNode{Val: 2}
+				n3 := &ListNode{Val: 3}
 				n1.Next = n2
 				n2.Next = n3
 				return n1
@@ -39,7 +39,7 @@ func Test_findCycleLength(t *testing.T) {
 		{
 			name: "cycle of length 1 (self loop)",
 			head: func() *ListNode {
-				n1 := &ListNode{Value: 1}
+				n1 := &ListNode{Val: 1}
 				n1.Next = n1
 				return n1
 			}(),

@@ -10,15 +10,15 @@ func Test_hasCycle(t *testing.T) {
 	}{
 		{
 			name: "no cycle",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3}}},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3}}},
 			want: false,
 		},
 		{
 			name: "cycle exists",
 			head: func() *ListNode {
-				n1 := &ListNode{Value: 1}
-				n2 := &ListNode{Value: 2}
-				n3 := &ListNode{Value: 3}
+				n1 := &ListNode{Val: 1}
+				n2 := &ListNode{Val: 2}
+				n3 := &ListNode{Val: 3}
 				n1.Next = n2
 				n2.Next = n3
 				n3.Next = n1 // cycle here

@@ -12,23 +12,23 @@ func Test_findMiddle(t *testing.T) {
 	}{
 		{
 			name: "odd length list",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3, Next: &ListNode{Value: 4, Next: &ListNode{Value: 5}}}}},
-			want: &ListNode{Value: 3},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4, Next: &ListNode{Val: 5}}}}},
+			want: &ListNode{Val: 3},
 		},
 		{
 			name: "even length list",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2, Next: &ListNode{Value: 3, Next: &ListNode{Value: 4}}}},
-			want: &ListNode{Value: 3},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2, Next: &ListNode{Val: 3, Next: &ListNode{Val: 4}}}},
+			want: &ListNode{Val: 3},
 		},
 		{
 			name: "single node",
-			head: &ListNode{Value: 1},
-			want: &ListNode{Value: 1},
+			head: &ListNode{Val: 1},
+			want: &ListNode{Val: 1},
 		},
 		{
 			name: "two nodes",
-			head: &ListNode{Value: 1, Next: &ListNode{Value: 2}},
-			want: &ListNode{Value: 2},
+			head: &ListNode{Val: 1, Next: &ListNode{Val: 2}},
+			want: &ListNode{Val: 2},
 		},
 		{
 			name: "nil list",

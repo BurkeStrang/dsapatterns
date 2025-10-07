@@ -8,10 +8,10 @@ func buildList(vals []int) *ListNode {
 	if len(vals) == 0 {
 		return nil
 	}
-	head := &ListNode{Value: vals[0]}
+	head := &ListNode{Val: vals[0]}
 	curr := head
 	for _, v := range vals[1:] {
-		curr.Next = &ListNode{Value: v}
+		curr.Next = &ListNode{Val: v}
 		curr = curr.Next
 	}
 	return head

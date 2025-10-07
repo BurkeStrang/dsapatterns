@@ -26,7 +26,7 @@ func findCycleStart(head *ListNode) *ListNode {
 	for slow != fast {
 		slow = slow.Next
 		fast = fast.Next
-		fmt.Println("slow:", slow.Value, "fast:", fast.Value)
+		fmt.Println("slow:", slow.Val, "fast:", fast.Val)
 	}
 
 	return slow
