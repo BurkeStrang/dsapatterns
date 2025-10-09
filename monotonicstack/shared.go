@@ -53,3 +53,9 @@ func equal(a, b []int) bool {
 	}
 	return true
 }
+
+
+type stackElement struct {
+	char  rune
+	count int
+}
