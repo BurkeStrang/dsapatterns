@@ -1,5 +1,7 @@
 package hashmaps
 
+import "math"
+
 // Given a string, determine the maximum number of times the word "balloon" can be formed using the characters from the string.
 // Each character in the string can be used only once.
 //
@@ -31,7 +33,7 @@ func  maxNumberOfBalloons(text string) int {
 		charCount[c]++
 	}
 
-	minCount := int(^uint(0) >> 1) // Max int value
+	minCount := math.MaxInt // Max int value
 	// Calculate the maximum number of times "balloon" can be formed
 	minCount = min(minCount, charCount['b'])
 	minCount = min(minCount, charCount['a'])
