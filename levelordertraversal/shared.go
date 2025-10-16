@@ -6,6 +6,11 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+type Pair struct {
+	node  *TreeNode
+	index int
+}
+
 func equal(a, b any) bool {
 	switch aTyped := a.(type) {
 	case []int:
