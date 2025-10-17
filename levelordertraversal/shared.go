@@ -1,5 +1,10 @@
 package levelordertraversal
-// TreeNode structure
+
+type NAryNode struct {
+	Val      int
+	Children []*NAryNode
+}
+
 type TreeNode struct {
 	Val   int
 	Left  *TreeNode
