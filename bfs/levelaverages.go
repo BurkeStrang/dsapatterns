@@ -16,7 +16,7 @@ func levelAverage(root *TreeNode) []float64 {
 	for len(queue) > 0 {
 		levelSize := len(queue)
 		levelSum := 0.0
-		for i := 0; i < levelSize; i++ {
+		for range levelSize {
 			currentNode := queue[0]
 			queue = queue[1:]
 			// add the node's value to the running sum
