@@ -1,4 +1,4 @@
-package bfs
+package treebfs
 
 // Given a root of the binary tree and an integer key,
 // find the level order successor of the node containing the given key as a value in the tree.

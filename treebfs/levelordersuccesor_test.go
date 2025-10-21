@@ -1,43 +1,42 @@
-package bfs_test
+package treebfs
 
 import(
-	"dsapatterns/bfs"
 	"testing"
 )
 
 func TestFindSuccessor(t *testing.T) {
 	tests := []struct {
 		name string
-		root *bfs.TreeNode
+		root *TreeNode
 		key  int
 		want int // compare by value, not pointer
 	}{
 		{
 			name: "Example 1",
-			root: &bfs.TreeNode{
+			root: &TreeNode{
 				Val: 1,
-				Left: &bfs.TreeNode{
+				Left: &TreeNode{
 					Val:   2,
-					Left:  &bfs.TreeNode{Val: 4},
-					Right: &bfs.TreeNode{Val: 5},
+					Left:  &TreeNode{Val: 4},
+					Right: &TreeNode{Val: 5},
 				},
-				Right: &bfs.TreeNode{Val: 3},
+				Right: &TreeNode{Val: 3},
 			},
 			key:  3,
 			want: 4,
 		},
 		{
 			name: "Example 2",
-			root: &bfs.TreeNode{
+			root: &TreeNode{
 				Val: 12,
-				Left: &bfs.TreeNode{
+				Left: &TreeNode{
 					Val:   7,
-					Left:  &bfs.TreeNode{Val: 9},
+					Left:  &TreeNode{Val: 9},
 				},
-				Right: &bfs.TreeNode{
+				Right: &TreeNode{
 					Val:   1,
-					Left:  &bfs.TreeNode{Val: 10},
-					Right: &bfs.TreeNode{Val: 5},
+					Left:  &TreeNode{Val: 10},
+					Right: &TreeNode{Val: 5},
 				},
 			},
 			key:  9,
@@ -45,16 +44,16 @@ func TestFindSuccessor(t *testing.T) {
 		},
 		{
 			name: "Example 3",
-			root: &bfs.TreeNode{
+			root: &TreeNode{
 				Val: 12,
-				Left: &bfs.TreeNode{
+				Left: &TreeNode{
 					Val:   7,
-					Left:  &bfs.TreeNode{Val: 9},
+					Left:  &TreeNode{Val: 9},
 				},
-				Right: &bfs.TreeNode{
+				Right: &TreeNode{
 					Val:   1,
-					Left:  &bfs.TreeNode{Val: 10},
-					Right: &bfs.TreeNode{Val: 5},
+					Left:  &TreeNode{Val: 10},
+					Right: &TreeNode{Val: 5},
 				},
 			},
 			key:  12,
@@ -62,9 +61,9 @@ func TestFindSuccessor(t *testing.T) {
 		},
 		{
 			name: "No successor (last node)",
-			root: &bfs.TreeNode{
+			root: &TreeNode{
 				Val: 1,
-				Left: &bfs.TreeNode{Val: 2},
+				Left: &TreeNode{Val: 2},
 			},
 			key:  2,
 			want: 0, // nil successor
@@ -78,7 +77,7 @@ func TestFindSuccessor(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got := bfs.FindSuccessor(tt.root, tt.key)
+			got := FindSuccessor(tt.root, tt.key)
 			var gotVal int
 			if got != nil {
 				gotVal = got.Val

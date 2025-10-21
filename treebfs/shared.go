@@ -1,4 +1,4 @@
-package bfs
+package treebfs
 
 import (
 	"container/list"
