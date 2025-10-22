@@ -16,7 +16,7 @@ func Test_findSumOfPathNumbers(t *testing.T) {
 		{
 			name: "Example 2",
 			root: makeTree([]*int{intPtr(1), intPtr(0), intPtr(1), intPtr(1), intPtr(6), nil, intPtr(5)}),
-			want: 322, // Paths: 101, 106, 115 => 101+106+115=332
+			want: 322, // Paths: 101, 106, 115 => 101+106+115=322
 			//                       1
 			//                     /   \
 			//                    0     1
