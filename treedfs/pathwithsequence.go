@@ -4,22 +4,29 @@ package treedfs
 // find if the sequence is present as a root-to-leaf path in the given tree.
 
 func findPath(root *TreeNode, sequence []int) bool {
-	var currentPath []int
-	return findSequenceRecursive(root, sequence, currentPath)
+	if root == nil {
+		return len(sequence) == 0
+	}
+
+	return findPathRecursive(root, sequence, 0)
 }
 
-func findSequenceRecursive(currentNode *TreeNode, sequence []int, currentPath []int) bool {
+func findPathRecursive(currentNode *TreeNode, sequence []int, sequenceIndex int) bool {
 	if currentNode == nil {
 		return false
 	}
 
-	currentPath = append(currentPath, currentNode.Val)
-
-	if currentNode.Left == nil && currentNode.Right == nil {
-		if equalArray(sequence, currentPath) {
-			return true
-		}
+	if sequenceIndex >= len(sequence) || currentNode.Val != sequence[sequenceIndex] {
+		return false
 	}
-	return findSequenceRecursive(currentNode.Left, sequence, currentPath) ||
-		findSequenceRecursive(currentNode.Right, sequence, currentPath)
+
+	// if the current node is a leaf, and it is the end of the sequence, we have found a path!
+	if currentNode.Left == nil && currentNode.Right == nil && sequenceIndex == len(sequence)-1 {
+		return true
+	}
+
+	// recursively call to traverse the left and right sub-tree
+	// return true if any of the two recursive call return true
+	return findPathRecursive(currentNode.Left, sequence, sequenceIndex+1) ||
+		findPathRecursive(currentNode.Right, sequence, sequenceIndex+1)
 }
