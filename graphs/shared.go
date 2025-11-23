@@ -1,3 +1,4 @@
+//Package graphs is for graph related shared functions
 package graphs
 
 func equalIntSlices(a, b []int) bool {

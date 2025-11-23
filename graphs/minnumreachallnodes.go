@@ -9,14 +9,16 @@ package graphs
 // n = 6
 // edges = [[0,1],[0,2],[2,5],[3,4],[4,2]]
 // Expected Output: [0,3]
-// Justification: Starting from nodes 0 and 3, you can reach all other nodes in the graph. Starting from node 0, you can reach nodes 1, 2, and 5. Starting from node 3, you can reach nodes 4 and 2 (and by extension 5).
+// Justification: Starting from nodes 0 and 3, you can reach all other nodes in the graph.
+// Starting from node 0, you can reach nodes 1, 2, and 5. Starting from node 3, you can reach nodes 4 and 2 (and by extension 5).
 //
 // Example 2:
 // Input:
 // n = 3
 // edges = [[0,1],[2,1]]
 // Expected Output: [0,2]
-// Justification: Nodes 0 and 2 are the only nodes that don't have incoming edges. Hence, you need to start from these nodes to reach node 1.
+// Justification: Nodes 0 and 2 are the only nodes that don't have incoming edges.
+// Hence, you need to start from these nodes to reach node 1.
 //
 // Example 3:
 // Input:
@@ -42,7 +44,7 @@ func findSmallestSetOfVertices(n int, edges [][]int) []int {
 
 	var result []int
 	// Gather nodes without incoming edges
-	for i := 0; i < n; i++ {
+	for i := range n {
 		if !hasIncomingEdge[i] {
 			result = append(result, i)
 		}
