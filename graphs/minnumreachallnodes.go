@@ -1,0 +1,51 @@
+package graphs
+
+// Given a directed acyclic graph with n nodes labeled from 0 to n-1,
+// determine the smallest number of initial nodes such that you can access all the nodes by traversing edges.
+// Return these nodes.
+//
+// Example 1:
+// Input:
+// n = 6
+// edges = [[0,1],[0,2],[2,5],[3,4],[4,2]]
+// Expected Output: [0,3]
+// Justification: Starting from nodes 0 and 3, you can reach all other nodes in the graph. Starting from node 0, you can reach nodes 1, 2, and 5. Starting from node 3, you can reach nodes 4 and 2 (and by extension 5).
+//
+// Example 2:
+// Input:
+// n = 3
+// edges = [[0,1],[2,1]]
+// Expected Output: [0,2]
+// Justification: Nodes 0 and 2 are the only nodes that don't have incoming edges. Hence, you need to start from these nodes to reach node 1.
+//
+// Example 3:
+// Input:
+// n = 5
+// edges = [[0,1],[2,1],[3,4]]
+// Expected Output: [0,2,3]
+// Justification: Node 1 can be reached from both nodes 0 and 2, but to cover all nodes, you also need to start from node 3.
+// Constraints:
+//
+// 2 <= n <=
+// 1 <= edges.length <= min(, n * (n - 1) / 2)
+// edges[i].length == 2
+// 0 <= fromi, toi < n
+// All pairs (fromi, toi) are distinct.
+
+func findSmallestSetOfVertices(n int, edges [][]int) []int {
+	hasIncomingEdge := make([]bool, n)
+
+	// Determine nodes with incoming edges
+	for _, edge := range edges {
+		hasIncomingEdge[edge[1]] = true
+	}
+
+	var result []int
+	// Gather nodes without incoming edges
+	for i := 0; i < n; i++ {
+		if !hasIncomingEdge[i] {
+			result = append(result, i)
+		}
+	}
+	return result
+}
