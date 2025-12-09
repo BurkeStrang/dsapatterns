@@ -15,8 +15,8 @@ func findIslandPerimeter(matrix [][]int) int {
 		visited[i] = make([]bool, cols)
 	}
 
-	for i := 0; i < rows; i++ {
-		for j := 0; j < cols; j++ {
+	for i := range rows {
+		for j := range cols {
 			if matrix[i][j] == 1 && !visited[i][j] { // only if the cell is a land and not visited
 				return dfs(matrix, visited, i, j)
 			}
