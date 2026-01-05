@@ -22,6 +22,10 @@ func findDistinctIslandsDFS(matrix [][]int) int {
 				var islandTraversal string
 				traverseIslandDFS(matrix, visited, i, j, &islandTraversal, "O") // origin
 				islandsSet[islandTraversal] = true
+				println("----") // Debug print
+				println("Island Traversal:", islandTraversal) // Debug print
+				println("Total Distinct Islands So Far:", len(islandsSet)) // Debug print
+				println("----") // Debug print
 			}
 		}
 	}
