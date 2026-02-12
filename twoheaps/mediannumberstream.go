@@ -42,23 +42,23 @@ func Constructor() Median {
 	}
 }
 
-func (this *Median) insertNum(num int) {
-	if this.maxHeap.Len() == 0 || (*this.maxHeap).IntHeap[0] >= num {
-		heap.Push(this.maxHeap, num)
+func (median *Median) insertNum(num int) {
+	if median.maxHeap.Len() == 0 || (*median.maxHeap).IntHeap[0] >= num {
+		heap.Push(median.maxHeap, num)
 	} else {
-		heap.Push(this.minHeap, num)
+		heap.Push(median.minHeap, num)
 	}
 
-	if this.maxHeap.Len() > this.minHeap.Len()+1 {
-		heap.Push(this.minHeap, heap.Pop(this.maxHeap))
-	} else if this.maxHeap.Len() < this.minHeap.Len() {
-		heap.Push(this.maxHeap, heap.Pop(this.minHeap))
+	if median.maxHeap.Len() > median.minHeap.Len()+1 {
+		heap.Push(median.minHeap, heap.Pop(median.maxHeap))
+	} else if median.maxHeap.Len() < median.minHeap.Len() {
+		heap.Push(median.maxHeap, heap.Pop(median.minHeap))
 	}
 }
 
-func (this *Median) findMedian() float64 {
-	if this.maxHeap.Len() == this.minHeap.Len() {
-		return float64((*this.maxHeap).IntHeap[0])/2.0 + float64((*this.minHeap)[0])/2.0
+func (median *Median) findMedian() float64 {
+	if median.maxHeap.Len() == median.minHeap.Len() {
+		return float64((*median.maxHeap).IntHeap[0])/2.0 + float64((*median.minHeap)[0])/2.0
 	}
-	return float64((*this.maxHeap).IntHeap[0])
+	return float64((*median.maxHeap).IntHeap[0])
 }
