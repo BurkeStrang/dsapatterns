@@ -27,11 +27,11 @@ func (h MaxHeapInterval) Less(i, j int) bool {
 }
 func (h MaxHeapInterval) Swap(i, j int) { h.indexes[i], h.indexes[j] = h.indexes[j], h.indexes[i] }
 
-func (h *MaxHeapInterval) Push(x interface{}) {
+func (h *MaxHeapInterval) Push(x any) {
 	h.indexes = append(h.indexes, x.(int))
 }
 
-func (h *MaxHeapInterval) Pop() interface{} {
+func (h *MaxHeapInterval) Pop() any {
 	old := h.indexes
 	n := len(old)
 	x := old[n-1]
