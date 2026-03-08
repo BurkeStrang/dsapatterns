@@ -1,4 +1,4 @@
-//Package cyclicalsort organizes sorting problems
+// Package cyclicalsort organizes sorting problems
 package cyclicalsort
 
 // We are given an array containing n objects.
@@ -8,7 +8,7 @@ package cyclicalsort
 // before the object with sequence number 4.
 // Write a function to sort the objects in-place on their creation sequence
 // number in  without using any extra space.
-// For simplicity, let’s assume we are passed an integer array containing only the sequence numbers,
+// For simplicity, let's assume we are passed an integer array containing only the sequence numbers,
 // though each number is actually an object.
 //
 // Example 1:
@@ -28,23 +28,20 @@ package cyclicalsort
 // 1 <= n <=
 // 0 <= nums[i] <= n
 
-func sort(Nums []int) []int {
+func sort(nums []int) []int {
 	i := 0
-	for i < len(Nums) {
-		j := Nums[i] - 1        // Calculate the index where the current element should be placed.
-		// println("i:",i,Nums[i],"j:",j,Nums[j])
-		if Nums[i] != Nums[j] { // Check if the current element is not in its correct position.
-			swap(Nums, i, j) // Swap the current element with the one at its correct position.
+	for i < len(nums) {
+		j := nums[i] - 1        // Calculate the index where the current element should be placed.
+		if nums[i] != nums[j] { // Check if the current element is not in its correct position.
+			swap(nums, i, j) // Swap the current element with the one at its correct position.
 		} else {
 			i++
 		}
 	}
-	return Nums
+	return nums
 }
 
 // swap swaps two elements in the slice at positions i and j.
-func swap(Arr []int, i, j int) {
-	temp := Arr[i]
-	Arr[i] = Arr[j]
-	Arr[j] = temp
+func swap(arr []int, i, j int) {
+	arr[i], arr[j] = arr[j], arr[i]
 }

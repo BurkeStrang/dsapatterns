@@ -43,7 +43,7 @@ func Constructor() Median {
 }
 
 func (median *Median) insertNum(num int) {
-	if median.maxHeap.Len() == 0 || (*median.maxHeap).IntHeap[0] >= num {
+	if median.maxHeap.Len() == 0 || median.maxHeap.IntHeap[0] >= num {
 		heap.Push(median.maxHeap, num)
 	} else {
 		heap.Push(median.minHeap, num)
@@ -58,7 +58,7 @@ func (median *Median) insertNum(num int) {
 
 func (median *Median) findMedian() float64 {
 	if median.maxHeap.Len() == median.minHeap.Len() {
-		return float64((*median.maxHeap).IntHeap[0])/2.0 + float64((*median.minHeap)[0])/2.0
+		return float64(median.maxHeap.IntHeap[0])/2.0 + float64((*median.minHeap)[0])/2.0
 	}
-	return float64((*median.maxHeap).IntHeap[0])
+	return float64(median.maxHeap.IntHeap[0])
 }

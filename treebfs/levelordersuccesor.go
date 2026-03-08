@@ -36,7 +36,9 @@ func FindSuccessor(root *TreeNode, key int) *TreeNode {
 		var currentNode *TreeNode
 		node, _ := queue.Front() // Get the front node of the queue
 		currentNode = node
-		queue.Pop()
+		if err := queue.Pop(); err != nil {
+			return nil
+		}
 
 		// insert the children of current node in the queue
 		if currentNode.Left != nil {

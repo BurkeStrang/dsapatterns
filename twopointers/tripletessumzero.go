@@ -34,7 +34,8 @@ func searchPair(arr []int, targetSum int, left int, triplets *[][]int) {
 	right := len(arr) - 1
 	for left < right {
 		currentSum := arr[left] + arr[right]
-		if currentSum == targetSum { // found the triplet
+		switch {
+		case currentSum == targetSum: // found the triplet
 			*triplets = append(*triplets, []int{-targetSum, arr[left], arr[right]})
 			left++
 			right--
@@ -44,9 +45,9 @@ func searchPair(arr []int, targetSum int, left int, triplets *[][]int) {
 			for left < right && arr[right] == arr[right+1] {
 				right-- // skip same element to avoid duplicate triplets
 			}
-		} else if targetSum > currentSum {
+		case targetSum > currentSum:
 			left++ // we need a pair with a bigger sum
-		} else {
+		default:
 			right-- // we need a pair with a smaller sum
 		}
 	}

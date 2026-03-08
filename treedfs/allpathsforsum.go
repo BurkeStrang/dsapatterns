@@ -36,7 +36,5 @@ func findPathsRecursive(currentNode *TreeNode, sum int, currentPath []int, allPa
 		findPathsRecursive(currentNode.Right, sum-currentNode.Val, currentPath, allPaths)
 	}
 
-	// remove the current node from the path to backtrack,
-	// we need to remove the current node while we are going up the recursive call stack.
-	currentPath = currentPath[:len(currentPath)-1]
+	// currentPath is passed by value so backtracking happens automatically on return.
 }

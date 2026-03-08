@@ -41,7 +41,9 @@ func connect(root *TreeNode) *TreeNode {
 			var currentNode *TreeNode
 			node, _ := queue.Front() // Get the front node of the queue
 			currentNode = node
-			queue.Pop()
+			if err := queue.Pop(); err != nil {
+				return root
+			}
 
 			if previousNode != nil {
 				previousNode.Next = currentNode

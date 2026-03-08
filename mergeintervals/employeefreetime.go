@@ -1,4 +1,4 @@
-//Package mergeintervals
+// Package mergeintervals contains interval merging problems
 package mergeintervals
 
 import (
@@ -71,10 +71,8 @@ func findEmployeeFreeTime(schedule [][]*Interval) []*Interval {
 		if previousInterval.End < queueTop.interval.Start {
 			result = append(result, &Interval{previousInterval.End, queueTop.interval.Start})
 			previousInterval = queueTop.interval
-		} else { // overlapping intervals, update the previousInterval if needed
-			if previousInterval.End < queueTop.interval.End {
-				previousInterval = queueTop.interval
-			}
+		} else if previousInterval.End < queueTop.interval.End { // overlapping intervals, update the previousInterval if needed
+			previousInterval = queueTop.interval
 		}
 
 		// if there are more intervals available for the same employee, add their next interval

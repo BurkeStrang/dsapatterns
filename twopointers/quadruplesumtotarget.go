@@ -45,7 +45,8 @@ func searchPairs(arr []int, targetSum, first, second int, quadruplets [][]int) [
 	right := len(arr) - 1
 	for left < right {
 		sum := arr[first] + arr[second] + arr[left] + arr[right]
-		if sum == targetSum { // found the quadruplet
+		switch {
+		case sum == targetSum: // found the quadruplet
 			quadruplets = append(quadruplets, []int{arr[first], arr[second], arr[left], arr[right]})
 			left++
 			right--
@@ -55,9 +56,9 @@ func searchPairs(arr []int, targetSum, first, second int, quadruplets [][]int) [
 			for left < right && arr[right] == arr[right+1] {
 				right-- // skip same element to avoid duplicate quadruplets
 			}
-		} else if sum < targetSum {
+		case sum < targetSum:
 			left++ // we need a pair with a bigger sum
-		} else {
+		default:
 			right-- // we need a pair with a smaller sum
 		}
 	}

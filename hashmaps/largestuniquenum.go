@@ -22,11 +22,11 @@ package hashmaps
 // 1 <= nums.length <= 2000
 // 0 <= nums[i] <= 1000
 
-func largestUniqueNumber(A []int) int {
+func largestUniqueNumber(a []int) int {
 	freq := make(map[int]int)
 
 	// Populate the hashmap with number frequencies
-	for _, num := range A {
+	for _, num := range a {
 		freq[num]++
 	}
 

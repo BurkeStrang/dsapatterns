@@ -57,13 +57,15 @@ func compare(str1, str2 string) bool {
 
 func getNextValidCharIndex(str string, index int) int {
 	backspaceCount := 0
+loop:
 	for index >= 0 {
-		if str[index] == '#' { // found a backspace character
+		switch {
+		case str[index] == '#': // found a backspace character
 			backspaceCount++
-		} else if backspaceCount > 0 { // a non-backspace character
+		case backspaceCount > 0: // a non-backspace character
 			backspaceCount--
-		} else {
-			break
+		default:
+			break loop
 		}
 
 		index-- // skip a backspace or a valid character

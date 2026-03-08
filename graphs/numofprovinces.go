@@ -68,11 +68,12 @@ func (uf *UnionFind) UnionSet(x, y int) {
 	}
 
 	// Union by rank
-	if uf.rank[rootX] < uf.rank[rootY] {
+	switch {
+	case uf.rank[rootX] < uf.rank[rootY]:
 		uf.parent[rootX] = rootY
-	} else if uf.rank[rootX] > uf.rank[rootY] {
+	case uf.rank[rootX] > uf.rank[rootY]:
 		uf.parent[rootY] = rootX
-	} else {
+	default:
 		uf.parent[rootY] = rootX
 		uf.rank[rootX]++
 	}

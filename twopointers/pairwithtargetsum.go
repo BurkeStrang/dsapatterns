@@ -21,11 +21,12 @@ func search(arr []int, targetsum int) []int {
 	left, right := 0, len(arr)-1
 	for left < right {
 		sum := arr[left] + arr[right]
-		if sum == targetsum {
+		switch {
+		case sum == targetsum:
 			return []int{left, right}
-		} else if sum < targetsum {
+		case sum < targetsum:
 			left++
-		} else {
+		default:
 			right--
 		}
 	}

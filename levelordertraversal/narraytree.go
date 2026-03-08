@@ -39,12 +39,10 @@ func levelOrder(root *NAryNode) [][]int {
 		level := []int{} // List to store current level nodes
 
 		for range size {
-			node := queue[0]                // Dequeue the front node
-			queue = queue[1:]               // Remove the front node from the queue
-			level = append(level, node.Val) // Add node value to the current level
-			for _, child := range node.Children {
-				queue = append(queue, child) // Enqueue all children of the current node
-			}
+			node := queue[0]                        // Dequeue the front node
+			queue = queue[1:]                       // Remove the front node from the queue
+			level = append(level, node.Val)         // Add node value to the current level
+			queue = append(queue, node.Children...) // Enqueue all children of the current node
 		}
 		result = append(result, level) // Add the current level to the result
 	}

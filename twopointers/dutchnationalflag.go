@@ -28,14 +28,15 @@ package twopointers
 func dutch(arr []int) []int {
 	low, high := 0, len(arr)-1
 	for i := 0; i <= high; {
-		if arr[i] == 0 {
+		switch arr[i] {
+		case 0:
 			swap(arr, i, low)
 			// increment 'i' and 'low'
 			i++
 			low++
-		} else if arr[i] == 1 {
+		case 1:
 			i++
-		} else { // the case for arr[i] == 2
+		default: // the case for arr[i] == 2
 			swap(arr, i, high)
 			// decrement 'high' only, after the swap the number at index 'i' could be 0, 1,
 			// or 2

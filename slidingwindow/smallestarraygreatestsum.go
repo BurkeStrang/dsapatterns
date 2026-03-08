@@ -12,7 +12,7 @@ import "math"
 //
 // Example 2:
 // Input: arr = [2, 1, 5, 2, 8], S=7
-// Output: 1 
+// Output: 1
 // Explanation: The smallest subarray with a sum greater than or equal to '7' is [8].
 //
 // Example 3:
@@ -21,17 +21,17 @@ import "math"
 // Explanation: Smallest subarrays with a sum greater than or equal to '8' are [3, 4, 1] or [1, 1, 6].
 // Constraints:
 //
-// 1 <= S <= 
+// 1 <= S <=
 // 1 <= arr.length <= 105
 // 1 <= arr[i] <= 104
 
-func findMinSubArray(S int, arr []int) int {
+func findMinSubArray(s int, arr []int) int {
 	windowSum, minLength := 0, math.MaxInt32
 	windowStart := 0
 	for windowEnd := range arr {
 		windowSum += arr[windowEnd] // add the next element
-		// shrink the window as small as possible until the 'windowSum' is smaller than 'S'
-		for windowSum >= S {
+		// shrink the window as small as possible until the 'windowSum' is smaller than 's'
+		for windowSum >= s {
 			minLength = min(minLength, windowEnd-windowStart+1)
 			windowSum -= arr[windowStart] // subtract the element going out
 			windowStart++                 // slide the window ahead

@@ -33,10 +33,10 @@ func maxFruit(arr []rune) int {
 	fruitFrequencyMap := make(map[rune]int)
 	// try to extend the range [windowStart, windowEnd]
 	for windowEnd := range arr {
-		fruitFrequencyMap[arr[windowEnd]] = fruitFrequencyMap[arr[windowEnd]] + 1
+		fruitFrequencyMap[arr[windowEnd]]++
 		// shrink the sliding window, until we're left with '2' fruits in the frequency map
 		for len(fruitFrequencyMap) > 2 {
-			fruitFrequencyMap[arr[windowStart]] = fruitFrequencyMap[arr[windowStart]] - 1
+			fruitFrequencyMap[arr[windowStart]]--
 			if fruitFrequencyMap[arr[windowStart]] == 0 {
 				delete(fruitFrequencyMap, arr[windowStart])
 			}
