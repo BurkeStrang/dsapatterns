@@ -12,13 +12,23 @@ func searchCeilingOfANumber(arr []int, key int) int {
 	right := len(arr) - 1
 
 	for left <= right {
+
 		mid := left + (right-left)/2
+		val := arr[mid]
+
 		switch {
-		case key < arr[mid]:
-			right = mid - 1
-		case key > arr[mid]:
+		// left = 0, right = 2, mid = 1, val = 6
+		// right = 0
+		// left = 0, right = 0, mid = 0, val = 4
+		// left = 1
+		// left = 1, right = 0 → exit
+		// return left = 1
+		//
+		case val < key:
 			left = mid + 1
-		default: // found the key
+		case val > key:
+			right = mid - 1
+		default:
 			return mid
 		}
 	}

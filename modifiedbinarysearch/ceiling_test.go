@@ -10,6 +10,7 @@ func Test_searchCeilingOfANumber(t *testing.T) {
 		key  int
 		want int
 	}{
+		{name: "Exmple 1", arr: []int{4, 6, 10}, key: 5, want: 1},
 		{name: "key exists in array", arr: []int{1, 3, 8, 10, 15}, key: 8, want: 2},
 		{name: "key between two elements", arr: []int{1, 3, 8, 10, 15}, key: 12, want: 4},
 		{name: "key smaller than all elements", arr: []int{1, 3, 8, 10, 15}, key: 0, want: 0},
