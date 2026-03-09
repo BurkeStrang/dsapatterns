@@ -141,7 +141,7 @@ def stub_file(filepath):
         print(f"  No functions found in {os.path.basename(filepath)}, skipping")
         return
 
-    stub_body = '\n\t// :TODO\n\tpanic("TODO")\n'
+    stub_body = '\n\t// TODO:\n\tpanic("TODO")\n'
 
     result = content
     for brace_start, brace_end in reversed(bodies):
