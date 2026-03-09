@@ -30,11 +30,12 @@ func search(arr []int, key int, findMaxIndex bool) int {
 	start, end := 0, len(arr)-1
 	for start <= end {
 		mid := start + (end-start)/2
-		if key < arr[mid] {
+		switch {
+		case key < arr[mid]:
 			end = mid - 1
-		} else if key > arr[mid] {
+		case key > arr[mid]:
 			start = mid + 1
-		} else { // key == arr[mid]
+		default: // key == arr[mid]
 			keyIndex = mid
 			if findMaxIndex {
 				start = mid + 1 // search ahead to find the last index of 'key'

@@ -1,5 +1,9 @@
 package modifiedbinarysearch
 
+// Example 1:
+// Input: ['a', 'c', 'f', 'h'], key = 'f'
+// Output: 'h'
+
 func searchNextLetter(letters []string, key string) string {
 
 	n := len(letters)
