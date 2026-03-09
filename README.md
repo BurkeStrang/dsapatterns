@@ -56,6 +56,37 @@ dsapatterns/
 └── ...
 ```
 
+## Practice Mode
+
+To practice a pattern from scratch, use the `practice` script to strip all function bodies and replace them with a `// TODO` stub that still compiles:
+
+```sh
+./scripts/practice.sh <folder>
+```
+
+**Example:**
+
+```sh
+./scripts/practice.sh stack
+```
+
+This will replace every solution function body in the `stack/` package with:
+
+```go
+// TODO
+panic("TODO")
+```
+
+The problem description, examples, constraints, and test files are left untouched so you can read the problem and run tests as you work.
+
+When you're done (or want to check your work), restore the originals with git:
+
+```sh
+git checkout -- stack/
+```
+
+> `shared.go` / `share.go` files and `*_test.go` files are never modified.
+
 ## Makefile Targets
 
 | Target | Description |
