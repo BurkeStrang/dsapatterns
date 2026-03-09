@@ -14,9 +14,9 @@ linters:
     - nlreturn
     - wsl
 
-  settings:
-    gocyclo:
-      min-complexity: 15
+linters-settings:
+  gocyclo:
+    min-complexity: 15
 
 run:
   timeout: 2m
