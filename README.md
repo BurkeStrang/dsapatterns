@@ -21,7 +21,7 @@ A structured collection of data structures and algorithm problems solved in Go, 
 | [Two Heaps](./twoheaps/) | 4 |
 | [Subsets](./subsets/) | 8 |
 | [Monotonic Stack](./monotonicstack/) | 7 |
-| [Modified Binary Search](./modifiedbinarysearch/) | 3 |
+| [Modified Binary Search](./modifiedbinarysearch/) | 4 |
 | [Stack](./stack/) | 6 |
 
 ## Getting Started
@@ -70,14 +70,16 @@ To practice a pattern from scratch, use the `practice` script to strip all funct
 ./scripts/practice.sh stack
 ```
 
-This will replace every solution function body in the `stack/` package with:
+This replaces every solution function body with a `// TODO:` comment and a zero-value return that compiles. For example:
 
 ```go
-// TODO
-panic("TODO")
+func validParentheses(s1 string) bool {
+	// TODO:
+	return false
+}
 ```
 
-The problem description, examples, constraints, and test files are left untouched so you can read the problem and run tests as you work.
+All tests still run and each unimplemented function shows a clear failure (`got false, want true`) rather than crashing the test binary. Fix one function at a time and re-run tests to see your progress.
 
 When you're done (or want to check your work), restore the originals with git:
 
@@ -85,7 +87,7 @@ When you're done (or want to check your work), restore the originals with git:
 git checkout -- stack/
 ```
 
-> `shared.go` / `share.go` files and `*_test.go` files are never modified.
+> `shared.go` / `share.go` files, `*_test.go` files, and heap/sort interface methods (`Len`, `Less`, `Swap`, `Push`, `Pop`) are never modified.
 
 ## Makefile Targets
 
