@@ -55,11 +55,12 @@ func searchInfiniteSortedArray(reader ArrayReader, key int) int {
 func binarySearch(reader ArrayReader, key int, start int, end int) int {
 	for start <= end {
 		mid := start + (end-start)/2
-		if key < reader.Get(mid) {
+		switch {
+		case key < reader.Get(mid):
 			end = mid - 1
-		} else if key > reader.Get(mid) {
+		case key > reader.Get(mid):
 			start = mid + 1
-		} else { // found the key
+		default: // found the key
 			return mid
 		}
 	}
