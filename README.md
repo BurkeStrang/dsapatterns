@@ -6,6 +6,7 @@ A structured collection of data structures and algorithm problems solved in Go, 
 
 | Pattern | Problems |
 |---|---|
+| [Bitwise XOR](./bitwisexor/) | 3 |
 | [Sliding Window](./slidingwindow/) | 13 |
 | [Two Pointers](./twopointers/) | 10 |
 | [Merge Intervals](./mergeintervals/) | 7 |
