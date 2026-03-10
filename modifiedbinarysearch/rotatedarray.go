@@ -17,22 +17,22 @@ package modifiedbinarysearch
 // Explanation: '10' is present in the array at index '4'.
 
 func searchRotated(arr []int, key int) int {
-	start, end := 0, len(arr)-1
-	for start <= end {
-		mid := start + (end-start)/2
+	beg, end := 0, len(arr)-1
+	for beg <= end {
+		mid := beg + (end-beg)/2
 		if arr[mid] == key {
 			return mid
 		}
 
-		if arr[start] <= arr[mid] { // left side is sorted in ascending order
-			if key >= arr[start] && key < arr[mid] {
+		if arr[beg] <= arr[mid] { // left side is sorted in ascending order
+			if key >= arr[beg] && key < arr[mid] {
 				end = mid - 1
 			} else { // key > arr[mid]
-				start = mid + 1
+				beg = mid + 1
 			}
 		} else { // right side is sorted in ascending order
 			if key > arr[mid] && key <= arr[end] {
-				start = mid + 1
+				beg = mid + 1
 			} else {
 				end = mid - 1
 			}
