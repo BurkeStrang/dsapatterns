@@ -26,6 +26,9 @@ func findMaxInBitonicArray(arr []int) int {
 	right := len(arr) - 1
 
 	for left < right {
+		// left = 0, right = 2, mid = 1, arr[mid] = 9, arr[mid+1] = 8
+		// left = 0, right = 1, mid = 0, arr[mid] = 10, arr[mid+1] = 9
+		// left = 0, right = 0
 		mid := left + (right-left)/2
 		if arr[mid] > arr[mid+1] {
 			right = mid
