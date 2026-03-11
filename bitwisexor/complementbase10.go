@@ -40,7 +40,9 @@ func bitwiseComplement(num int) int {
 	// '2', and '3' (which is one less than 4) has a binary representation of '11' i.e.,
 	// it has '2' least significant bits set to '1'
 	allBitsSet := int(math.Pow(2, float64(bitCount))) - 1
+	// allBitsSet = 8 - 1 = 7, binary = 0111
 
 	// From the solution description: complement = number ^ allBitsSet
+	// 1010 (10) ^ 0111 (7) = 0101 (5)
 	return num ^ allBitsSet
 }
