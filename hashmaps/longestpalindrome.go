@@ -22,11 +22,11 @@ package hashmaps
 // s consists of lowercase and/or uppercase English letters only.
 
 func longestPalindrome(s string) int {
-	charFreq := make(map[byte]int)
+	charFreq := make(map[rune]int)
 
 	// Populate the map with character frequencies
-	for i := 0; i < len(s); i++ {
-		charFreq[s[i]]++
+	for _, c := range s {
+		charFreq[c]++
 	}
 
 	length := 0
