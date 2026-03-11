@@ -36,7 +36,7 @@ make test
 # Run tests with verbose output
 make test-verbose
 
-# Run vet + lint + tests (full quality gate)
+# Run vet + lint + tests + fmt (full quality gate)
 make check
 ```
 
