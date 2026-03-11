@@ -1,48 +1,66 @@
 package bitwisexor
-
 import "math"
 
-// Every non-negative integer N has a binary representation,
-// for example, 8 can be represented as “1000” in binary and 7 as “0111” in binary.
-// The complement of a binary representation is the number in binary that we get when we change every 1 to a 0 and every 0 to a 1.
-// For example, the binary complement of “1010” is “0101”.
-// For a given positive number N in base-10,
-// return the complement of its binary representation as a base-10 integer.
+// Every non-negative integer N has a binary representation.
+// For example:
+//   8  -> 1000
+//   7  -> 0111
+//
+// The complement of a binary representation is obtained by flipping
+// every bit: 1 becomes 0 and 0 becomes 1.
 //
 // Example 1:
 // Input: 8
 // Output: 7
-// Explanation: 8 is 1000 in binary, its complement is 0111 in binary, which is 7 in base-10.
+// Explanation:
+// 8  = 1000
+// complement = 0111 = 7
 //
 // Example 2:
 // Input: 10
 // Output: 5
-// Explanation: 10 is 1010 in binary, its complement is 0101 in binary, which is 5 in base-10.
+// Explanation:
+// 10 = 1010
+// complement = 0101 = 5
 
 func bitwiseComplement(num int) int {
-	// Count number of total bits in 'num'
+
+	// Count how many bits are needed to represent 'num'
 	bitCount := 0
-	// num = 10 binary = 1010
 	n := num
+
+	// Example for num = 10 (binary 1010):
+	// iteration 1: n = 1010 → bitCount = 1
+	// iteration 2: n = 101  → bitCount = 2
+	// iteration 3: n = 10   → bitCount = 3
+	// iteration 4: n = 1    → bitCount = 4
+	// iteration 5: n = 0    → loop exits
 	for n > 0 {
 		bitCount++
 		n >>= 1
-		// binary = 1010, bitCount = 1
-		// binary = 101, bitCount = 2
-		// binary = 10, bitCount = 3
-		// binary = 1, bitCount = 4
-		// binary = 0, bitCount = 4
 	}
 
-	// For a number which is a complete power of '2' i.e., it can be written as
-	// pow(2, n), if we subtract '1' from such a number, we get a number which has 'n'
-	// least significant bits set to '1'. For example, '4' which is a complete power of
-	// '2', and '3' (which is one less than 4) has a binary representation of '11' i.e.,
-	// it has '2' least significant bits set to '1'
+	// Create a number where all bits up to the most significant bit
+	// of 'num' are set to 1.
+	//
+	// A power of two minus one produces a sequence of 1s in binary:
+	//   2^1 - 1 = 1  -> 1
+	//   2^2 - 1 = 3  -> 11
+	//   2^3 - 1 = 7  -> 111
+	//   2^4 - 1 = 15 -> 1111
+	//
+	// Example with num = 10:
+	// bitCount = 4
+	// 2^4 = 16
+	// allBitsSet = 16 - 1 = 15 -> binary 1111
 	allBitsSet := int(math.Pow(2, float64(bitCount))) - 1
-	// allBitsSet = 8 - 1 = 7, binary = 0111
 
-	// From the solution description: complement = number ^ allBitsSet
-	// 1010 (10) ^ 0111 (7) = 0101 (5)
+	// XOR flips the bits wherever the mask has a 1
+	//
+	// Example:
+	//   num       = 1010 (10)
+	//   allBitsSet= 1111 (15)
+	// -----------------------
+	//   result    = 0101 (5)
 	return num ^ allBitsSet
 }
