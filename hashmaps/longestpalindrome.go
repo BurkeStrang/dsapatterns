@@ -33,6 +33,13 @@ func longestPalindrome(s string) int {
 	oddFound := false
 
 	// Calculate the palindrome length
+	// This calculation is based on the fact that for a palindrome, we can use
+	// all characters with even frequencies and at most one character with an
+	// odd frequency.
+	// So even characters contribute their full frequency to the length, while
+	// odd characters only contribute their frequency minus one (to make it
+	// even), and we can have at most one odd character in the middle of the
+	// palindrome.
 	for _, freq := range charFreq {
 		if freq%2 == 0 {
 			length += freq
