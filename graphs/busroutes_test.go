@@ -4,7 +4,7 @@ import "testing"
 
 func Test_numBusesToDestination(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		routes [][]int
 		source int
 		target int

@@ -55,4 +55,3 @@ func Test_removeKdigits(t *testing.T) {
 		})
 	}
 }
-

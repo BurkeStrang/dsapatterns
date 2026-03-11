@@ -28,4 +28,3 @@ func Test_countTrees(t *testing.T) {
 		})
 	}
 }
-

@@ -31,10 +31,9 @@ func Test_findFirstK(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findFirstK(tt.nums, tt.k)
-			if !equal(got,tt.want) {
+			if !equal(got, tt.want) {
 				t.Errorf("findFirstK() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
-

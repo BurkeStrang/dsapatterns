@@ -21,4 +21,3 @@ func Test_findSingleNumber(t *testing.T) {
 		})
 	}
 }
-

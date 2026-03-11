@@ -24,7 +24,7 @@ import "math"
 // 1 <= text.length <= 104
 // text consists of lower case English letters only.
 
-func  maxNumberOfBalloons(text string) int {
+func maxNumberOfBalloons(text string) int {
 	// Create a map to store character frequencies
 	charCount := make(map[rune]int)
 

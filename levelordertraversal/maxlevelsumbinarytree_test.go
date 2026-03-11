@@ -12,7 +12,7 @@ func Test_maxLevelSum(t *testing.T) {
 			name: "Example 1: [1,20,3,4,5,null,8]",
 			root: &TreeNode{Val: 1,
 				Left: &TreeNode{Val: 20,
-					Left: &TreeNode{Val: 4},
+					Left:  &TreeNode{Val: 4},
 					Right: &TreeNode{Val: 5},
 				},
 				Right: &TreeNode{Val: 3,
@@ -26,7 +26,7 @@ func Test_maxLevelSum(t *testing.T) {
 			root: &TreeNode{Val: 10,
 				Left: &TreeNode{Val: 5,
 					Left: &TreeNode{Val: 3,
-						Left: &TreeNode{Val: 3},
+						Left:  &TreeNode{Val: 3},
 						Right: &TreeNode{Val: -2},
 					},
 					Right: &TreeNode{Val: 2,
@@ -61,7 +61,7 @@ func Test_maxLevelSum(t *testing.T) {
 		{
 			name: "Negative values",
 			root: &TreeNode{Val: -1,
-				Left: &TreeNode{Val: -2},
+				Left:  &TreeNode{Val: -2},
 				Right: &TreeNode{Val: -3},
 			},
 			want: 1,
@@ -76,4 +76,3 @@ func Test_maxLevelSum(t *testing.T) {
 		})
 	}
 }
-

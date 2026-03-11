@@ -27,7 +27,6 @@ func Test_generateGeneralizedAbbreviation(t *testing.T) {
 	}
 }
 
-
 func equalUnorderdedStringSlices(a, b []string) bool {
 	if len(a) != len(b) {
 		return false

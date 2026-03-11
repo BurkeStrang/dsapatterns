@@ -4,7 +4,7 @@ import "testing"
 
 func Test_hasCycle(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		matrix [][]rune
 		want   bool
 	}{
@@ -36,4 +36,3 @@ func Test_hasCycle(t *testing.T) {
 		})
 	}
 }
-

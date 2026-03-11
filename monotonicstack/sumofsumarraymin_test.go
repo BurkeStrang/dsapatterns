@@ -43,4 +43,3 @@ func Test_sumSubarrayMins(t *testing.T) {
 		})
 	}
 }
-

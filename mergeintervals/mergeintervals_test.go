@@ -44,7 +44,6 @@ func Test_merge(t *testing.T) {
 	}
 }
 
-
 func equalIntervals(a, b []Interval) bool {
 	if len(a) != len(b) {
 		return false

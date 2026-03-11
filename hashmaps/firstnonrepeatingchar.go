@@ -1,4 +1,5 @@
 package hashmaps
+
 // Given a string, identify the position of the first character that appears only once in the string.
 // If no such character exists, return -1.
 //
@@ -21,23 +22,22 @@ package hashmaps
 // 1 <= s.length <= 105
 // s consists of only lowercase English letters.
 
-
 func firstUniqChar(sStr string) int {
-    // Create a hashmap to store the frequency of each character
-    freq := make(map[rune]int)
+	// Create a hashmap to store the frequency of each character
+	freq := make(map[rune]int)
 
-    // Traverse the string to populate the hashmap with character frequencies
-    for _, c := range sStr {
-        freq[c]++
-    }
+	// Traverse the string to populate the hashmap with character frequencies
+	for _, c := range sStr {
+		freq[c]++
+	}
 
-    // Traverse the string again to find the first unique character
-    for i, c := range sStr {
-        if freq[c] == 1 {
-            return i
-        }
-    }
+	// Traverse the string again to find the first unique character
+	for i, c := range sStr {
+		if freq[c] == 1 {
+			return i
+		}
+	}
 
-    // If no unique character is found, return -1
-    return -1
+	// If no unique character is found, return -1
+	return -1
 }

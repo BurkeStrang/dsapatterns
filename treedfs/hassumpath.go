@@ -24,19 +24,17 @@ package treedfs
 // -1000 <= Node.val <= 1000
 // -1000 <= targetSum <= 1000
 
-
-
 func hasPath(root *TreeNode, sum int) bool {
-    if root == nil {
-        return false
-    }
+	if root == nil {
+		return false
+	}
 
-    // if the current node is leaf and its value is equal to the sum, we've found a path
-    if root.Val == sum && root.Left == nil && root.Right == nil {
-        return true
-    }
+	// if the current node is leaf and its value is equal to the sum, we've found a path
+	if root.Val == sum && root.Left == nil && root.Right == nil {
+		return true
+	}
 
-    // recursively call to traverse the left and right sub-tree
-    // return true if any of the two recursive call return true
-    return hasPath(root.Left, sum-root.Val) || hasPath(root.Right, sum-root.Val)
+	// recursively call to traverse the left and right sub-tree
+	// return true if any of the two recursive call return true
+	return hasPath(root.Left, sum-root.Val) || hasPath(root.Right, sum-root.Val)
 }

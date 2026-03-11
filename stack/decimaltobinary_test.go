@@ -21,4 +21,3 @@ func Test_decimalToBinary(t *testing.T) {
 		})
 	}
 }
-

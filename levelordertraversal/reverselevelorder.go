@@ -35,7 +35,6 @@ package levelordertraversal
 // The number of nodes in the tree is in the range [0, 2000].
 // -1000 <= Node.val <= 1000
 
-
 func Traverse(root *TreeNode) [][]int {
 	result := [][]int{}
 	if root == nil {

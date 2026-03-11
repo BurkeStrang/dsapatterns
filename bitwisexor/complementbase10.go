@@ -1,4 +1,5 @@
 package bitwisexor
+
 import "math"
 
 // Every non-negative integer N has a binary representation.

@@ -1,10 +1,9 @@
 package monotonicstack
 
 type ListNode struct {
-    Val  int
-    Next *ListNode
+	Val  int
+	Next *ListNode
 }
-
 
 func buildList(vals []int) *ListNode {
 	if len(vals) == 0 {
@@ -41,7 +40,6 @@ func listToSlice(head *ListNode) []int {
 	return res
 }
 
-
 func equal(a, b []int) bool {
 	if len(a) != len(b) {
 		return false
@@ -53,7 +51,6 @@ func equal(a, b []int) bool {
 	}
 	return true
 }
-
 
 type stackElement struct {
 	char  rune

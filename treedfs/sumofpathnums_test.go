@@ -43,4 +43,3 @@ func Test_findSumOfPathNumbers(t *testing.T) {
 		})
 	}
 }
-

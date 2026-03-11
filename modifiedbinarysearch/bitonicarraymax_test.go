@@ -22,4 +22,3 @@ func Test_findMaxInBitonicArray(t *testing.T) {
 		})
 	}
 }
-

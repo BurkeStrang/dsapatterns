@@ -20,7 +20,7 @@ fmt:
 lint:
 	golangci-lint run ./...
 
-check: vet lint test
+check: vet lint test fmt
 
 clean:
 	go clean ./...

@@ -51,4 +51,3 @@ func TestSolution_findMaximumPathSum(t *testing.T) {
 		})
 	}
 }
-

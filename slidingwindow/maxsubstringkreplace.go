@@ -23,7 +23,6 @@ package slidingwindow
 // s consists of only lowercase English letters.
 // 0 <= k <= s.length
 
-
 func maxLengthReplace(str string, k int) int {
 	windowStart, maxLength, maxRepeatLetterCount := 0, 0, 0
 	letterFrequencyMap := make(map[rune]int)

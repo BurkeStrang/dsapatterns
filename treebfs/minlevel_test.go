@@ -14,8 +14,8 @@ func Test_findDepth(t *testing.T) {
 			root: &TreeNode{
 				Val: 1,
 				Left: &TreeNode{
-					Val: 2,
-					Left: &TreeNode{Val: 4},
+					Val:   2,
+					Left:  &TreeNode{Val: 4},
 					Right: &TreeNode{Val: 5},
 				},
 				Right: &TreeNode{Val: 3},
@@ -25,7 +25,7 @@ func Test_findDepth(t *testing.T) {
 		{
 			name: "Example 2",
 			root: &TreeNode{
-				Val: 1,
+				Val:  1,
 				Left: &TreeNode{Val: 2},
 			},
 			want: 2,
@@ -35,12 +35,12 @@ func Test_findDepth(t *testing.T) {
 			root: &TreeNode{
 				Val: 1,
 				Left: &TreeNode{
-					Val: 2,
-					Left: &TreeNode{Val: 4},
+					Val:   2,
+					Left:  &TreeNode{Val: 4},
 					Right: &TreeNode{Val: 5},
 				},
 				Right: &TreeNode{
-					Val: 3,
+					Val:  3,
 					Left: &TreeNode{Val: 6},
 				},
 			},
@@ -66,4 +66,3 @@ func Test_findDepth(t *testing.T) {
 		})
 	}
 }
-

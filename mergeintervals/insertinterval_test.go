@@ -4,7 +4,7 @@ import "testing"
 
 func Test_insert(t *testing.T) {
 	tests := []struct {
-		name string
+		name        string
 		intervals   []Interval
 		newInterval Interval
 		want        []Interval
@@ -31,10 +31,9 @@ func Test_insert(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := insert(tt.intervals, tt.newInterval)
-			if !equalIntervals(got,tt.want) {
+			if !equalIntervals(got, tt.want) {
 				t.Errorf("insert() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
-

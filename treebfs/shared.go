@@ -45,8 +45,6 @@ func (q *Queue) Pop() error {
 	return nil
 }
 
-
-
 func equal(a, b [][]int) bool {
 	if len(a) != len(b) {
 		return false
@@ -63,7 +61,6 @@ func equal(a, b [][]int) bool {
 	}
 	return true
 }
-
 
 func equalFloatSlices(a, b []float64) bool {
 	if len(a) != len(b) {

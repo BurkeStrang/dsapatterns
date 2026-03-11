@@ -1,4 +1,5 @@
 package levelordertraversal
+
 import "testing"
 
 func Test_widthOfBinaryTree(t *testing.T) {

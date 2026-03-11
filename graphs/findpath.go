@@ -35,37 +35,35 @@ package graphs
 // There are no duplicate edges.
 // There are no self edges.
 
-
-
 func validPath(n int, edges [][]int, start int, end int) bool {
-    graph := make([][]int, n)
+	graph := make([][]int, n)
 
-    // Initialize the graph
-    for i := range n {
-        graph[i] = []int{}
-    }
+	// Initialize the graph
+	for i := range n {
+		graph[i] = []int{}
+	}
 
-    // Populate the graph from edges
-    for _, edge := range edges {
-        graph[edge[0]] = append(graph[edge[0]], edge[1])
-        graph[edge[1]] = append(graph[edge[1]], edge[0]) // Because it's an undirected graph
-    }
+	// Populate the graph from edges
+	for _, edge := range edges {
+		graph[edge[0]] = append(graph[edge[0]], edge[1])
+		graph[edge[1]] = append(graph[edge[1]], edge[0]) // Because it's an undirected graph
+	}
 
-	  visited := make([]bool, n)
-    return dfs(graph, start, end, visited)
+	visited := make([]bool, n)
+	return dfs(graph, start, end, visited)
 }
 
 func dfs(graph [][]int, node int, end int, visited []bool) bool {
-    if node == end {
-        return true // Found the path
-    }
-    visited[node] = true
+	if node == end {
+		return true // Found the path
+	}
+	visited[node] = true
 
-    // Traverse neighbors
-    for _, neighbor := range graph[node] {
-        if !visited[neighbor] && dfs(graph, neighbor, end, visited) {
-            return true
-        }
-    }
-    return false // Path not found
+	// Traverse neighbors
+	for _, neighbor := range graph[node] {
+		if !visited[neighbor] && dfs(graph, neighbor, end, visited) {
+			return true
+		}
+	}
+	return false // Path not found
 }

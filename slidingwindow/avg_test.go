@@ -38,4 +38,3 @@ func Test_findAverages(t *testing.T) {
 		})
 	}
 }
-

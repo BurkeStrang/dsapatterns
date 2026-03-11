@@ -7,7 +7,7 @@ import (
 
 func Test_sortStack(t *testing.T) {
 	tests := []struct {
-		name string
+		name  string
 		input Stack
 		want  Stack
 	}{
@@ -39,7 +39,6 @@ func Test_sortStack(t *testing.T) {
 	}
 }
 
-
 func makeStack(vals []int) Stack {
 	s := NewStack()
 	for _, v := range vals {
@@ -62,4 +61,3 @@ func stackToSlice(s Stack) []int {
 	}
 	return out
 }
-

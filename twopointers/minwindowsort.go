@@ -29,7 +29,6 @@ import "math"
 // 1 <= arr.length <= 104
 // -105 <= arr[i] <= 105
 
-
 func minSort(arr []int) int {
 	low := 0
 	high := len(arr) - 1

@@ -21,4 +21,3 @@ func Test_countRotations(t *testing.T) {
 		})
 	}
 }
-

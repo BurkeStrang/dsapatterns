@@ -12,9 +12,6 @@ import "container/heap"
 // Input: [5, 12, 11, -1, 12], K = 3
 // Output: [12, 11, 12]
 
-
-
-
 type IntHeap []int
 
 func (h IntHeap) Len() int           { return len(h) }

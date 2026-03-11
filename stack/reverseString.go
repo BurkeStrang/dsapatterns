@@ -18,8 +18,7 @@ package stack
 // 1 <= s.length <= 105
 // s[i] is a printable ascii character.
 
-
-func  reverseString(input string) string {
+func reverseString(input string) string {
 	// Create a stack using a slice
 	stack := []rune(input)
 

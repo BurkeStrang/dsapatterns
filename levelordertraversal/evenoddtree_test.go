@@ -12,7 +12,7 @@ func Test_isEvenOddTree(t *testing.T) {
 			name: "Example 1: Valid Even-Odd Tree",
 			root: &TreeNode{Val: 1,
 				Left: &TreeNode{Val: 10,
-					Left: &TreeNode{Val: 3},
+					Left:  &TreeNode{Val: 3},
 					Right: &TreeNode{Val: 7},
 				},
 				Right: &TreeNode{Val: 4},
@@ -35,7 +35,7 @@ func Test_isEvenOddTree(t *testing.T) {
 			name: "Example 3: Invalid Even-Odd Tree (even values at even level)",
 			root: &TreeNode{Val: 7,
 				Left: &TreeNode{Val: 10,
-					Left: &TreeNode{Val: 12},
+					Left:  &TreeNode{Val: 12},
 					Right: &TreeNode{Val: 8},
 				},
 				Right: &TreeNode{Val: 2},
@@ -67,4 +67,3 @@ func Test_isEvenOddTree(t *testing.T) {
 		})
 	}
 }
-

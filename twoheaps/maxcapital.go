@@ -8,7 +8,8 @@ type capitalHeap struct {
 	capital []int
 }
 
-func (h capitalHeap) Len() int           { return len(h.indices) }
+func (h capitalHeap) Len() int { return len(h.indices) }
+
 // this is a min-heap, so Less returns true if capital at i is less than capital at j
 func (h capitalHeap) Less(i, j int) bool { return h.capital[h.indices[i]] < h.capital[h.indices[j]] }
 func (h capitalHeap) Swap(i, j int)      { h.indices[i], h.indices[j] = h.indices[j], h.indices[i] }
@@ -27,7 +28,8 @@ type profitHeap struct {
 	profits []int
 }
 
-func (h profitHeap) Len() int           { return len(h.indices) }
+func (h profitHeap) Len() int { return len(h.indices) }
+
 // this is a max-heap, so Less returns true if profit at i is greater than profit at j
 func (h profitHeap) Less(i, j int) bool { return h.profits[h.indices[i]] > h.profits[h.indices[j]] }
 func (h profitHeap) Swap(i, j int)      { h.indices[i], h.indices[j] = h.indices[j], h.indices[i] }

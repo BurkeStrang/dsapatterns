@@ -4,7 +4,7 @@ import "testing"
 
 func Test_reverseString(t *testing.T) {
 	tests := []struct {
-		name string
+		name  string
 		input string
 		want  string
 	}{
@@ -21,4 +21,3 @@ func Test_reverseString(t *testing.T) {
 		})
 	}
 }
-

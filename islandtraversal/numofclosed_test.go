@@ -85,4 +85,3 @@ func Test_countClosedIslands(t *testing.T) {
 		})
 	}
 }
-

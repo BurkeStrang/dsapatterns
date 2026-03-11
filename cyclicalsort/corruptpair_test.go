@@ -22,10 +22,9 @@ func Test_findCorrupt(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findCorrupt(tt.nums)
-			if !equal(got,tt.want) {
+			if !equal(got, tt.want) {
 				t.Errorf("findCorrupt() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
-

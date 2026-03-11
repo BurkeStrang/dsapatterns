@@ -56,7 +56,7 @@ func Test_reversesub(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := reversesub(tt.head, tt.p, tt.q)
-			if !equalList(got,tt.want) {
+			if !equalList(got, tt.want) {
 				t.Errorf("reversesub() = %v, want %v", got, tt.want)
 			}
 		})

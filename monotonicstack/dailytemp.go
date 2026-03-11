@@ -1,4 +1,5 @@
 package monotonicstack
+
 // Given an array of integers temperatures representing daily temperatures,
 // calculate how many days you have to wait until a warmer temperature.
 // If there is no future day for which this is possible, put 0 instead.
@@ -22,19 +23,19 @@ package monotonicstack
 // 1 <= temperatures.length <= 105
 // 30 <= temperatures[i] <= 100
 
-func  dailyTemperatures(temperatures []int) []int {
-    stack := []int{}                  // Initialize an empty stack to store indices of temperatures.
-    res := make([]int, len(temperatures)) // Initialize a result slice with zeros.
+func dailyTemperatures(temperatures []int) []int {
+	stack := []int{}                      // Initialize an empty stack to store indices of temperatures.
+	res := make([]int, len(temperatures)) // Initialize a result slice with zeros.
 
-    for i, temp := range temperatures {
-        for len(stack) > 0 && temp > temperatures[stack[len(stack)-1]] {
-            // While the stack is not empty and the current temperature is higher
-            // than the temperature at the index stored at the top of the stack:
-            idx := stack[len(stack)-1]    // Get the top index from the stack.
-            stack = stack[:len(stack)-1]  // Pop from the stack.
-            res[idx] = i - idx           // Calculate the number of days until warmer temperature.
-        }
-        stack = append(stack, i) // Push the current index onto the stack.
-    }
-    return res
+	for i, temp := range temperatures {
+		for len(stack) > 0 && temp > temperatures[stack[len(stack)-1]] {
+			// While the stack is not empty and the current temperature is higher
+			// than the temperature at the index stored at the top of the stack:
+			idx := stack[len(stack)-1]   // Get the top index from the stack.
+			stack = stack[:len(stack)-1] // Pop from the stack.
+			res[idx] = i - idx           // Calculate the number of days until warmer temperature.
+		}
+		stack = append(stack, i) // Push the current index onto the stack.
+	}
+	return res
 }

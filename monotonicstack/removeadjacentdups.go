@@ -1,4 +1,5 @@
 package monotonicstack
+
 // You are given a string s consisting of lowercase English letters. A duplicate removal consists of choosing two adjacent and equal letters and removing them.
 //
 // We repeatedly make duplicate removals on s until we no longer can.
@@ -25,20 +26,20 @@ package monotonicstack
 // s consists of lowercase English letters.
 
 func removeDuplicates(s string) string {
-    // Create a StringBuilder to use as a stack
-    var stack []rune
+	// Create a StringBuilder to use as a stack
+	var stack []rune
 
-    // Process each character in s
-    for _, c := range s {
-        length := len(stack)
-        // If the stack is not empty and the current character is the same as the top of the stack, pop the character from the stack
-        if length > 0 && c == stack[length-1] {
-            stack = stack[:length-1]
-        } else { // Push the current character onto the stack
-            stack = append(stack, c)
-        }
-    }
+	// Process each character in s
+	for _, c := range s {
+		length := len(stack)
+		// If the stack is not empty and the current character is the same as the top of the stack, pop the character from the stack
+		if length > 0 && c == stack[length-1] {
+			stack = stack[:length-1]
+		} else { // Push the current character onto the stack
+			stack = append(stack, c)
+		}
+	}
 
-    // Convert the stack to a string
-    return string(stack)
+	// Convert the stack to a string
+	return string(stack)
 }

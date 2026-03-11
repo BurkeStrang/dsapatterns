@@ -1,8 +1,8 @@
 package fastandslowpointers
 
 type ListNode struct {
-	Val int
-	Next  *ListNode
+	Val  int
+	Next *ListNode
 }
 
 // Helper function to compare two ListNodes by value only (not full list)

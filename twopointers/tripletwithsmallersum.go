@@ -5,14 +5,14 @@ package twopointers
 //
 // Example 1:
 //
-// Input: [-1, 0, 2, 3], target=3 
+// Input: [-1, 0, 2, 3], target=3
 // Output: 2
 // Explanation: There are two triplets whose sum is less than the target: [-1, 0, 3], [-1, 0, 2]
 // Example 2:
 //
-// Input: [-1, 4, 2, 1, 3], target=5 
+// Input: [-1, 4, 2, 1, 3], target=5
 // Output: 4
-// Explanation: There are four triplets whose sum is less than the target: 
+// Explanation: There are four triplets whose sum is less than the target:
 // [-1, 1, 4], [-1, 1, 3], [-1, 1, 2], [-1, 2, 3]
 // Constraints:
 //

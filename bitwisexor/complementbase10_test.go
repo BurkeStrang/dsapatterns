@@ -24,4 +24,3 @@ func Test_bitwiseComplement(t *testing.T) {
 		})
 	}
 }
-

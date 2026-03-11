@@ -4,7 +4,7 @@ import "testing"
 
 func Test_findDistinctIslandsDFS(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		matrix [][]int
 		want   int
 	}{
@@ -51,4 +51,3 @@ func Test_findDistinctIslandsDFS(t *testing.T) {
 		})
 	}
 }
-

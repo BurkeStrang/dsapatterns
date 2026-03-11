@@ -1,6 +1,6 @@
 package treebfs
 
-import(
+import (
 	"testing"
 )
 
@@ -30,8 +30,8 @@ func TestFindSuccessor(t *testing.T) {
 			root: &TreeNode{
 				Val: 12,
 				Left: &TreeNode{
-					Val:   7,
-					Left:  &TreeNode{Val: 9},
+					Val:  7,
+					Left: &TreeNode{Val: 9},
 				},
 				Right: &TreeNode{
 					Val:   1,
@@ -47,8 +47,8 @@ func TestFindSuccessor(t *testing.T) {
 			root: &TreeNode{
 				Val: 12,
 				Left: &TreeNode{
-					Val:   7,
-					Left:  &TreeNode{Val: 9},
+					Val:  7,
+					Left: &TreeNode{Val: 9},
 				},
 				Right: &TreeNode{
 					Val:   1,
@@ -62,7 +62,7 @@ func TestFindSuccessor(t *testing.T) {
 		{
 			name: "No successor (last node)",
 			root: &TreeNode{
-				Val: 1,
+				Val:  1,
 				Left: &TreeNode{Val: 2},
 			},
 			key:  2,

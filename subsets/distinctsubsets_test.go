@@ -17,20 +17,19 @@ func Test_findSubsets(t *testing.T) {
 		},
 		{
 			name: "example test case 2",
-			nums: []int{1,2,3},
-			want: [][]int{{}, {1},{2},{3},{1,2},{1,3},{2,3},{1,2,3}},
+			nums: []int{1, 2, 3},
+			want: [][]int{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}},
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findSubsets(tt.nums)
-			if !equalSubsets(got,tt.want){
+			if !equalSubsets(got, tt.want) {
 				t.Errorf("findSubsets() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
-
 
 func equalSubsets(a, b [][]int) bool {
 	sortSlice := func(s [][]int) {

@@ -23,4 +23,3 @@ func Test_searchMinDiff(t *testing.T) {
 		})
 	}
 }
-

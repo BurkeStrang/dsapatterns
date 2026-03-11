@@ -1,4 +1,5 @@
 package levelordertraversal
+
 import "math"
 
 // You are given the root of a binary tree. The level of its root node is 1,
@@ -51,7 +52,7 @@ func maxLevelSum(root *TreeNode) int {
 	queue = append(queue, root) // Add the root node to the queue
 
 	maxSum := math.MinInt32
-	resultLevel := 1 // To keep track of the level with the maximum sum
+	resultLevel := 1  // To keep track of the level with the maximum sum
 	currentLevel := 1 // Current level counter
 
 	for len(queue) > 0 {
@@ -76,7 +77,7 @@ func maxLevelSum(root *TreeNode) int {
 
 		// If the current level sum is greater than the maxSum found so far
 		if currentSum > maxSum {
-			maxSum = currentSum // Update maxSum
+			maxSum = currentSum        // Update maxSum
 			resultLevel = currentLevel // Update resultLevel to the current level
 		}
 

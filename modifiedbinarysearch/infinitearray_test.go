@@ -4,7 +4,7 @@ import "testing"
 
 func Test_searchInfiniteSortedArray(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		reader ArrayReader
 		key    int
 		want   int
@@ -22,4 +22,3 @@ func Test_searchInfiniteSortedArray(t *testing.T) {
 		})
 	}
 }
-

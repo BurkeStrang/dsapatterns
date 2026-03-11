@@ -4,7 +4,7 @@ import "testing"
 
 func Test_nextGreaterElement(t *testing.T) {
 	tests := []struct {
-		name string
+		name  string
 		nums1 []int
 		nums2 []int
 		want  []int
@@ -49,4 +49,3 @@ func Test_nextGreaterElement(t *testing.T) {
 		})
 	}
 }
-

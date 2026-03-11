@@ -22,10 +22,9 @@ func Test_findDups(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findDups(tt.nums)
-			if !equal(got,tt.want) {
+			if !equal(got, tt.want) {
 				t.Errorf("findDups() = %v, want %v", got, tt.want)
 			}
 		})
 	}
 }
-

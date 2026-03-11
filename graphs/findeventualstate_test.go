@@ -33,4 +33,3 @@ func Test_eventualSafeNodes(t *testing.T) {
 		})
 	}
 }
-

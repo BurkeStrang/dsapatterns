@@ -30,4 +30,3 @@ func Test_findPermutations(t *testing.T) {
 		})
 	}
 }
-

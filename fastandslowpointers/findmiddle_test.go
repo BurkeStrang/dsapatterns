@@ -2,7 +2,6 @@ package fastandslowpointers
 
 import "testing"
 
-
 func Test_findMiddle(t *testing.T) {
 	tests := []struct {
 		name string // description of this test case
@@ -45,4 +44,3 @@ func Test_findMiddle(t *testing.T) {
 		})
 	}
 }
-

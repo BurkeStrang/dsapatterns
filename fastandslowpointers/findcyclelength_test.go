@@ -9,7 +9,7 @@ func Test_findCycleLength(t *testing.T) {
 		head *ListNode
 		want int
 	}{
- 		{
+		{
 			name: "cycle of length 3",
 			head: func() *ListNode {
 				n1 := &ListNode{Val: 1}
@@ -49,10 +49,9 @@ func Test_findCycleLength(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findCycleLength(tt.head)
- 			if got != tt.want {
- 				t.Errorf("findCycleLength() = %v, want %v", got, tt.want)
- 			}
+			if got != tt.want {
+				t.Errorf("findCycleLength() = %v, want %v", got, tt.want)
+			}
 		})
 	}
 }
-

@@ -36,7 +36,6 @@ import (
 // 1 <= meetings.length <= 104
 // 0 <= starti < endi <= 106
 
-
 type Meeting struct {
 	Start int
 	End   int

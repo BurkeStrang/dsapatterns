@@ -21,4 +21,3 @@ func countTrees(n int) int {
 	}
 	return count
 }
-

@@ -34,4 +34,3 @@ func levelAverage(root *TreeNode) []float64 {
 	}
 	return result
 }
-
