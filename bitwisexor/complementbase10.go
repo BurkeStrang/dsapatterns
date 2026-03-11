@@ -22,10 +22,16 @@ import "math"
 func bitwiseComplement(num int) int {
 	// Count number of total bits in 'num'
 	bitCount := 0
+	// num = 10 binary = 1010
 	n := num
 	for n > 0 {
 		bitCount++
 		n >>= 1
+		// binary = 1010, bitCount = 1
+		// binary = 101, bitCount = 2
+		// binary = 10, bitCount = 3
+		// binary = 1, bitCount = 4
+		// binary = 0, bitCount = 4
 	}
 
 	// For a number which is a complete power of '2' i.e., it can be written as
