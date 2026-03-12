@@ -1,3 +1,4 @@
+// Package misc contains various miscellaneous algorithms and data structures.
 package misc
 
 import "strconv"
