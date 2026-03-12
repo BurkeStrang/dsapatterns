@@ -24,21 +24,20 @@ package hashmaps
 // 1 <= ransomNote.length, magazine.length <= 105
 // ransomNote and magazine consist of lowercase English letters.
 
-func canConstruct(ransomNote string, magazine string) bool {
-	// Create a map to store character frequencies from the magazine
-	charCount := make(map[rune]int)
+func canConstruct(ransomNote, magazine string) bool {
+	var freq [26]int // zero value array freq := [26]int{}
 
-	// Populate the map with character frequencies from the magazine
-	for _, c := range magazine {
-		charCount[c]++
+	for i := 0; i < len(magazine); i++ {
+		freq[magazine[i]-'a']++
 	}
 
-	// Check if the ransom note can be constructed
-	for _, c := range ransomNote {
-		if charCount[c] == 0 {
+	for i := 0; i < len(ransomNote); i++ {
+		idx := ransomNote[i] - 'a'
+		if freq[idx] == 0 {
 			return false
 		}
-		charCount[c]--
+		freq[idx]--
 	}
+
 	return true
 }

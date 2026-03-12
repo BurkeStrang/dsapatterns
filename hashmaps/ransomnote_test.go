@@ -2,7 +2,7 @@ package hashmaps
 
 import "testing"
 
-func Test_canConstruct(t *testing.T) {
+func Test_canConstructRansomeNote(t *testing.T) {
 	tests := []struct {
 		name       string
 		ransomNote string

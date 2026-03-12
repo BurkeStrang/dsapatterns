@@ -1,7 +1,5 @@
 package hashmaps
 
-import "math"
-
 // Given a string, determine the maximum number of times the word "balloon" can be formed using the characters from the string.
 // Each character in the string can be used only once.
 //
@@ -25,21 +23,18 @@ import "math"
 // text consists of lower case English letters only.
 
 func maxNumberOfBalloons(text string) int {
-	// Create a map to store character frequencies
-	charCount := make(map[rune]int)
-
-	// Populate the map with character frequencies from the string
-	for _, c := range text {
-		charCount[c]++
+	freq := make(map[rune]int)
+	for _, letter := range text {
+		freq[letter]++
 	}
-
-	minCount := math.MaxInt // Max int value
-	// Calculate the maximum number of times "balloon" can be formed
-	minCount = min(minCount, charCount['b'])
-	minCount = min(minCount, charCount['a'])
-	minCount = min(minCount, charCount['l']/2)
-	minCount = min(minCount, charCount['o']/2)
-	minCount = min(minCount, charCount['n'])
-
-	return minCount
+	minResult := len(text)
+	list := []rune{'b', 'a', 'l', 'o', 'n'}
+	for _, letter := range list {
+		if letter == 'l' || letter == 'o' {
+			minResult = min(minResult, freq[letter]/2)
+		} else {
+			minResult = min(minResult, freq[letter])
+		}
+	}
+	return minResult
 }

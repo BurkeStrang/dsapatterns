@@ -19,19 +19,13 @@ package stack
 // s[i] is a printable ascii character.
 
 func reverseString(input string) string {
-	// Create a stack using a slice
+	reverseList := make([]rune, 0, len(input))
 	stack := []rune(input)
-
-	// Use a slice to collect reversed characters
-	reversedList := make([]rune, 0, len(input))
-
-	// Pop characters from the stack and add to the slice
+	// pop all letters from stack to reverseList
 	for len(stack) > 0 {
-		// Pop last element
-		reversedList = append(reversedList, stack[len(stack)-1])
+		reverseList = append(reverseList, stack[len(stack)-1])
 		stack = stack[:len(stack)-1]
 	}
 
-	// Convert slice to string
-	return string(reversedList)
+	return string(reverseList)
 }

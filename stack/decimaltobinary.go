@@ -1,5 +1,7 @@
 package stack
 
+import "strings"
+
 import "fmt"
 
 // Given a positive integer n, write a function that returns its binary equivalent as a string.
@@ -24,8 +26,8 @@ import "fmt"
 // 1 <= n <= 10^9
 
 func decimalToBinary(num int) string {
-	stack := []int{} // Create an empty stack to store binary digits.
-	sb := ""         // Initialize an empty string to build the binary representation.
+	stack := []int{}       // Create an empty stack to store binary digits.
+	var sb strings.Builder // Initialize an empty string to build the binary representation.
 
 	// Convert the decimal number to binary using a stack.
 	for num > 0 {
@@ -37,8 +39,8 @@ func decimalToBinary(num int) string {
 	for len(stack) > 0 {
 		pop := stack[len(stack)-1]   // Pop the top element from the stack.
 		stack = stack[:len(stack)-1] // Remove the popped element from the stack.
-		sb += fmt.Sprintf("%d", pop) // Append the popped binary digit to the result string.
+		fmt.Fprintf(&sb, "%d", pop)  // Append the popped binary digit to the result string.
 	}
 
-	return sb // Return the binary representation as a string.
+	return sb.String() // Return the binary representation as a string.
 }

@@ -23,21 +23,16 @@ package hashmaps
 // s consists of only lowercase English letters.
 
 func firstUniqChar(sStr string) int {
-	// Create a hashmap to store the frequency of each character
-	freq := make(map[rune]int)
-
-	// Traverse the string to populate the hashmap with character frequencies
-	for _, c := range sStr {
-		freq[c]++
+	// create map with freq
+	freq := map[rune]int{}
+	for _, letter := range sStr {
+		freq[letter]++
 	}
-
-	// Traverse the string again to find the first unique character
-	for i, c := range sStr {
-		if freq[c] == 1 {
-			return i
+	// loop through sStr to get first Unique letter
+	for index, sLetter := range sStr {
+		if freq[sLetter] == 1 {
+			return index
 		}
 	}
-
-	// If no unique character is found, return -1
 	return -1
 }

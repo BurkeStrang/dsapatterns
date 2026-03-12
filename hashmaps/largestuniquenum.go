@@ -24,19 +24,17 @@ package hashmaps
 
 func largestUniqueNumber(a []int) int {
 	freq := make(map[int]int)
-
-	// Populate the hashmap with number frequencies
-	for _, num := range a {
-		freq[num]++
+	// creating map with frequencies of numbers
+	for _, val := range a {
+		freq[val]++
 	}
-
-	maxUnique := -1
-	// Traverse the hashmap to find the largest unique number
-	for key, value := range freq {
-		if value == 1 {
-			maxUnique = max(maxUnique, key)
+	maxNum := -1
+	// loop through the freq and get ones with 1
+	// get the max
+	for number, count := range freq {
+		if count == 1 {
+			maxNum = max(maxNum, number)
 		}
 	}
-
-	return maxUnique
+	return maxNum
 }

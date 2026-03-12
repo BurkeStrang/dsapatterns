@@ -7,15 +7,19 @@ package hashmaps
 //
 // Input: "applepie"
 // Expected Output: 5
-// Justification: The longest palindrome that can be constructed from the string is "pepep", which has a length of 5. There are are other palindromes too but they all will be of length 5.
+// Justification: The longest palindrome that can be constructed from the string is "pepep",
+// which has a length of 5.
+// There are are other palindromes too but they all will be of length 5.
 //
 // Input: "aabbcc"
 // Expected Output: 6
-// Justification: We can form the palindrome "abccba" using the characters from the string, which has a length of 6.
+// Justification: We can form the palindrome "abccba" using the characters from the string,
+// which has a length of 6.
 //
 // Input: "bananas"
 // Expected Output: 5
-// Justification: The longest palindrome that can be constructed from the string is "anana", which has a length of 5.
+// Justification: The longest palindrome that can be constructed from the string is "anana",
+// which has a length of 5.
 //
 // Constraints:
 // 1 <= s.length <= 2000

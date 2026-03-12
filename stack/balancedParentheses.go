@@ -25,35 +25,22 @@ package stack
 // s consists of parentheses only '()[]{}'.
 
 func validParentheses(s1 string) bool {
-	// Creating a stack to keep track of opening parentheses
 	stack := []rune{}
-
-	// Iterating through each character in the input string
-	for _, c := range s1 {
-		// If the character is an opening parenthesis, push it onto the stack
-		if c == '(' || c == '{' || c == '[' {
-			stack = append(stack, c)
+	for _, paren := range s1 {
+		if paren == '(' || paren == '[' || paren == '{' {
+			stack = append(stack, paren)
 		} else {
-			// If stack is empty and we have a closing parenthesis, the string is not balanced
 			if len(stack) == 0 {
 				return false
 			}
-			// Pop the top character from the stack
 			top := stack[len(stack)-1]
 			stack = stack[:len(stack)-1]
-			// If the character is a closing parenthesis, check whether
-			// it corresponds to the most recent opening parenthesis
-			if c == ')' && top != '(' {
-				return false
-			}
-			if c == '}' && top != '{' {
-				return false
-			}
-			if c == ']' && top != '[' {
+			if (paren == ')' && top != '(') ||
+				(paren == ']' && top != '[') ||
+				(paren == '}' && top != '{') {
 				return false
 			}
 		}
 	}
-	// If the stack is empty, all opening parentheses had a corresponding closing match
 	return len(stack) == 0
 }
