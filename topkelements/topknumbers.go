@@ -12,27 +12,9 @@ import "container/heap"
 // Input: [5, 12, 11, -1, 12], K = 3
 // Output: [12, 11, 12]
 
-type IntHeap []int
-
-func (h IntHeap) Len() int           { return len(h) }
-func (h IntHeap) Less(i, j int) bool { return h[i] < h[j] }
-func (h IntHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
-
-func (h *IntHeap) Push(x any) {
-	*h = append(*h, x.(int))
-}
-
-func (h *IntHeap) Pop() any {
-	old := *h
-	n := len(old)
-	x := old[n-1]
-	*h = old[0 : n-1]
-	return x
-}
-
 // findKLargestNumbers - keeps all comments same and method name same
 func findKLargestNumbers(nums []int, k int) []int {
-	minHeap := &IntHeap{}
+	minHeap := &MinHeap{}
 	heap.Init(minHeap)
 	// put first 'K' numbers in the min heap
 	for i := range k {
