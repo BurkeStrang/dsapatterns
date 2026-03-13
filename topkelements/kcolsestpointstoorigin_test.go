@@ -4,7 +4,7 @@ import "testing"
 
 func Test_findClosestPoints(t *testing.T) {
 	tests := []struct {
-		name string
+		name   string
 		points []*Point
 		k      int
 		want   []*Point
