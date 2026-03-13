@@ -3,6 +3,7 @@ package topkelements
 import "fmt"
 
 // MinHeap
+
 type MinHeap []int
 
 func (h MinHeap) Len() int           { return len(h) }
@@ -22,6 +23,7 @@ func (h *MinHeap) Pop() any {
 }
 
 // MaxHeap
+
 type MaxHeap []int
 
 func (h MaxHeap) Len() int           { return len(h) }
@@ -79,6 +81,7 @@ func (h *MaxPointHeap) Pop() any {
 }
 
 // MinFreqHeap
+
 type Entry struct {
 	Num       int
 	Frequency int

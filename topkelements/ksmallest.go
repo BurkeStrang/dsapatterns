@@ -1,4 +1,4 @@
-// package topkelements
+// Package topkelements
 package topkelements
 
 import "container/heap"

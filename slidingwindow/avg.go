@@ -1,3 +1,4 @@
+// Package slidingwindow
 package slidingwindow
 
 // Given an array, find the average of each subarray of ‘K’ contiguous elements in it.

@@ -1,3 +1,4 @@
+// Package modifiedbinarysearch
 package modifiedbinarysearch
 
 // Given a Bitonic array, find if a given ‘key’ is present in it.

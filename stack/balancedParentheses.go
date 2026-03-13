@@ -1,3 +1,4 @@
+// Package stack
 package stack
 
 // Given a string s containing (, ), [, ], {, and } characters.
