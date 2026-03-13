@@ -1,5 +1,7 @@
 package topkelements
 
+import "fmt"
+
 // MinHeap
 type MinHeap []int
 
@@ -31,6 +33,44 @@ func (h *MaxHeap) Push(x any) {
 }
 
 func (h *MaxHeap) Pop() any {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
+
+// MaxPointHeap
+
+type Point struct {
+	X int
+	Y int
+}
+
+func (p *Point) String() string {
+	return fmt.Sprintf("(%d,%d)", p.X, p.Y)
+}
+
+func NewPoint(x, y int) *Point {
+	return &Point{X: x, Y: y}
+}
+
+func (p *Point) DistFromOrigin() int {
+	// ignoring sqrt
+	return (p.X * p.X) + (p.Y * p.Y)
+}
+
+type MaxPointHeap []*Point
+
+func (h MaxPointHeap) Len() int           { return len(h) }
+func (h MaxPointHeap) Less(i, j int) bool { return h[i].DistFromOrigin() > h[j].DistFromOrigin() }
+func (h MaxPointHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *MaxPointHeap) Push(x interface{}) {
+	*h = append(*h, x.(*Point))
+}
+
+func (h *MaxPointHeap) Pop() interface{} {
 	old := *h
 	n := len(old)
 	x := old[n-1]
