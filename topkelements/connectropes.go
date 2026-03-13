@@ -1,6 +1,8 @@
 package topkelements
 
-import "container/heap"
+import (
+	"container/heap"
+)
 
 // Given ‘N’ ropes with different lengths,
 // we need to connect these ropes into one big rope with minimum cost.
@@ -29,15 +31,21 @@ func minimumCostToConnectRopes(ropeLengths []int) int {
 	for _, length := range ropeLengths {
 		heap.Push(minHeap, length)
 	}
-
+	// so in the min heap the lengths for example 1 could be [1 3 11 5]
+	// only the top of the heap is guaranteed to be the lowest length, the rest
+	// of the values are not sorted
 	result := 0
-
 	// Go through the values of the heap, connect the top (lowest) rope lengths
 	// from the min heap, and push the result back to the min heap.
 	// Keep doing this until the heap is left with only one rope.
 	for minHeap.Len() > 1 {
 		temp := heap.Pop(minHeap).(int) + heap.Pop(minHeap).(int)
+		// [1, 3, 5, 11]
+		// [4, 5, 11]
+		// [9, 11]
+		// [20]
 		result += temp
+		// 4 + 9 + 20 = 33
 		heap.Push(minHeap, temp)
 	}
 
