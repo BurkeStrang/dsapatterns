@@ -23,4 +23,3 @@ func Test_findKthSmallestNumber(t *testing.T) {
 		})
 	}
 }
-
