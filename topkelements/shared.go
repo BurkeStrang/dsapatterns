@@ -83,7 +83,7 @@ type Entry struct {
 	Num       int
 	Frequency int
 }
-type MinFreqHeap[]Entry
+type MinFreqHeap []Entry
 
 func (h MinFreqHeap) Len() int           { return len(h) }
 func (h MinFreqHeap) Less(i, j int) bool { return h[i].Frequency < h[j].Frequency }
@@ -97,6 +97,6 @@ func (h *MinFreqHeap) Pop() any {
 	old := *h
 	n := len(old)
 	entry := old[n-1]
-	*h = old[: n-1]
+	*h = old[:n-1]
 	return entry
 }
