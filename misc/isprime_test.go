@@ -1,7 +1,7 @@
 package misc
 
 import (
-	"sort"
+	"slices"
 	"testing"
 )
 
@@ -65,23 +65,9 @@ func Test_getprimes(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := getPrimes(tt.n)
-			if !sliceEqual(got, tt.want) {
+			if !slices.Equal(got, tt.want) {
 				t.Errorf("getPrimes() = %v, want %v", got, tt.want)
 			}
 		})
 	}
-}
-
-func sliceEqual(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	sort.Ints(a)
-	sort.Ints(b)
-	for i := range a {
-		if a[i] != b[i] {
-			return false
-		}
-	}
-	return true
 }
