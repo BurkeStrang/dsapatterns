@@ -20,7 +20,7 @@ type KthLargest struct {
 
 func Constructor(nums []int, k int) KthLargest {
 	result := KthLargest{
-		minHeap: make(MinHeap, 0),
+		minHeap: MinHeap{},
 		k:       k,
 	}
 

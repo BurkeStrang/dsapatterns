@@ -103,3 +103,28 @@ func (h *MinFreqHeap) Pop() any {
 	*h = old[:n-1]
 	return entry
 }
+
+// MinClosestHeap
+
+type ClosestEntry struct {
+	key   int
+	value int
+}
+
+type MinClosestHeap []*ClosestEntry
+
+func (h MinClosestHeap) Len() int           { return len(h) }
+func (h MinClosestHeap) Less(i, j int) bool { return h[i].key < h[j].key }
+func (h MinClosestHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *MinClosestHeap) Push(x any) {
+	*h = append(*h, x.(*ClosestEntry))
+}
+
+func (h *MinClosestHeap) Pop() any {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[0 : n-1]
+	return x
+}
