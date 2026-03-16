@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-Replaces function bodies in Go solution files with a // TODO + zero-value return stub.
-Tests will compile and run, showing failures for each unimplemented function individually.
+Replaces function bodies in Go solution files with a
+// TODO + zero-value return stub.
+Tests will compile and run, showing failures for each
+unimplemented function individually.
 
 Skips:
   - *_test.go files
@@ -73,7 +75,8 @@ def skip_block_comment(content, i):
 
 
 def advance(content, i):
-    """Return index past any string/comment starting at i, or None if not applicable."""
+    """Return index past any string/comment starting at i,
+    or None if not applicable."""
     if content[i] in ('"', "'"):
         return skip_string(content, i)
     if content[i] == '`':
@@ -90,7 +93,8 @@ def advance(content, i):
 # ---------------------------------------------------------------------------
 
 def extract_func_info(sig):
-    """Return (name, has_receiver, return_type_str) from a func signature string."""
+    """Return (name, has_receiver, return_type_str) from a
+    func signature string."""
     s = sig[5:]  # strip leading 'func '
 
     has_receiver = False
@@ -130,7 +134,8 @@ def strip_param_name(t):
     parts = t.split(None, 1)
     if len(parts) == 2:
         first = parts[0]
-        if re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', first) and first not in NON_STRUCT_NAMES:
+        if (re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', first)
+                and first not in NON_STRUCT_NAMES):
             return parts[1]
     return t
 
@@ -193,7 +198,8 @@ def make_stub_body(return_str):
 # ---------------------------------------------------------------------------
 
 def find_functions(content):
-    """Yield (func_start, brace_start, brace_end) for each function in content."""
+    """Yield (func_start, brace_start, brace_end) for each
+    function in content."""
     i, n = 0, len(content)
 
     while i < n:
@@ -265,7 +271,10 @@ def stub_file(filepath):
 
     funcs = list(find_functions(content))
     if not funcs:
-        print(f"  No functions found in {os.path.basename(filepath)}, skipping")
+        print(
+            f"  No functions found in "
+            f"{os.path.basename(filepath)}, skipping"
+        )
         return
 
     stubs = []
@@ -281,7 +290,10 @@ def stub_file(filepath):
         stubs.append((brace_start, brace_end, make_stub_body(return_str)))
 
     if not stubs:
-        print(f"  Only boilerplate methods in {os.path.basename(filepath)}, skipping")
+        print(
+            f"  Only boilerplate methods in "
+            f"{os.path.basename(filepath)}, skipping"
+        )
         return
 
     result = content
@@ -296,7 +308,10 @@ def stub_file(filepath):
 
     fn_word = "function" if len(stubs) == 1 else "functions"
     note = f" ({skipped} boilerplate skipped)" if skipped else ""
-    print(f"  Stubbed {len(stubs)} {fn_word} in {os.path.basename(filepath)}{note}")
+    print(
+        f"  Stubbed {len(stubs)} {fn_word} in "
+        f"{os.path.basename(filepath)}{note}"
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -328,7 +343,10 @@ def main():
     print(f"Stubbing {len(solution_files)} file(s) in '{folder}'...")
     for f in solution_files:
         stub_file(f)
-    print("Done! Use 'git diff' to review and 'git checkout -- <folder>' to restore.")
+    print(
+        "Done! Use 'git diff' to review and "
+        "'git checkout -- <folder>' to restore."
+    )
 
 
 if __name__ == '__main__':
