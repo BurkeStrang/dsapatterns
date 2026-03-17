@@ -19,7 +19,7 @@ func findDistinctIslandsDFS(matrix [][]int) int {
 	for i := range rows {
 		for j := range cols {
 			if matrix[i][j] == 1 && !visited[i][j] { // only if the cell is a land and not visited
-				var islandTraversal string
+				islandTraversal := ""
 				traverseIslandDFS(matrix, visited, i, j, &islandTraversal, "O") // origin
 				islandsSet[islandTraversal] = true
 			}
