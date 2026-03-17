@@ -1,5 +1,9 @@
 package levelordertraversal
 
+// Example 1:
+// input: root = [3,9,20,null,null,15,7]
+// output: [[3],[20,9],[15,7]]
+
 func traverseZigZag(root *TreeNode) [][]int {
 	result := make([][]int, 0)
 	if root == nil {
