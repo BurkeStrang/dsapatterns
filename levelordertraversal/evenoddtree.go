@@ -48,7 +48,8 @@ func isEvenOddTree(root *TreeNode) bool {
 		return true // Check if the tree is empty
 	}
 
-	queue := []*TreeNode{root}
+	queue := make([]*TreeNode, 0)
+	queue = append(queue, root)
 	level := 0 // Start with level 0
 
 	for len(queue) > 0 {
@@ -69,6 +70,7 @@ func isEvenOddTree(root *TreeNode) bool {
 		}
 
 		// Check values for the current level
+		// if even do thing
 		if level%2 == 0 {
 			for i := 0; i < len(values); i++ {
 				if values[i]%2 == 0 || (i > 0 && values[i] <= values[i-1]) {
