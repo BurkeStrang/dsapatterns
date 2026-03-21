@@ -7,13 +7,13 @@ type ParenthesesString struct {
 	CloseCount int // close parentheses count
 }
 
-func NewParenthesesString(str string, openCount, closeCount int) *ParenthesesString {
-	return &ParenthesesString{Str: str, OpenCount: openCount, CloseCount: closeCount}
+func NewParenthesesString(str string, openCount, closeCount int) ParenthesesString {
+	return ParenthesesString{Str: str, OpenCount: openCount, CloseCount: closeCount}
 }
 
 func generateValidParentheses(num int) []string {
 	result := []string{}
-	queue := []*ParenthesesString{}
+	queue := []ParenthesesString{}
 	queue = append(queue, NewParenthesesString("", 0, 0))
 
 	for len(queue) > 0 {
