@@ -7,14 +7,10 @@ type ParenthesesString struct {
 	CloseCount int // close parentheses count
 }
 
-func NewParenthesesString(str string, openCount, closeCount int) ParenthesesString {
-	return ParenthesesString{Str: str, OpenCount: openCount, CloseCount: closeCount}
-}
-
 func generateValidParentheses(num int) []string {
 	result := []string{}
 	queue := []ParenthesesString{}
-	queue = append(queue, NewParenthesesString("", 0, 0))
+	queue = append(queue, ParenthesesString{"", 0, 0})
 
 	for len(queue) > 0 {
 		ps := queue[0]
@@ -25,11 +21,11 @@ func generateValidParentheses(num int) []string {
 			result = append(result, ps.Str)
 		} else {
 			if ps.OpenCount < num { // if we can add an open parentheses, add it
-				queue = append(queue, NewParenthesesString(ps.Str+"(", ps.OpenCount+1, ps.CloseCount))
+				queue = append(queue, ParenthesesString{ps.Str + "(", ps.OpenCount + 1, ps.CloseCount})
 			}
 
 			if ps.OpenCount > ps.CloseCount { // if we can add a close parentheses, add it
-				queue = append(queue, NewParenthesesString(ps.Str+")", ps.OpenCount, ps.CloseCount+1))
+				queue = append(queue, ParenthesesString{ps.Str + ")", ps.OpenCount, ps.CloseCount + 1})
 			}
 		}
 	}
