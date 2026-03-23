@@ -42,6 +42,31 @@ func (h *MaxHeap) Pop() any {
 	return x
 }
 
+// MaxCharHeap
+
+type MaxCharHeap []CharFreq
+
+type CharFreq struct {
+	Letter    rune
+	Frequency int
+}
+
+func (h MaxCharHeap) Len() int           { return len(h) }
+func (h MaxCharHeap) Less(i, j int) bool { return h[i].Frequency > h[j].Frequency }
+func (h MaxCharHeap) Swap(i, j int)      { h[i], h[j] = h[j], h[i] }
+
+func (h *MaxCharHeap) Push(x any) {
+	*h = append(*h, x.(CharFreq))
+}
+
+func (h *MaxCharHeap) Pop() any {
+	old := *h
+	n := len(old)
+	x := old[n-1]
+	*h = old[:n-1]
+	return x
+}
+
 // MaxPointHeap
 
 type Point struct {
