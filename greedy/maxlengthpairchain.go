@@ -1,6 +1,9 @@
 package greedy
 
-import "sort"
+import (
+	"math"
+	"sort"
+)
 
 // Given a collection of pairs where each pair contains two elements [a, b] and a < b,
 // find the maximum length of a chain you can form using pairs.
@@ -29,8 +32,8 @@ func findLongestChain(pairs [][]int) int {
 		return pairs[i][1] < pairs[j][1]
 	})
 
-	currentEnd := -1 << 31 // Current end of the chain
-	chainCount := 0        // Count of pairs in the chain
+	currentEnd := math.MinInt // Current end of the chain
+	chainCount := 0           // Count of pairs in the chain
 
 	// Iterate through the sorted pairs
 	for _, pair := range pairs {
