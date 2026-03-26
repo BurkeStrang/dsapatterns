@@ -29,7 +29,7 @@ func largestPalindromic(s string) string {
 	// Count the frequency of each digit in the input number
 	for i := 0; i < len(s); i++ {
 		val := int(s[i] - '0')
-		frequency[val] += 1
+		frequency[val]++
 	}
 
 	middle := -1 // Variable to store the middle digit if needed
@@ -39,7 +39,7 @@ func largestPalindromic(s string) string {
 		if frequency[i] != 0 && (i != 0 || firstHalf.Len() > 0) {
 			count := frequency[i]
 			for count > 1 {
-				firstHalf.WriteByte(byte(i + '0')) // Append the digit to firstHalf
+				firstHalf.WriteRune(rune(i + '0')) // Append the digit to firstHalf
 				count -= 2                         // Use two of the digit for the first half
 			}
 			if count == 1 && middle == -1 {
@@ -50,7 +50,7 @@ func largestPalindromic(s string) string {
 
 	secondHalf := reverseString(firstHalf.String()) // Create secondHalf as a reversed copy of firstHalf
 	if middle != -1 {                               // Append the middle digit if it exists
-		firstHalf.WriteByte(byte(middle + '0'))
+		firstHalf.WriteRune(rune(middle + '0'))
 	}
 	firstHalf.WriteString(secondHalf) // Append the reversed first half to firstHalf
 
