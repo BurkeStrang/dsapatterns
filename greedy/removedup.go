@@ -40,7 +40,9 @@ func removeDuplicateLetters(s string) string {
 			// Has Result
 			// Is Smaller
 			// Can Remove Last
-			for len(result) > 0 && c < result[len(result)-1] && count[result[len(result)-1]] > 0 {
+			for len(result) > 0 &&
+				c < result[len(result)-1] &&
+				count[result[len(result)-1]] > 0 {
 				delete(present, result[len(result)-1])
 				result = result[:len(result)-1]
 			}
