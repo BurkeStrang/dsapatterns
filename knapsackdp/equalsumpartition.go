@@ -22,6 +22,7 @@ package knapsackdp
 // 1 <= nums.length <= 200
 // 1 <= nums[i] <= 100
 
+// bottom up dp
 func canPartition(nums []int) bool {
 	n := len(nums)
 	// find the total sum
@@ -47,7 +48,6 @@ func canPartition(nums []int) bool {
 	for i := range n {
 		dp[i][0] = true
 	}
-
 	// with only one number, we can form a subset only when the required sum is equal to
 	// its value
 	for s := 1; s <= sum; s++ {
