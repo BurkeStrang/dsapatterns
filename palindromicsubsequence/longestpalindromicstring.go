@@ -19,10 +19,10 @@ package palindromicsubsequence
 // Explanation: LPS could be "p", "q" or "r".
 
 func findLPStringLength(st string) int {
-	return isPalindrome(st, 0, len(st)-1)
+	return palindromeLength(st, 0, len(st)-1)
 }
 
-func isPalindrome(st string, startIndex, endIndex int) int {
+func palindromeLength(st string, startIndex, endIndex int) int {
 	if startIndex > endIndex {
 		return 0
 	}
@@ -33,13 +33,13 @@ func isPalindrome(st string, startIndex, endIndex int) int {
 
 	if st[startIndex] == st[endIndex] {
 		remainingLength := endIndex - startIndex - 1
-		if remainingLength == isPalindrome(st, startIndex+1, endIndex-1) {
+		if remainingLength == palindromeLength(st, startIndex+1, endIndex-1) {
 			return remainingLength + 2
 		}
 	}
 
-	c1 := isPalindrome(st, startIndex+1, endIndex)
-	c2 := isPalindrome(st, startIndex, endIndex-1)
+	c1 := palindromeLength(st, startIndex+1, endIndex)
+	c2 := palindromeLength(st, startIndex, endIndex-1)
 	if c1 > c2 {
 		return c1
 	}
