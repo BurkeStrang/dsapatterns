@@ -4,7 +4,7 @@ import "testing"
 
 func Test_exist(t *testing.T) {
 	tests := []struct {
-		name string
+		name  string
 		board [][]byte
 		word  string
 		want  bool
@@ -22,4 +22,3 @@ func Test_exist(t *testing.T) {
 		})
 	}
 }
-
