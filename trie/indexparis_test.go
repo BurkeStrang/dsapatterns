@@ -1,9 +1,7 @@
-package trie_test
+package trie
 
 import (
 	"testing"
-
-	"dsapatterns/trie"
 )
 
 func TestSolutionIndex_IndexPairs(t *testing.T) {
@@ -18,7 +16,7 @@ func TestSolutionIndex_IndexPairs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			var s trie.SolutionIndex
+			var s SolutionIndex
 			got := s.IndexPairs(tt.text, tt.words)
 			if !equalSlices(got, tt.want) {
 				t.Errorf("IndexPairs() = %v, want %v", got, tt.want)

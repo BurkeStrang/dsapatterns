@@ -1,7 +1,6 @@
-package trie_test
+package trie
 
 import (
-	"dsapatterns/trie"
 	"testing"
 )
 
@@ -16,7 +15,7 @@ func TestSolution_Search(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := trie.NewSolution()
+			s := NewSolution()
 			s.Insert(tt.word)
 			got := s.Search(tt.word)
 			if got != tt.want {
@@ -39,7 +38,7 @@ func TestSolution_StartsWith(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := trie.NewSolution()
+			s := NewSolution()
 			s.Insert(tt.word)
 			got := s.StartsWith(tt.prefix)
 			if got != tt.want {
