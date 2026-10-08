@@ -30,7 +30,7 @@ TYPE_KEYWORDS = {
     'namespace', 'class', 'struct', 'interface', 'record', 'enum',
 }
 
-STUB_THROW = 'throw new System.NotImplementedException();'
+STUB_THROW = 'throw new NotImplementedException();'
 
 
 # ---------------------------------------------------------------------------

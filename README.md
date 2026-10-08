@@ -5,7 +5,7 @@ A structured collection of data structures and algorithm problems, organized by 
 | Language | Folder | Status |
 |---|---|---|
 | Go | [`go/`](./go/) | Active |
-| C# | [`csharp/`](./csharp/) | Set up, 1 sample problem |
+| C# | [`csharp/`](./csharp/) | In progress |
 | C | [`c/`](./c/) | Not started |
 
 Each language folder is self-contained, with its own README covering setup, tooling, and the list of patterns.

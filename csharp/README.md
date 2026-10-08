@@ -6,6 +6,7 @@ C# implementations of the DSA patterns. Each pattern has its own folder (and nam
 
 | Pattern | Problems |
 |---|---|
+| [Bitwise XOR](./BitwiseXor/) | 5 |
 | [Sliding Window](./SlidingWindow/) | 1 |
 
 ## Getting Started
@@ -62,7 +63,7 @@ This replaces every solution method body with a `// TODO:` comment and a `throw`
 internal static double[] FindAverages(int k, int[] arr)
 {
     // TODO:
-    throw new System.NotImplementedException();
+    throw new NotImplementedException();
 }
 ```
 
