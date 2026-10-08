@@ -105,6 +105,10 @@ git checkout -- SlidingWindow/
 
 > `Shared.cs` files, `*Tests.cs` files, and equality/ordering methods (`Equals`, `GetHashCode`, `ToString`, `CompareTo`, `Compare`) are never modified.
 
+## Debugging
+
+Use VS Code. Open the `csharp/` folder with the [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) extension installed, set a breakpoint in a solution, and choose **Debug Test** on the test from the Testing panel.
+
 ## Makefile Targets
 
 | Target | Description |
