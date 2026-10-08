@@ -9,26 +9,33 @@ on:
 jobs:
   lint:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-go@v6
         with:
-          go-version-file: go.mod
+          go-version-file: go/go.mod
           cache: false
 
       - uses: golangci/golangci-lint-action@v9
         with:
           version: v2.11.2
+          working-directory: go
 
   fmt:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-go@v6
         with:
-          go-version-file: go.mod
+          go-version-file: go/go.mod
           cache: false
 
       - run: |
@@ -41,13 +48,59 @@ jobs:
 
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: go
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-go@v6
         with:
-          go-version-file: go.mod
+          go-version-file: go/go.mod
           cache: false
 
       - run: go vet ./...
       - run: go test -race ./...
+
+  csharp-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: csharp
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: csharp/global.json
+
+      - run: make lint
+
+  csharp-fmt:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: csharp
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: csharp/global.json
+
+      - run: dotnet tool restore
+      - run: dotnet csharpier check .
+
+  csharp-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: csharp
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: csharp/global.json
+
+      - run: dotnet test

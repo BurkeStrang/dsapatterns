@@ -30,3 +30,8 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# C# build output
+csharp/bin/
+csharp/obj/
+csharp/TestResults/

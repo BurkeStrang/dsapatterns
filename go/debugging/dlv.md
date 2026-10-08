@@ -307,7 +307,7 @@ This disables optimizations and inlining.
 # Suggested Workflow for Algorithm Practice
 
 1.  Write the test
-2.  Run tests
+2.  Run tests (from the `go/` directory, the module root)
 
 ``` bash
 go test ./... -v
@@ -357,6 +357,7 @@ or
 
 Key commands you'll use most when debugging algorithms:
 
+    # from the go/ directory (the module root)
     dlv test ./topkelements -- -test.run Test_minimumCostToConnectRopes
     b minimumCostToConnectRopes
     c
