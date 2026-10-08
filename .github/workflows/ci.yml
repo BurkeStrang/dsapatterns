@@ -104,3 +104,33 @@ jobs:
           global-json-file: csharp/global.json
 
       - run: dotnet test
+
+  c-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: c
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make lint
+
+  c-fmt:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: c
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make fmt-check
+
+  c-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: c
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make test

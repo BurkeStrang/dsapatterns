@@ -35,3 +35,10 @@ go.work.sum
 csharp/bin/
 csharp/obj/
 csharp/TestResults/
+
+# C build output
+c/build/
+c/compile_commands.json
+
+# netcoredbg command history
+.netcoredbg_hist
