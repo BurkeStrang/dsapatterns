@@ -2,12 +2,40 @@
 
 C# implementations of the DSA patterns. Each pattern has its own folder (and namespace) with clean, self-contained implementations and table-driven unit tests.
 
+The problems, comments, and test cases mirror the [Go implementation](../go/): each Go file has a C# file of the same name in PascalCase (`slidingwindow/avg.go` → `SlidingWindow/Avg.cs`).
+
 ## Patterns
 
 | Pattern | Problems |
 |---|---|
 | [Bitwise XOR](./BitwiseXor/) | 5 |
 | [Sliding Window](./SlidingWindow/) | 13 |
+| [Two Pointers](./TwoPointers/) | 10 |
+| [Merge Intervals](./MergeIntervals/) | 7 |
+| [Cyclic Sort](./CyclicalSort/) | 8 |
+| [Reverse Linked List](./ReverseLinkedList/) | 5 |
+| [Fast & Slow Pointers](./FastAndSlowPointers/) | 8 |
+| [Graphs](./Graphs/) | 5 |
+| [Hash Maps](./HashMaps/) | 5 |
+| [Island Traversal](./IslandTraversal/) | 7 |
+| [Level Order Traversal](./LevelOrderTraversal/) | 7 |
+| [Tree BFS](./TreeBfs/) | 7 |
+| [Tree DFS](./TreeDfs/) | 7 |
+| [Two Heaps](./TwoHeaps/) | 4 |
+| [Subsets](./Subsets/) | 8 |
+| [Monotonic Stack](./MonotonicStack/) | 7 |
+| [Modified Binary Search](./ModifiedBinarySearch/) | 11 |
+| [Stack](./Stack/) | 6 |
+| [Top K Elements](./TopKElements/) | 14 |
+| [K-way Merge](./KWayMerge/) | 5 |
+| [Greedy](./Greedy/) | 6 |
+| [0/1 Knapsack DP](./KnapsackDp/) | 6 |
+| [Fibonacci Numbers](./FibNum/) | 6 |
+| [Palindromic Subsequence](./PalindromicSubsequence/) | 5 |
+| [Backtracking](./Backtracking/) | 5 |
+| [Trie](./Trie/) | 5 |
+| [Topological Sort](./TopologicalSort/) | 3 |
+| [Miscellaneous](./Misc/) | 3 |
 
 ## Getting Started
 

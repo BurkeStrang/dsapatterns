@@ -1,0 +1,71 @@
+namespace DsaPatterns.KnapsackDp;
+
+// Given a set of positive numbers,
+// partition the set into two subsets with minimum difference between their
+// subset sums.
+//
+// Example 1:
+// Input: {1, 2, 3, 9}
+// Output: 3
+// Explanation: We can partition the given set into two subsets where minimum
+// absolute difference
+// between the sum of numbers is '3'. Following are the two subsets: {1, 2, 3} &
+// {9}.
+//
+// Example 2:
+// Input: {1, 2, 7, 1, 5}
+// Output: 0
+// Explanation: We can partition the given set into two subsets where minimum
+// absolute difference
+// between the sum of number is '0'. Following are the two subsets: {1, 2, 5} &
+// {7, 1}.
+//
+// Example 3:
+// Input: {1, 3, 100, 4}
+// Output: 92
+// Explanation: We can partition the given set into two subsets where minimum
+// absolute difference
+// between the sum of numbers is '92'. Here are the two subsets: {1, 3, 4} &
+// {100}.
+
+internal static class MinSubsetSumDiff
+{
+    internal static int CanPartitionMin(int[] num)
+    {
+        return CanPartitionMinRecursive(num, 0, 0, 0);
+    }
+
+    private static int CanPartitionMinRecursive(
+        int[] num,
+        int currentIndex,
+        int sum1,
+        int sum2
+    )
+    {
+        // Base check
+        if (currentIndex == num.Length)
+        {
+            return Math.Abs(sum1 - sum2);
+        }
+
+        // Recursive call after including the number at the currentIndex in the
+        // first set
+        int diff1 = CanPartitionMinRecursive(
+            num,
+            currentIndex + 1,
+            sum1 + num[currentIndex],
+            sum2
+        );
+
+        // Recursive call after including the number at the currentIndex in the
+        // second set
+        int diff2 = CanPartitionMinRecursive(
+            num,
+            currentIndex + 1,
+            sum1,
+            sum2 + num[currentIndex]
+        );
+
+        return Math.Min(diff1, diff2);
+    }
+}
