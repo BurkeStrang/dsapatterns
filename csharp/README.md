@@ -7,7 +7,7 @@ C# implementations of the DSA patterns. Each pattern has its own folder (and nam
 | Pattern | Problems |
 |---|---|
 | [Bitwise XOR](./BitwiseXor/) | 5 |
-| [Sliding Window](./SlidingWindow/) | 1 |
+| [Sliding Window](./SlidingWindow/) | 13 |
 
 ## Getting Started
 
