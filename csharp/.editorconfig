@@ -8,11 +8,11 @@ max_line_length = 80
 # Style
 csharp_style_namespace_declarations = file_scoped:warning
 csharp_new_line_before_open_brace = all
-csharp_prefer_braces = true:warning
+csharp_prefer_braces = false:warning
 csharp_using_directive_placement = outside_namespace:warning
 dotnet_sort_system_directives_first = true
 csharp_style_var_for_built_in_types = false:suggestion
-csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_var_when_type_is_apparent = false:suggestion
 
 # Naming: PascalCase for types and methods, camelCase for locals and parameters
 dotnet_naming_rule.methods_pascal.symbols = methods
