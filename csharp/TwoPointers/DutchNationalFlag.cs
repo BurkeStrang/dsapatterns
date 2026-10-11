@@ -31,37 +31,34 @@ internal static class DutchNationalFlag
 {
     internal static int[] Dutch(int[] arr)
     {
-        int low = 0;
-        int high = arr.Length - 1;
+        int zeros = 0;
+        int twos = arr.Length - 1;
         int i = 0;
-        while (i <= high)
+        while (i <= twos)
         {
             switch (arr[i])
             {
                 case 0:
-                    Swap(arr, i, low);
-                    // increment 'i' and 'low'
+                    arr[i] = arr[zeros];
+                    arr[zeros] = 0;
                     i++;
-                    low++;
+                    zeros++;
+                    break;
+                case 2:
+                    arr[i] = arr[twos];
+                    arr[twos] = 2;
+                    // decrement 'twos' only, after the swap the number at
+                    // index 'i' could be 0, 1, or 2
+                    twos--;
                     break;
                 case 1:
                     i++;
                     break;
-                default: // the case for arr[i] == 2
-                    Swap(arr, i, high);
-                    // decrement 'high' only, after the swap the number at
-                    // index 'i' could be 0, 1, or 2
-                    high--;
-                    break;
+                default:
+                    throw new ArgumentException("Invalid Integer Must be 0,1,2");
             }
         }
 
         return arr;
-    }
-
-    // Swap is a helper method to swap two elements in the array
-    private static void Swap(int[] arr, int i, int j)
-    {
-        (arr[i], arr[j]) = (arr[j], arr[i]);
     }
 }

@@ -36,6 +36,27 @@ namespace DsaPatterns.TwoPointers;
 
 internal static class ComparingStringsBackslash
 {
+
+    // internal static bool Compare(string str1, string str2)
+    // {
+    //     StringBuilder s1 = new();
+    //     StringBuilder s2 = new();
+    //     foreach (char c in str1)
+    //     {
+    //         if (c == '#')
+    //             s1.Length--;
+    //         else
+    //             s1.Append(c);
+    //     }
+    //     foreach (char c in str2)
+    //     {
+    //         if (c == '#')
+    //             s2.Length--;
+    //         else
+    //             s2.Append(c);
+    //     }
+    //     return s1.ToString() == s2.ToString();
+    // }
     internal static bool Compare(string str1, string str2)
     {
         int index1 = str1.Length - 1;
