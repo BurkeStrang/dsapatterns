@@ -5,9 +5,9 @@ public class RedundantConnectionTests
     public static TheoryData<string, int[][], int[]> Cases =>
         new()
         {
-            { "Example 1", new int[][] { [1, 2], [1, 3], [3, 4], [1, 4], [1, 5] }, [ 1, 4 ] },
-            { "Example 2", new int[][] { [1, 2], [2, 3], [3, 1], [3, 4] }, [ 3, 1 ] },
-            { "Example 3", new int[][] { [1, 2], [2, 3], [3, 4], [4, 2], [5, 6] }, [ 4, 2 ] },
+            { "Example 1", [[1,2], [1,3], [3,4], [1,4], [1,5]], [ 1, 4 ] },
+            { "Example 2", [[1,2], [2,3], [3,1], [3,4]], [3,1] },
+            { "Example 3", [[1,2], [2,3], [3,4], [4,2], [5,6]], [ 4, 2 ] },
         };
 
     [Theory]

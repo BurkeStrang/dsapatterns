@@ -38,59 +38,6 @@ namespace DsaPatterns.UnionFind;
 
 internal static class NumberOfProvinces
 {
-    class UnionFind
-    {
-        private int[] parent;
-        private int[] rank;
-
-        public UnionFind(int size)
-        {
-            parent = new int[size];
-            rank = new int[size];
-            for (int i = 0; i < size; i++)
-            {
-                parent[i] = i;
-                rank[i] = 0;
-            }
-        }
-
-        public int Find(int x)
-        {
-            if (parent[x] != x)
-            {
-                parent[x] = Find(parent[x]); // Path compression
-            }
-            return parent[x];
-        }
-
-        public void UnionSet(int x, int y)
-        {
-            int rootX = Find(x);
-            int rootY = Find(y);
-
-            // If they are in the same set, do nothing.
-            if (rootX == rootY)
-            {
-                return;
-            }
-
-            // Union by rank
-            if (rank[rootX] < rank[rootY])
-            {
-                parent[rootX] = rootY;
-            }
-            else if (rank[rootX] > rank[rootY])
-            {
-                parent[rootY] = rootX;
-            }
-            else
-            {
-                parent[rootY] = rootX;
-                rank[rootX]++;
-            }
-        }
-    }
-
     internal static int FindProvinces(int[][] isConnected)
     {
         int n = isConnected.Length;
@@ -105,7 +52,7 @@ internal static class NumberOfProvinces
                 if (isConnected[i][j] == 1 && uf.Find(i) != uf.Find(j))
                 {
                     numberOfProvinces--;
-                    uf.UnionSet(i, j);
+                    uf.Union(i, j);
                 }
             }
         }

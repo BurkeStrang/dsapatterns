@@ -38,6 +38,7 @@ namespace DsaPatterns.UnionFind;
 internal static class RedundantConnection
 {
     internal static int[] parent = [];
+
     internal static int Find(int node)
     {
         if (node != parent[node])
