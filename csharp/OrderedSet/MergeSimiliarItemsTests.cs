@@ -18,6 +18,8 @@ public class MergeSimiliarItemsTests
 
         Assert.True(got.Count == want.Length &&
                 got.All(g => want.Any(w => w[0] == g[0] && w[1] == g[1]))
-                , $"{name}: got {string.Join(", ", got.Select(g => $"[{g[0]}, {g[1]}]"))}, want {string.Join(", ", want.Select(w => $"[{w[0]}, {w[1]}]"))}");
+                , $"{name}: got {string.Join(", ",
+                    got.Select(g => $"[{g[0]}, {g[1]}]"))}, want {string.Join(", ",
+                        want.Select(w => $"[{w[0]}, {w[1]}]"))}");
     }
 }

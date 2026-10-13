@@ -34,7 +34,7 @@ internal static class MergeSimilarItems
 {
     internal static IList<IList<int>> Merge(int[][] items1, int[][] items2)
     {
-        Dictionary<int, int> mergedItems = [];
+        SortedDictionary<int, int> mergedItems = [];
 
         // Process items from the first array
         foreach (int[] item in items1)
@@ -52,20 +52,10 @@ internal static class MergeSimilarItems
             mergedItems[item[0]] += item[1];
         }
 
-        // Put every merged value in a min heap keyed on its item value, so draining
-        // the heap returns the items in increasing order of value
-        PriorityQueue<int, int> minHeap = new();
-        foreach (var entry in mergedItems)
-        {
-            minHeap.Enqueue(entry.Key, entry.Key);
-        }
-
-        // Convert heap entries to a list of lists
         List<IList<int>> result = [];
-        while (minHeap.Count > 0)
+        foreach (KeyValuePair<int, int> entry in mergedItems)
         {
-            int value = minHeap.Dequeue();
-            result.Add([value, mergedItems[value]]);
+            result.Add([entry.Key, mergedItems[entry.Key]]);
         }
 
         return result;
