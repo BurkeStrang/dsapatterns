@@ -5,21 +5,9 @@ public class AlienDictionTests
     public static TheoryData<string, string[], string> Cases =>
         new()
         {
-            {
-                "Example 1",
-                ["ba", "bc", "ac", "cab"],
-                "bac"
-            },
-            {
-                "Example 2",
-                ["cab", "aaa", "aab"],
-                "cab"
-            },
-            {
-                "Example 3",
-                ["ywx", "wz", "xww", "xz", "zyy", "zwz"],
-                "ywxz"
-            },
+            { "Example 1", ["ba", "bc", "ac", "cab"], "bac" },
+            { "Example 2", ["cab", "aaa", "aab"], "cab" },
+            { "Example 3", ["ywx", "wz", "xww", "xz", "zyy", "zwz"], "ywxz" },
         };
 
     [Theory]

@@ -11,7 +11,7 @@ public class ReconstructSquenceTests
                 [
                     [1, 2],
                     [2, 3],
-                    [3, 4]
+                    [3, 4],
                 ],
                 true
             },
@@ -21,7 +21,7 @@ public class ReconstructSquenceTests
                 [
                     [1, 2],
                     [2, 3],
-                    [2, 4]
+                    [2, 4],
                 ],
                 false
             },
@@ -30,7 +30,7 @@ public class ReconstructSquenceTests
                 [3, 1, 4, 2, 5],
                 [
                     [3, 1, 5],
-                    [1, 4, 2, 5]
+                    [1, 4, 2, 5],
                 ],
                 true
             },
@@ -38,7 +38,12 @@ public class ReconstructSquenceTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void CanConstructSequence(string name, int[] org, int[][] seqs, bool want)
+    public void CanConstructSequence(
+        string name,
+        int[] org,
+        int[][] seqs,
+        bool want
+    )
     {
         bool got = ReconstructSequence.CanConstruct(org, seqs);
 

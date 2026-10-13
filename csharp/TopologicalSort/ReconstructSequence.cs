@@ -1,4 +1,5 @@
 namespace DsaPatterns.TopologicalSort;
+
 // Given a sequence originalSeq and an array of sequences,
 // write a method to find if originalSeq can be uniquely
 // reconstructed from the array of sequences.
@@ -9,22 +10,27 @@ namespace DsaPatterns.TopologicalSort;
 // Example 1:
 // Input: originalSeq: [1, 2, 3, 4], seqs: [[1, 2], [2, 3], [3, 4]]
 // Output: true
-// Explanation: The sequences [1, 2], [2, 3], and [3, 4] can uniquely reconstruct
-// [1, 2, 3, 4], in other words, all the given sequences uniquely define the order of numbers
+// Explanation: The sequences [1, 2], [2, 3], and [3, 4] can uniquely
+// reconstruct
+// [1, 2, 3, 4], in other words, all the given sequences uniquely define the
+// order of numbers
 // in the 'originalSeq'.
 //
 // Example 2:
 // Input: originalSeq: [1, 2, 3, 4], seqs: [[1, 2], [2, 3], [2, 4]]
 // Output: false
-// Explanation: The sequences [1, 2], [2, 3], and [2, 4] cannot uniquely reconstruct
-// [1, 2, 3, 4]. There are two possible sequences we can construct from the given sequences:
+// Explanation: The sequences [1, 2], [2, 3], and [2, 4] cannot uniquely
+// reconstruct
+// [1, 2, 3, 4]. There are two possible sequences we can construct from the
+// given sequences:
 // 1) [1, 2, 3, 4]
 // 2) [1, 2, 4, 3]
 //
 // Example 3:
 // Input: originalSeq: [3, 1, 4, 2, 5], seqs: [[3, 1, 5], [1, 4, 2, 5]]
 // Output: true
-// Explanation: The sequences [3, 1, 5] and [1, 4, 2, 5] can uniquely reconstruct
+// Explanation: The sequences [3, 1, 5] and [1, 4, 2, 5] can uniquely
+// reconstruct
 // [3, 1, 4, 2, 5].
 //
 // Constraints:
@@ -47,7 +53,8 @@ internal static class ReconstructSequence
             return false;
 
         // a. Initialize the graph
-        Dictionary<int, int> inDegree = []; // count of incoming edges for every vertex
+        // count of incoming edges for every vertex
+        Dictionary<int, int> inDegree = [];
         Dictionary<int, List<int>> graph = []; // adjacency list graph
         foreach (int[] seq in sequences)
         {
@@ -66,13 +73,15 @@ internal static class ReconstructSequence
         {
             for (int i = 1; i < seq.Length; i++)
             {
-                int parent = seq[i - 1], child = seq[i];
+                int parent = seq[i - 1],
+                    child = seq[i];
                 graph[parent].Add(child);
                 inDegree[child] = inDegree[child] + 1;
             }
         }
 
-        // if we don't have ordering rules for all the numbers we'll not able to uniquely
+        // if we don't have ordering rules for all the numbers we'll not able to
+        // uniquely
         // construct the sequence
         if (inDegree.Count != originalSeq.Length)
             return false;
@@ -85,15 +94,19 @@ internal static class ReconstructSequence
                 sources.Enqueue(entry.Key);
         }
 
-        // d. For each source, add it to the sortedOrder and subtract one from all of its
-        // children's in-degrees if a child's in-degree becomes zero, add it to sources queue
+        // d. For each source, add it to the sortedOrder and subtract one from
+        // all of its
+        // children's in-degrees if a child's in-degree becomes zero, add it to
+        // sources queue
         while (sources.Count > 0)
         {
+            // more than one sources mean, there is more than one way to
+            // reconstruct the sequence
             if (sources.Count > 1)
-                return false; // more than one sources mean, there is more than one way to
-                              // reconstruct the sequence
+                return false;
+            // the next source (or number) is different from original sequence
             if (originalSeq[sortedOrder.Count] != sources.Peek())
-                return false; // the next source (or number) is different from original sequence
+                return false;
             int vertex = sources.Dequeue();
             sortedOrder.Add(vertex);
             // get the node's children to decrement their in-degrees
@@ -106,7 +119,8 @@ internal static class ReconstructSequence
             }
         }
 
-        // if sortedOrder's size is not equal to original sequence's size, there is no
+        // if sortedOrder's size is not equal to original sequence's size, there
+        // is no
         // unique way to construct
         return sortedOrder.Count == originalSeq.Length;
     }

@@ -5,14 +5,16 @@ namespace DsaPatterns.UnionFind;
 // where edges[i] = [ai, bi], represents an edge between ai, and bi.
 // Identify one edge that, if removed, will turn the graph into a tree.
 // A tree is a graph that is connected and has no cycles.
-// Assume that the graph is always reducible to a tree by removing just one edge.
+// Assume that the graph is always reducible to a tree by removing just one
+// edge.
 // If there are multiple answers, return the edge that occurs last in the input.
 //
 // Example 1:
 // Input: [[1,2], [1,3], [3,4], [1,4], [1,5]]
 // Expected Output: [1,4]
 // Justification: The edge [1,4] is redundant
-// because removing it will eliminate the cycle 1-3-4-1 while keeping the graph connected.
+// because removing it will eliminate the cycle 1-3-4-1 while keeping the graph
+// connected.
 //
 // Example 2:
 // Input: [[1,2], [2,3], [3,1], [3,4]]

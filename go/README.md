@@ -32,7 +32,9 @@ Go implementations of the DSA patterns. Each pattern has its own package with cl
 | [Palindromic Subsequence](./palindromicsubsequence/) | 5 |
 | [Backtracking](./backtracking/) | 5 |
 | [Trie](./trie/) | 5 |
-| [Topological Sort](./topologicalsort/) | 3 |
+| [Topological Sort](./topologicalsort/) | 7 |
+| [Union Find](./unionfind/) | 4 |
+| [Ordered Set](./orderedset/) | 1 |
 | [Miscellaneous](./misc/) | 3 |
 
 ## Getting Started

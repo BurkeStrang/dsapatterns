@@ -34,7 +34,9 @@ The problems, comments, and test cases mirror the [Go implementation](../go/): e
 | [Palindromic Subsequence](./PalindromicSubsequence/) | 5 |
 | [Backtracking](./Backtracking/) | 5 |
 | [Trie](./Trie/) | 5 |
-| [Topological Sort](./TopologicalSort/) | 3 |
+| [Topological Sort](./TopologicalSort/) | 7 |
+| [Union Find](./UnionFind/) | 4 |
+| [Ordered Set](./OrderedSet/) | 1 |
 | [Miscellaneous](./Misc/) | 3 |
 
 ## Getting Started

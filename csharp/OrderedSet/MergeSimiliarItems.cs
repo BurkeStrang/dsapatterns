@@ -11,7 +11,8 @@ namespace DsaPatterns.OrderedSet;
 // Example 1:
 // Input: items1 = [[1,2],[4,3]], items2 = [[2,1],[4,3],[3,4]]
 // Expected Output: [[1,2],[2,1],[3,4],[4,6]]
-// Justification: Item 1 has value 2 in items1 and doesn't exist in items2, item 2 has value 1 in items2, item 4 is summed up.
+// Justification: Item 1 has value 2 in items1 and doesn't exist in items2, item
+// 2 has value 1 in items2, item 4 is summed up.
 //
 // Example 2:
 // Input: items1 = [[5,5]], items2 = [[5,10]]
@@ -21,7 +22,8 @@ namespace DsaPatterns.OrderedSet;
 // Example 3:
 // Input: items1 = [[1,1],[2,2]], items2 = [[3,3]]
 // Expected Output: [[1,1],[2,2],[3,3]]
-// Justification: All items are unique across items1 and items2, so they remain unchanged.
+// Justification: All items are unique across items1 and items2, so they remain
+// unchanged.
 // Constraints:
 //
 // 1 <= items1.length, items2.length <= 1000
@@ -60,5 +62,4 @@ internal static class MergeSimilarItems
 
         return result;
     }
-
 }

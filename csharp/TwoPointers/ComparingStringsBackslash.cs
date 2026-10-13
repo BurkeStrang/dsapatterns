@@ -36,7 +36,6 @@ namespace DsaPatterns.TwoPointers;
 
 internal static class ComparingStringsBackslash
 {
-
     // internal static bool Compare(string str1, string str2)
     // {
     //     StringBuilder s1 = new();

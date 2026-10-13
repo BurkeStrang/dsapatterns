@@ -24,9 +24,12 @@ namespace DsaPatterns.UnionFind;
 // Example 3:
 // Input: graph = [[1,2,3],[0,2],[0,1,3],[0,2]]
 // Expected Output: false
-// Justification: We found that edges (1, 2), (0, 3), and (2, 3) connect nodes within the same set,
-// which violates the condition for a bipartite graph where each edge must connect nodes in different subsets.
-// Thus, there's no way to divide this graph into two subsets that satisfy the bipartite condition.
+// Justification: We found that edges (1, 2), (0, 3), and (2, 3) connect nodes
+// within the same set,
+// which violates the condition for a bipartite graph where each edge must
+// connect nodes in different subsets.
+// Thus, there's no way to divide this graph into two subsets that satisfy the
+// bipartite condition.
 //
 // Constraints:
 // graph.length == n
@@ -36,7 +39,6 @@ namespace DsaPatterns.UnionFind;
 // graph[u] does not contain u.
 // All the values of graph[u] are unique.
 // If graph[u] contains v, then graph[v] contains u.
-
 
 internal static class GraphBipartite
 {
