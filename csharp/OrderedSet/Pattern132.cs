@@ -66,11 +66,9 @@ internal static class Pattern132
                 // Find the smallest number in the set greater than nums[i]
                 foreach (int val in second)
                 {
+                    // If such a number exists, we found a 132 pattern
                     if (val > nums[i])
-                    {
-                        // If such a number exists, we found a 132 pattern
                         return true;
-                    }
                 }
             }
             // Push the current number onto the stack
