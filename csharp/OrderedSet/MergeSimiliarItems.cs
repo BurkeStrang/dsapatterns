@@ -37,6 +37,7 @@ internal static class MergeSimilarItems
     internal static IList<IList<int>> Merge(int[][] items1, int[][] items2)
     {
         SortedDictionary<int, int> mergedItems = [];
+        List<IList<int>> result = [];
 
         // Process items from the first array
         foreach (int[] item in items1)
@@ -54,11 +55,8 @@ internal static class MergeSimilarItems
             mergedItems[item[0]] += item[1];
         }
 
-        List<IList<int>> result = [];
         foreach (KeyValuePair<int, int> entry in mergedItems)
-        {
             result.Add([entry.Key, mergedItems[entry.Key]]);
-        }
 
         return result;
     }
