@@ -86,14 +86,15 @@ internal static class NumOfClosed
 
         visited[x][y] = true; // mark the cell visited
 
-        bool isClosed = true;
-        // recursively visit all neighboring cells (horizontally & vertically)
-        // lower, upper, right, then left cell
-        isClosed = isClosed && IsClosedIslandDfs(matrix, visited, x + 1, y);
-        isClosed = isClosed && IsClosedIslandDfs(matrix, visited, x - 1, y);
-        isClosed = isClosed && IsClosedIslandDfs(matrix, visited, x, y + 1);
-        isClosed = isClosed && IsClosedIslandDfs(matrix, visited, x, y - 1);
+        // recursively visit all neighboring cells (horizontally & vertically).
+        // visit every neighbor even after one reaches an edge: stopping
+        // early leaves the rest of the island unvisited, and it is counted
+        // again later
+        bool down = IsClosedIslandDfs(matrix, visited, x + 1, y);
+        bool up = IsClosedIslandDfs(matrix, visited, x - 1, y);
+        bool right = IsClosedIslandDfs(matrix, visited, x, y + 1);
+        bool left = IsClosedIslandDfs(matrix, visited, x, y - 1);
 
-        return isClosed;
+        return down && up && right && left;
     }
 }

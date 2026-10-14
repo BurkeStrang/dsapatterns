@@ -28,6 +28,11 @@ int main(void)
          "[[1,1,1,1,1,1],[1,0,0,0,0,1],[1,0,1,0,0,1],[0,0,0,0,1,1],[1,1,1,1,1,"
          "1]]",
          1},
+        // the search goes down from the top-left 1 and hits the bottom edge
+        // first; the rest of the island must still be marked visited or it is
+        // counted again later as a closed island
+        {"open island whose search reaches the border early",
+         "[[0,0,0,0,0],[0,1,0,1,0],[0,1,1,1,0],[0,1,0,0,0],[0,1,0,0,0]]", 0},
     };
     for (int i = 0; i < LEN(tests); i++)
     {

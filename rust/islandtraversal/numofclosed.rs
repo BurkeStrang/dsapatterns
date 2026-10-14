@@ -81,14 +81,13 @@ fn is_closed_island_dfs(
 
     visited[row][col] = true; // mark the cell visited
 
-    let mut is_closed = true;
-    // recursively visit all neighboring cells (horizontally & vertically);
-    // like the Go version, once the island is known to be open the rest of
-    // its cells are left for a later call
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x + 1, y);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x - 1, y);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x, y + 1);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x, y - 1);
+    // recursively visit all neighboring cells (horizontally & vertically).
+    // visit every neighbor even after one reaches an edge: stopping early
+    // leaves the rest of the island unvisited, and it is counted again later
+    let down = is_closed_island_dfs(matrix, visited, x + 1, y);
+    let up = is_closed_island_dfs(matrix, visited, x - 1, y);
+    let right = is_closed_island_dfs(matrix, visited, x, y + 1);
+    let left = is_closed_island_dfs(matrix, visited, x, y - 1);
 
-    is_closed
+    down && up && right && left
 }

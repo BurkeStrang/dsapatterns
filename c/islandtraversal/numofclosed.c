@@ -58,15 +58,15 @@ bool is_closed_island_dfs
 
     SEEN(visited, x, y) = true; // mark the cell visited
 
-    bool is_closed = true;
-    // recursively visit all neighboring cells (horizontally & vertically)
-    // lower, upper, right, then left cell
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x + 1, y);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x - 1, y);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x, y + 1);
-    is_closed = is_closed && is_closed_island_dfs(matrix, visited, x, y - 1);
+    // recursively visit all neighboring cells (horizontally & vertically).
+    // visit every neighbor even after one reaches an edge: stopping early
+    // leaves the rest of the island unvisited, and it is counted again later
+    bool down = is_closed_island_dfs(matrix, visited, x + 1, y);
+    bool up = is_closed_island_dfs(matrix, visited, x - 1, y);
+    bool right = is_closed_island_dfs(matrix, visited, x, y + 1);
+    bool left = is_closed_island_dfs(matrix, visited, x, y - 1);
 
-    return is_closed;
+    return down && up && right && left;
 }
 
 int count_closed_islands

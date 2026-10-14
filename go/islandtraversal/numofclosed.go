@@ -64,12 +64,13 @@ func isClosedIslandDFS(matrix [][]int, visited [][]bool, x, y int) bool {
 
 	visited[x][y] = true // mark the cell visited
 
-	isClosed := true
-	// recursively visit all neighboring cells (horizontally & vertically)
-	isClosed = isClosed && isClosedIslandDFS(matrix, visited, x+1, y) // lower cell
-	isClosed = isClosed && isClosedIslandDFS(matrix, visited, x-1, y) // upper cell
-	isClosed = isClosed && isClosedIslandDFS(matrix, visited, x, y+1) // right cell
-	isClosed = isClosed && isClosedIslandDFS(matrix, visited, x, y-1) // left cell
+	// recursively visit all neighboring cells (horizontally & vertically).
+	// visit every neighbor even after one reaches an edge: stopping early
+	// leaves the rest of the island unvisited, and it is counted again later
+	down := isClosedIslandDFS(matrix, visited, x+1, y)  // lower cell
+	up := isClosedIslandDFS(matrix, visited, x-1, y)    // upper cell
+	right := isClosedIslandDFS(matrix, visited, x, y+1) // right cell
+	left := isClosedIslandDFS(matrix, visited, x, y-1)  // left cell
 
-	return isClosed
+	return down && up && right && left
 }

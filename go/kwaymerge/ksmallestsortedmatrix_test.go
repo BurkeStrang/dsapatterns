@@ -10,6 +10,7 @@ func Test_findKthSmallestPoint(t *testing.T) {
 		want   int
 	}{
 		{name: "Example 1", matrix: [][]int{{2, 6, 8}, {3, 7, 10}, {5, 7, 8}}, k: 5, want: 7},
+		{name: "Smaller numbers further down", matrix: [][]int{{1, 20, 30}, {2, 21, 31}, {3, 22, 32}}, k: 3, want: 3},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

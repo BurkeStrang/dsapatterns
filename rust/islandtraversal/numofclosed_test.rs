@@ -55,6 +55,20 @@ fn test_count_closed_islands() {
             ],
             1,
         ),
+        (
+            // the search goes down from the top-left 1 and hits the bottom
+            // edge first; the rest of the island must still be marked
+            // visited or it is counted again later as a closed island
+            "open island whose search reaches the border early",
+            vec![
+                vec![0, 0, 0, 0, 0],
+                vec![0, 1, 0, 1, 0],
+                vec![0, 1, 1, 1, 0],
+                vec![0, 1, 0, 0, 0],
+                vec![0, 1, 0, 0, 0],
+            ],
+            0,
+        ),
     ];
     for (name, matrix, want) in tests {
         let got = count_closed_islands(&matrix);

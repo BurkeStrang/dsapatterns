@@ -1,6 +1,9 @@
 package topkelements
 
-import "testing"
+import (
+	"slices"
+	"testing"
+)
 
 func Test_findClosestElements(t *testing.T) {
 	tests := []struct {
@@ -17,10 +20,8 @@ func Test_findClosestElements(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			got := findClosestElements(tt.arr, tt.K, tt.X)
-			if got == nil || len(got) != len(tt.want) {
-				if got[0] != tt.want[0] && got[1] != tt.want[1] && got[2] != tt.want[2] {
-					t.Errorf("findClosestElements() = %v, want %v", got, tt.want)
-				}
+			if !slices.Equal(got, tt.want) {
+				t.Errorf("findClosestElements() = %v, want %v", got, tt.want)
 			}
 		})
 	}

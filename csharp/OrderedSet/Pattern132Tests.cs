@@ -16,9 +16,6 @@ public class Pattern123Tests
     {
         bool got = Pattern132.Find(nums);
 
-        Assert.True(
-            got == want,
-            $"{name}: got {got}, want {want}"
-        );
+        Assert.True(got == want, $"{name}: got {got}, want {want}");
     }
 }

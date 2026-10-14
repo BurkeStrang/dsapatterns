@@ -16,9 +16,9 @@ import (
 	"container/heap"
 )
 
-// Node structure
+// Point is a matrix cell and the number stored in it
 type Point struct {
-	Row, Col int
+	Value, Row, Col int
 }
 
 // PriorityQueue implements heap.Interface and holds Nodes
@@ -27,7 +27,7 @@ type PriorityQueue []*Point
 func (pq PriorityQueue) Len() int { return len(pq) }
 
 func (pq PriorityQueue) Less(i, j int) bool {
-	return pq[i].Row < pq[j].Row || (pq[i].Row == pq[j].Row && pq[i].Col < pq[j].Col)
+	return pq[i].Value < pq[j].Value
 }
 
 func (pq PriorityQueue) Swap(i, j int) {
@@ -55,7 +55,7 @@ func findKthSmallestPoint(matrix [][]int, k int) int {
 	// put the 1st element of each row in the min heap
 	// we don't need to push more than 'k' elements in the heap
 	for i := 0; i < len(matrix) && i < k; i++ {
-		heap.Push(minHeap, &Point{i, 0})
+		heap.Push(minHeap, &Point{matrix[i][0], i, 0})
 	}
 
 	// take the smallest (top) element form the min heap, if the running count is equal
@@ -64,12 +64,13 @@ func findKthSmallestPoint(matrix [][]int, k int) int {
 	numberCount, result := 0, 0
 	for minHeap.Len() > 0 {
 		node := heap.Pop(minHeap).(*Point)
-		result = matrix[node.Row][node.Col]
+		result = node.Value
 		if numberCount++; numberCount == k {
 			break
 		}
 		node.Col++
 		if len(matrix[0]) > node.Col {
+			node.Value = matrix[node.Row][node.Col]
 			heap.Push(minHeap, node)
 		}
 	}
