@@ -33,50 +33,57 @@ namespace DsaPatterns.OrderedSet;
 
 internal static class MyCalendar
 {
-    // Custom comparer for SortedSet
-    private class IntervalComparer : IComparer<int[]>
+    private class IntervalComparer : IComparer<(int Start, int End)>
     {
-        int IComparer<int[]>.Compare(int[]? x, int[]? y)
+        public int Compare
+        (
+            (int Start, int End) x,
+            (int Start, int End) y
+        )
         {
-            return x![0].CompareTo(y![0]);
+            return x.Start.CompareTo(y.Start);
         }
     }
 
-    // Method to process booking requests and return results
     internal static List<bool> Book(int[][] nums)
     {
-        // Initialize SortedSet with custom comparer
-        SortedSet<int[]> bookings = new(new IntervalComparer());
-        List<bool> results = []; // List to store the results of booking attempts
+        SortedSet<(int Start, int End)> bookings = new(new IntervalComparer());
+        List<bool> results = [];
 
         foreach (int[] interval in nums)
         {
-            int start = interval[0], end = interval[1]; // Extract start and end times
+            int curStart = interval[0];
+            int curEnd = interval[1];
 
-            // Find the closest event that starts before or at the same time
-            int[]? lower = null, higher = null;
-            foreach (int[] b in bookings)
+            (int Start, int End)? lower = null;
+            (int Start, int End)? higher = null;
+
+            foreach ((int Start, int End) prevBooking in bookings)
             {
-                if (b[0] < start) lower = b;
-                if (b[0] >= start)
+                if (prevBooking.Start < curStart)
                 {
-                    higher = b;
+                    lower = prevBooking;
+                }
+                else
+                {
+                    higher = prevBooking;
                     break;
                 }
             }
 
-            // Check for overlap with neighboring events
-            if ((lower == null || lower[1] <= start) && (higher == null || end <= higher[0]))
+            if ((lower is null || lower.Value.End <= curStart) &&
+                (higher is null || curEnd <= higher.Value.Start))
             {
-                bookings.Add([start, end]); // Add booking if no overlap
+                bookings.Add((curStart, curEnd));
                 results.Add(true);
             }
             else
             {
-                results.Add(false); // Booking overlaps, push false
+                results.Add(false);
             }
         }
-        return results; // Return the list of results
+
+        return results;
     }
 }
 
