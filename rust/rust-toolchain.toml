@@ -1,0 +1,8 @@
+# Pins the Rust version for this folder, so a new release can't add clippy
+# lints or rustfmt changes that fail CI. rustup reads this file and installs
+# the version the first time cargo runs here. To upgrade, change the version,
+# then run `make check` and fix whatever the new clippy reports.
+[toolchain]
+channel = "1.94.0"
+components = ["rustfmt", "clippy"]
+profile = "minimal"

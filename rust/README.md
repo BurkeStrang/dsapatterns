@@ -41,7 +41,7 @@ The problems, comments, and test cases mirror the [Go implementation](../go/): e
 
 ## Getting Started
 
-**Requirements:** a recent stable Rust (written against 1.94), with the `rustfmt` and `clippy` components that `rustup` installs by default
+**Requirements:** `rustup`. The Rust version is pinned in `rust-toolchain.toml` (currently 1.94.0), and `rustup` installs it, with `rustfmt` and `clippy`, the first time `cargo` runs in this folder. The pin keeps a new Rust release from adding clippy lints that fail CI; to upgrade, change the version there and run `make check`.
 
 All commands run from this directory (`rust/`):
 

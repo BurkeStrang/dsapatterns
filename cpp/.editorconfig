@@ -1,0 +1,6 @@
+# C++-specific settings; general settings are inherited from the repo root.
+
+[*.{cpp,hpp}]
+indent_style = space
+indent_size = 4
+max_line_length = 80

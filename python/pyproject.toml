@@ -1,0 +1,30 @@
+# Settings for the tools only: this folder is not an installable package.
+
+[tool.pytest.ini_options]
+python_files = ["*_test.py"]
+pythonpath = ["."]
+testpaths = ["."]
+norecursedirs = [".*", "scripts"]
+
+[tool.ruff]
+line-length = 80
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle errors, including lines over 80 characters
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes: unused names, undefined names
+    "I",   # import order
+    "N",   # PEP 8 naming
+    "B",   # likely bugs, such as mutable default arguments
+    "UP",  # newer syntax for the target Python version
+    "SIM", # simpler ways to write the same code
+    "RUF", # ruff's own checks
+]
+# The problem descriptions are copied as written, curly quotes included.
+ignore = ["RUF001", "RUF002", "RUF003"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true

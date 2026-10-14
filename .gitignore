@@ -43,5 +43,16 @@ c/compile_commands.json
 # Rust build output
 rust/target/
 
+# C++ build output
+cpp/build/
+cpp/compile_commands.json
+
+# Python virtual environment and tool caches
+python/.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
 # netcoredbg command history
 .netcoredbg_hist

@@ -7,7 +7,7 @@ on:
     branches: [master]
 
 jobs:
-  lint:
+  go-lint:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -25,7 +25,7 @@ jobs:
           version: v2.11.2
           working-directory: go
 
-  fmt:
+  go-fmt:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -46,7 +46,7 @@ jobs:
             exit 1
           fi
 
-  test:
+  go-test:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -162,5 +162,77 @@ jobs:
         working-directory: rust
     steps:
       - uses: actions/checkout@v5
+
+      - run: make test
+
+  cpp-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cpp
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make lint
+
+  cpp-fmt:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cpp
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make fmt-check
+
+  cpp-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: cpp
+    steps:
+      - uses: actions/checkout@v5
+
+      - run: make test
+
+  python-lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version-file: python/.python-version
+
+      - run: make lint
+
+  python-fmt:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version-file: python/.python-version
+
+      - run: make fmt-check
+
+  python-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version-file: python/.python-version
 
       - run: make test

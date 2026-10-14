@@ -1,0 +1,34 @@
+#include "reversealtksublist.cpp"
+
+#include "testing/testing.hpp"
+
+int main()
+{
+    struct test
+    {
+        std::string name;
+        std::vector<int> head;
+        int k;
+        std::vector<int> want;
+    };
+    std::vector<test> tests = {
+        {"reverse every alternate 2 nodes",
+         {1, 2, 3, 4, 5, 6},
+         2,
+         {2, 1, 3, 4, 6, 5}},
+        {"reverse every alternate 3 nodes",
+         {1, 2, 3, 4, 5, 6, 7},
+         3,
+         {3, 2, 1, 4, 5, 6, 7}},
+        {"k greater than length", {1, 2}, 5, {2, 1}},
+        {"single node", {1}, 2, {1}},
+        {"empty list", {}, 2, {}},
+    };
+    for (const test &tt : tests)
+    {
+        t::run(tt.name);
+        ListNode *got = reverse_alt(build_list(tt.head), tt.k);
+        t::check("reverse_alt()", list_values(got), tt.want);
+    }
+    return t::done();
+}
