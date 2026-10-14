@@ -27,8 +27,7 @@ public class QuadrupleSumToTargetTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void SearchQuadruplets
-    (
+    public void SearchQuadruplets(
         string name,
         int[] arr,
         int target,
