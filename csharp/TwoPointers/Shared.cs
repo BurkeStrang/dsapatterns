@@ -17,6 +17,11 @@ internal static class Shared
         return $"[{string.Join(", ", nums)}]";
     }
 
+    internal static string Format2D(IEnumerable<IEnumerable<int>> rows)
+    {
+        return $"[{string.Join(", ", rows.Select(Format))}]";
+    }
+
     private static int CompareRows(int[] a, int[] b)
     {
         for (int k = 0; k < Math.Min(a.Length, b.Length); k++)

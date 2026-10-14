@@ -14,9 +14,7 @@ internal static class Lts
     {
         List<List<int>> result = [];
         if (root == null)
-        {
             return result;
-        }
 
         Queue<TreeNode> queue = new();
         queue.Enqueue(root);

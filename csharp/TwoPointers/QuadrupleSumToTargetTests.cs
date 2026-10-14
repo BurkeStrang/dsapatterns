@@ -2,10 +2,11 @@ namespace DsaPatterns.TwoPointers;
 
 public class QuadrupleSumToTargetTests
 {
-    public static TheoryData<int[], int, int[][]> Cases =>
+    public static TheoryData<string, int[], int, int[][]> Cases =>
         new()
         {
             {
+                "Example 1",
                 [4, 1, 2, -1, 1, -3],
                 1,
                 [
@@ -14,6 +15,7 @@ public class QuadrupleSumToTargetTests
                 ]
             },
             {
+                "Example 2",
                 [2, 0, -1, 1, -2, 2],
                 2,
                 [
@@ -25,13 +27,17 @@ public class QuadrupleSumToTargetTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void SearchQuadruplets(int[] arr, int target, int[][] expected)
+    public void SearchQuadruplets(string name, int[] arr, int target, int[][] want)
     {
-        List<List<int>> result = QuadrupleSumToTarget.SearchQuadruplets(
+        List<List<int>> got = QuadrupleSumToTarget.SearchQuadruplets(
             arr,
             target
         );
 
-        Assert.Equal(Shared.SortRows(expected), Shared.SortRows(result));
+        Assert.True(
+            Shared.Format2D(got) == Shared.Format2D(want),
+            $"{name}: got {Shared.Format2D(got)}, "
+                + $"want {Shared.Format2D(want)}"
+        );
     }
 }
