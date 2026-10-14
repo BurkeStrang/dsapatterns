@@ -40,5 +40,8 @@ csharp/TestResults/
 c/build/
 c/compile_commands.json
 
+# Rust build output
+rust/target/
+
 # netcoredbg command history
 .netcoredbg_hist

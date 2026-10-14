@@ -1,0 +1,9 @@
+[package]
+name = "dsapatterns"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+# pattern folders sit next to this file, like the other languages, not in src/
+[lib]
+path = "lib.rs"
