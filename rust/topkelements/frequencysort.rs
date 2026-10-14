@@ -1,3 +1,4 @@
+use std::cmp::Reverse;
 use std::collections::HashMap;
 
 // Given a string, sort it based on the decreasing frequency of its characters.
@@ -26,7 +27,7 @@ pub fn sort_character_by_frequency(s: &str) -> String {
         character_frequency_map.into_iter().collect();
 
     // Sort the character-frequency pairs by frequency in descending order
-    character_frequency_pairs.sort_by(|a, b| b.1.cmp(&a.1));
+    character_frequency_pairs.sort_by_key(|pair| Reverse(pair.1));
 
     // Build a string, appending the most occurring characters first
     let mut sorted_string = String::with_capacity(s.len());
