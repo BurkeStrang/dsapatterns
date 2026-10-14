@@ -41,7 +41,7 @@ The problems, comments, and test cases mirror the [Go implementation](../go/): e
 
 ## Getting Started
 
-**Requirements:** a C17 compiler (`gcc` or `clang`), `make`, and `clang-format` for formatting
+**Requirements:** a C17 compiler (`gcc` or `clang`), `make`, and `python3` (`make fmt` uses it to install the pinned `clang-format`)
 
 All commands run from this directory (`c/`):
 
@@ -122,7 +122,9 @@ int find_max_sum_sub_array
 
 Functions that take no parameters keep `name(void)` on one line. `make fmt-check` reports files that are not formatted without changing them.
 
-Because the second step is not part of `clang-format`, an editor's format-on-save (which only runs `clang-format`) will pull the parameters back onto one line; run `make fmt` afterwards, or turn format-on-save off for this folder.
+`clang-format` is pinned to version 18.1.3, because each release formats a little differently and CI would fail on whichever version the runner happens to have. You don't need to install it: the first `make fmt` or `make fmt-check` installs that version from PyPI into `.tools/` (ignored by git), which needs `python3`. To upgrade, change `CLANG_FORMAT_VERSION` in the Makefile and run `make fmt`.
+
+Because the second step is not part of `clang-format`, an editor's format-on-save (which only runs `clang-format`) will pull the parameters back onto one line; run `make fmt` afterwards, or turn format-on-save off for this folder. If the editor runs `clang-format` for other files, point it at `.tools/bin/clang-format` so it uses the same version.
 
 ## Practice Mode
 

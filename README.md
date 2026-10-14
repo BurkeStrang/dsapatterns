@@ -10,6 +10,7 @@ A structured collection of data structures and algorithm problems, organized by 
 | Rust | [`rust/`](./rust/) | Active |
 | C++ | [`cpp/`](./cpp/) | Active |
 | Python | [`python/`](./python/) | Active |
+| TypeScript | [`typescript/`](./typescript/) | Active |
 
 Each language folder is self-contained, with its own README covering setup, tooling, and the list of patterns.
 
@@ -20,5 +21,6 @@ dsapatterns/
 ├── c/
 ├── rust/
 ├── cpp/
-└── python/
+├── python/
+└── typescript/
 ```

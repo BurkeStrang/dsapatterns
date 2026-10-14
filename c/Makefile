@@ -14,6 +14,13 @@ BINS := $(patsubst %_test.c,build/%_test,$(TESTS))
 SOURCES := $(sort $(wildcard */*.c */*.h))
 C_FILES := $(sort $(wildcard */*.c))
 
+# clang-format is pinned, because each release formats a little differently.
+# The first fmt or fmt-check installs this version from PyPI into .tools/;
+# changing the version here installs the new one.
+CLANG_FORMAT_VERSION := 18.1.3
+CLANG_FORMAT := .tools/bin/clang-format
+CLANG_FORMAT_STAMP := .tools/clang-format-$(CLANG_FORMAT_VERSION)
+
 all: check
 
 build: compile_commands.json $(BINS)
@@ -47,11 +54,17 @@ debug:
 	@$(MAKE) -s build/$(T)_test
 	ASAN_OPTIONS=detect_leaks=0 lldb build/$(T)_test
 
-fmt:
-	@./scripts/format.py $(SOURCES)
+$(CLANG_FORMAT_STAMP):
+	python3 -m venv .tools
+	.tools/bin/pip install --quiet --disable-pip-version-check \
+		clang-format==$(CLANG_FORMAT_VERSION)
+	@touch $@
 
-fmt-check:
-	@./scripts/format.py --check $(SOURCES)
+fmt: $(CLANG_FORMAT_STAMP)
+	@CLANG_FORMAT=$(CLANG_FORMAT) ./scripts/format.py $(SOURCES)
+
+fmt-check: $(CLANG_FORMAT_STAMP)
+	@CLANG_FORMAT=$(CLANG_FORMAT) ./scripts/format.py --check $(SOURCES)
 
 lint:
 	@for f in $(TESTS); do \

@@ -1,0 +1,6 @@
+# TypeScript-specific settings; general settings are inherited from the repo root.
+
+[*.{ts,js}]
+indent_style = space
+indent_size = 2
+max_line_length = 80

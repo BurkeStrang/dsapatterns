@@ -39,6 +39,7 @@ csharp/TestResults/
 # C build output
 c/build/
 c/compile_commands.json
+c/.tools/
 
 # Rust build output
 rust/target/
@@ -46,6 +47,7 @@ rust/target/
 # C++ build output
 cpp/build/
 cpp/compile_commands.json
+cpp/.tools/
 
 # Python virtual environment and tool caches
 python/.venv/
@@ -53,6 +55,9 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# TypeScript dependencies
+typescript/node_modules/
 
 # netcoredbg command history
 .netcoredbg_hist

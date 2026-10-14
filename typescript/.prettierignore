@@ -1,0 +1,4 @@
+node_modules/
+package-lock.json
+# the READMEs are written by hand, like the other folders'
+*.md

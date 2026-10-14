@@ -1,0 +1,105 @@
+// Write a program to solve a Sudoku puzzle by filling the empty cells.
+// A sudoku solution must satisfy all of the following rules:
+// Each of the digits 1-9 must occur exactly once in each row.
+// Each of the digits 1-9 must occur exactly once in each column.
+// Each of the digits 1-9 must occur exactly once in each of the 9 3x3 sub-boxes
+// of the grid.
+// The '.' character indicates empty cells.
+//
+// Example 1:
+// Input:
+//
+//             {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+//             {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+//             {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+//             {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+//             {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+//             {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+//             {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+//             {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+//             {'.', '.', '.', '.', '8', '.', '.', '7', '9'}
+// Output:
+//
+//             {'5'', '3'', '4'', '6'', '7'', '8'', '9'', '1'', '2''},
+//             {'6'', '7'', '2'', '1'', '9'', '5'', '3'', '4'', '8''},
+//             {'1'', '9'', '8'', '3'', '4'', '2'', '5'', '6'', '7''},
+//             {'8'', '5'', '9'', '7'', '6'', '1'', '4'', '2'', '3''},
+//             {'4'', '2'', '6'', '8'', '5'', '3'', '7'', '9'', '1''},
+//             {'7'', '1'', '3'', '9'', '2'', '4'', '8'', '5'', '6''},
+//             {'9'', '6'', '1'', '5'', '3'', '7'', '2'', '8'', '4''},
+//             {'2'', '8'', '7'', '4'', '1'', '9'', '6'', '3'', '5''},
+//             {'3'', '4'', '5'', '2'', '8'', '6'', '1'', '7'', '9''}
+//
+// Explanation: The given output is the only valid Sudoku solution.
+//
+// Constraints:
+//
+// board.length == 9
+// board[i].length == 9
+// board[i][j] is a digit or '.'
+// It is guaranteed that the input board has only one solution.
+
+// isValid checks if a given number is valid in the current cell
+export function isValid(
+  board: string[][],
+  row: number,
+  col: number,
+  num: string,
+): boolean {
+  // Check if we already have the same number in the same row, col or box
+  for (let x = 0; x < 9; x++) {
+    if (board[row][x] === num) {
+      return false; // The same number is in the same row
+    }
+    if (board[x][col] === num) {
+      return false; // The same number is in the same col
+    }
+    const boxRow = Math.floor(row / 3) * 3 + Math.floor(x / 3);
+    const boxCol = Math.floor(col / 3) * 3 + (x % 3);
+    if (board[boxRow][boxCol] === num) {
+      return false; // The same number is in the same 3x3 box
+    }
+  }
+  return true;
+}
+
+export function solve(board: string[][]): boolean {
+  for (let row = 0; row < 9; row++) {
+    for (let col = 0; col < 9; col++) {
+      // If we find an empty cell
+      if (board[row][col] !== ".") {
+        continue;
+      }
+
+      // Try every number from 1-9
+      for (const num of "123456789") {
+        // Check if the number is valid in the current cell
+        if (isValid(board, row, col, num)) {
+          // If it is valid, fill the cell with the number
+          board[row][col] = num;
+
+          // Recursively call the function to solve the rest of the board
+          if (solve(board)) {
+            return true;
+          }
+
+          // If the current number doesn't lead to a solution, backtrack by
+          // emptying the cell
+          board[row][col] = ".";
+        }
+      }
+
+      // If we have tried every number and none of them lead to a solution,
+      // return false
+      return false;
+    }
+  }
+
+  return true; // If the board is completely filled, return true
+}
+
+// solveSudoku solves the Sudoku in place. The board is 9 rows of 9 cells,
+// "1" to "9" with "." for an empty cell.
+export function solveSudoku(board: string[][]): void {
+  solve(board);
+}

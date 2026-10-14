@@ -43,7 +43,7 @@ A few file names differ from Go: names are all lowercase (`stack/balancedparenth
 
 ## Getting Started
 
-**Requirements:** a C++20 compiler (`clang++` by default, `g++` 13 or later also works), `make`, `clang-format` for formatting, and `lldb` for debugging
+**Requirements:** a C++20 compiler (`clang++` by default, `g++` 13 or later also works), `make`, `python3` (`make fmt` uses it to install the pinned `clang-format`), and `lldb` for debugging
 
 All commands run from this directory (`cpp/`):
 
@@ -170,7 +170,9 @@ Failure messages print numbers, strings, `std::vector`, `std::optional` and `std
 
 `make fmt` formats every `.cpp` and `.hpp` file with `clang-format`, using `.clang-format` (Allman braces, 4 spaces, 80 columns). `make fmt-check` reports files that are not formatted without changing them.
 
-Unlike the C folder, there is no extra step after `clang-format`, so an editor's format-on-save gives the same result as `make fmt`.
+`clang-format` is pinned to version 18.1.3, because each release formats a little differently and CI would fail on whichever version the runner happens to have. You don't need to install it: the first `make fmt` or `make fmt-check` installs that version from PyPI into `.tools/` (ignored by git), which needs `python3`. To upgrade, change `CLANG_FORMAT_VERSION` in the Makefile and run `make fmt`.
+
+Unlike the C folder, there is no extra step after `clang-format`, so an editor's format-on-save gives the same result as `make fmt`, as long as the editor uses the same version: point its `clang-format` path at `.tools/bin/clang-format`, or run `make fmt` before committing.
 
 ## Practice Mode
 

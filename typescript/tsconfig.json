@@ -1,0 +1,25 @@
+{
+  // Type checking only: Vitest runs the .ts files directly, so tsc never
+  // writes any JavaScript.
+  "compilerOptions": {
+    "target": "es2024",
+    "lib": ["es2024"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "noEmit": true,
+    // imports name the .ts file itself, e.g. "./avg.ts"
+    "allowImportingTsExtensions": true,
+    // only TypeScript that Node can run by stripping the types: no enums,
+    // namespaces or constructor parameter properties
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "skipLibCheck": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

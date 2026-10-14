@@ -17,6 +17,9 @@ Usage: format.py [--check] <file>...
 
 With --check nothing is written; the files that are not formatted are
 listed and the exit code is 1.
+
+The clang-format program comes from the CLANG_FORMAT environment variable
+(the Makefile sets it to its pinned copy), or from PATH if it is not set.
 """
 
 import os
@@ -132,7 +135,8 @@ def format_signatures(content):
 
 def clang_format(path, content):
     result = subprocess.run(
-        ['clang-format', f'--assume-filename={path}'],
+        [os.environ.get('CLANG_FORMAT', 'clang-format'),
+         f'--assume-filename={path}'],
         input=content, capture_output=True, text=True, check=True,
     )
     return result.stdout

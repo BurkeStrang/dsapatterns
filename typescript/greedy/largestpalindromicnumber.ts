@@ -1,0 +1,64 @@
+// Given a string s containing 0 to 9 digits, create the largest possible
+// palindromic number using the string characters.
+// It should not contain leading zeroes.
+// A palindromic number reads the same backward as forward.
+// If it's not possible to form such a number using all digits of the given
+// string, you can skip some of them.
+//
+// Example 1
+// Input: s = "323211444"
+// Expected Output: "432141234"
+// Justification: This is the largest palindromic number that can be formed from
+// the given digits.
+//
+// Example 2
+// Input: s = "998877"
+// Expected Output: "987789"
+// Justification: "987789" is the largest palindrome that can be formed.
+//
+// Example 3
+// Input: s = "54321"
+// Expected Output: "5"
+// Justification: Only "5" can form a valid palindromic number as other digits
+// cannot be paired.
+
+export function largestPalindromic(s: string): string {
+  let firstHalf = ""; // The first half of the palindrome
+  const frequency = new Array<number>(10).fill(0); // Frequency of digits 0-9
+
+  // Count the frequency of each digit in the input number
+  for (const digit of s) {
+    frequency[Number(digit)]++;
+  }
+
+  let middle = ""; // The middle digit, if one is needed
+
+  // Iterate from the highest digit (9) to the lowest (0)
+  for (let d = 9; d >= 0; d--) {
+    let count = frequency[d];
+    const digit = String(d);
+    // a number can't start with 0, so skip the zeros until there is
+    // something in front of them
+    if (count !== 0 && (d !== 0 || firstHalf !== "")) {
+      while (count > 1) {
+        firstHalf += digit; // Append the digit to firstHalf
+        count -= 2; // Use two of the digit for the two halves
+      }
+      if (count === 1 && middle === "") {
+        // The middle digit is the largest digit with an odd count
+        middle = digit;
+      }
+    }
+  }
+
+  // Create secondHalf as a reversed copy of firstHalf
+  const secondHalf = Array.from(firstHalf).reverse().join("");
+
+  // Append the middle digit if it exists, then the reversed first half
+  const result = firstHalf + middle + secondHalf;
+
+  if (result === "") {
+    return "0";
+  }
+  return result; // Return the final palindrome
+}
