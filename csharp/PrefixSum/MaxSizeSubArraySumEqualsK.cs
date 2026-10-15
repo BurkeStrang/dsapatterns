@@ -44,7 +44,7 @@ internal static class MaxSizeSubArraySumEqualsK
 
             // Check if there is a subarray with sum k
             if (cumMap.ContainsKey(cumSum - k))
-                maxLen = Math.Max(maxLen, i - cumMap[cumSum - k]);
+                maxLen = Max(maxLen, i - cumMap[cumSum - k]);
 
             // Store the cumulative sum and its index
             if (!cumMap.ContainsKey(cumSum))
