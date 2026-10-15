@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.TopKElements;
 
 // Given a string, sort it based on the decreasing frequency of its characters.
@@ -24,8 +22,7 @@ internal static class FrequencySort
         Dictionary<char, int> characterFrequencyMap = [];
         foreach (char chr in str)
         {
-            characterFrequencyMap[chr] =
-                characterFrequencyMap.GetValueOrDefault(chr) + 1;
+            characterFrequencyMap[chr] = characterFrequencyMap.GetValueOrDefault(chr) + 1;
         }
 
         // Create a list of character-frequency pairs for sorting
@@ -36,9 +33,7 @@ internal static class FrequencySort
         }
 
         // Sort the character-frequency pairs by frequency in descending order
-        characterFrequencyPairs.Sort(
-            (a, b) => b.Frequency.CompareTo(a.Frequency)
-        );
+        characterFrequencyPairs.Sort((a, b) => b.Frequency.CompareTo(a.Frequency));
 
         // Build a string, appending the most occurring characters first
         StringBuilder sortedString = new(str.Length);

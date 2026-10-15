@@ -18,13 +18,8 @@ internal class FreqStack
 {
     // max-heap of numbers ordered by frequency, then by how recently they were
     // pushed (their sequence number)
-    private readonly PriorityQueue<
-        int,
-        (int Frequency, int SequenceNumber)
-    > maxHeap = new(
-        Comparer<(int Frequency, int SequenceNumber)>.Create(
-            (a, b) => b.CompareTo(a)
-        )
+    private readonly PriorityQueue<int, (int Frequency, int SequenceNumber)> maxHeap = new(
+        Comparer<(int Frequency, int SequenceNumber)>.Create((a, b) => b.CompareTo(a))
     );
     private readonly Dictionary<int, int> frequencyMap = [];
     private int sequenceNumber;

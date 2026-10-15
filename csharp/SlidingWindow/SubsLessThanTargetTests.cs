@@ -52,8 +52,7 @@ public class SubsLessThanTargetTests
 
         Assert.True(
             Shared.EqualUnordered2D(got, want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

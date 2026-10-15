@@ -31,10 +31,7 @@ public class RearrangeDistTests
         Dictionary<char, int> lastSeen = [];
         for (int i = 0; i < output.Length; i++)
         {
-            if (
-                lastSeen.TryGetValue(output[i], out int previous)
-                && i - previous < k
-            )
+            if (lastSeen.TryGetValue(output[i], out int previous) && i - previous < k)
             {
                 return false;
             }

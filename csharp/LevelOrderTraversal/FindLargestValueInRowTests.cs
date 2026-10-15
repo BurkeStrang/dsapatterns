@@ -16,9 +16,7 @@ public class FindLargestValueInRowTests
     [MemberData(nameof(Cases))]
     public void LargestValues(string name, int?[] tree, int[] want)
     {
-        List<int> got = FindLargestValueInRow.LargestValues(
-            Shared.ToTree(tree)
-        );
+        List<int> got = FindLargestValueInRow.LargestValues(Shared.ToTree(tree));
 
         Assert.True(
             got.SequenceEqual(want),

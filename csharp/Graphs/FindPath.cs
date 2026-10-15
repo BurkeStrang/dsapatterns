@@ -60,12 +60,7 @@ internal static class FindPath
         return Dfs(graph, start, end, visited);
     }
 
-    private static bool Dfs(
-        List<int>[] graph,
-        int node,
-        int end,
-        bool[] visited
-    )
+    private static bool Dfs(List<int>[] graph, int node, int end, bool[] visited)
     {
         if (node == end)
         {

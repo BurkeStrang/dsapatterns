@@ -62,11 +62,7 @@ public class EmployeeFreeTimeTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindEmployeeFreeTime(
-        string name,
-        int[][][] schedule,
-        int[][] want
-    )
+    public void FindEmployeeFreeTime(string name, int[][][] schedule, int[][] want)
     {
         Interval[][] employees = schedule.Select(Shared.ToIntervals).ToArray();
 

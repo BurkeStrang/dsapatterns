@@ -33,10 +33,7 @@ namespace DsaPatterns.MergeIntervals;
 
 internal static class InsertInterval
 {
-    internal static List<Interval> Insert(
-        Interval[] intervals,
-        Interval newInterval
-    )
+    internal static List<Interval> Insert(Interval[] intervals, Interval newInterval)
     {
         if (intervals.Length == 0)
         {

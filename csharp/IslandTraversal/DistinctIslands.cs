@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.IslandTraversal;
 
 // You are given a 2D matrix containing only 1s (land) and 0s (water).
@@ -29,14 +27,7 @@ internal static class DistinctIslands
                 {
                     StringBuilder islandTraversal = new();
                     // 'O' for origin
-                    TraverseIslandDfs(
-                        matrix,
-                        visited,
-                        i,
-                        j,
-                        islandTraversal,
-                        'O'
-                    );
+                    TraverseIslandDfs(matrix, visited, i, j, islandTraversal, 'O');
                     islandsSet.Add(islandTraversal.ToString());
                 }
             }

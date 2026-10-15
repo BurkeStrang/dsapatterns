@@ -12,13 +12,7 @@ public class KClosestNumbersTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindClosestElements(
-        string name,
-        int[] arr,
-        int k,
-        int x,
-        int[] want
-    )
+    public void FindClosestElements(string name, int[] arr, int k, int x, int[] want)
     {
         List<int> got = KClosestNumbers.FindClosestElements(arr, k, x);
 

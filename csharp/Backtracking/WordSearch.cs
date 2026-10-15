@@ -56,13 +56,7 @@ internal static class WordSearch
 
     private static bool Dfs(char[][] board, string word, int i, int j, int k)
     {
-        if (
-            i < 0
-            || i >= board.Length
-            || j < 0
-            || j >= board[0].Length
-            || board[i][j] != word[k]
-        )
+        if (i < 0 || i >= board.Length || j < 0 || j >= board[0].Length || board[i][j] != word[k])
         {
             return false;
         }

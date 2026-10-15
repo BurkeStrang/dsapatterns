@@ -28,8 +28,7 @@ internal static class ScheduelingTask
         Dictionary<string, int> taskFrequencyMap = [];
         foreach (string task in tasks)
         {
-            taskFrequencyMap[task] =
-                taskFrequencyMap.GetValueOrDefault(task) + 1;
+            taskFrequencyMap[task] = taskFrequencyMap.GetValueOrDefault(task) + 1;
         }
 
         // max heap of tasks, ordered by frequency

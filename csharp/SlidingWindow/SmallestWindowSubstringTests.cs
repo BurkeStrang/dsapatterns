@@ -13,12 +13,7 @@ public class SmallestWindowSubstringTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindSubstring(
-        string name,
-        string str,
-        string pattern,
-        string want
-    )
+    public void FindSubstring(string name, string str, string pattern, string want)
     {
         string got = SmallestWindowSubstring.FindSubstring(str, pattern);
 

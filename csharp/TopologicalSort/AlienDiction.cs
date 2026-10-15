@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.TopologicalSort;
 
 // There is a dictionary containing words from an alien language

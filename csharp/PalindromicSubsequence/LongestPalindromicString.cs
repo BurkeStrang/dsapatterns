@@ -40,10 +40,7 @@ internal static class LongestPalindromicString
         if (st[startIndex] == st[endIndex])
         {
             int remainingLength = endIndex - startIndex - 1;
-            if (
-                remainingLength
-                == PalindromeLength(st, startIndex + 1, endIndex - 1)
-            )
+            if (remainingLength == PalindromeLength(st, startIndex + 1, endIndex - 1))
             {
                 return remainingLength + 2;
             }

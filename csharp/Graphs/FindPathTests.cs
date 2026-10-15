@@ -44,14 +44,7 @@ public class FindPathTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void ValidPath(
-        string name,
-        int n,
-        int[][] edges,
-        int start,
-        int end,
-        bool want
-    )
+    public void ValidPath(string name, int n, int[][] edges, int start, int end, bool want)
     {
         bool got = FindPath.ValidPath(n, edges, start, end);
 

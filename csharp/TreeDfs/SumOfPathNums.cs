@@ -28,7 +28,6 @@ internal static class SumOfPathNums
         }
 
         // traverse left and right subtrees
-        return FindPathSum(node.Left, currentSum)
-            + FindPathSum(node.Right, currentSum);
+        return FindPathSum(node.Left, currentSum) + FindPathSum(node.Right, currentSum);
     }
 }

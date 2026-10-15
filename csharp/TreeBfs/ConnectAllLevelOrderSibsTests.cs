@@ -15,9 +15,7 @@ public class ConnectAllLevelOrderSibsTests
     [MemberData(nameof(Cases))]
     public void ConnectAll(string name, int?[] tree, int[] want)
     {
-        TreeNode? gotRoot = ConnectAllLevelOrderSibs.ConnectAll(
-            Shared.ToTree(tree)
-        );
+        TreeNode? gotRoot = ConnectAllLevelOrderSibs.ConnectAll(Shared.ToTree(tree));
 
         List<int> got = FlattenNext(gotRoot);
         Assert.True(

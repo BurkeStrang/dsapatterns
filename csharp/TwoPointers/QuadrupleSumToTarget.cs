@@ -62,12 +62,7 @@ internal static class QuadrupleSumToTarget
             int sum = arr[first] + arr[second] + arr[left] + arr[right];
             if (sum == targetSum) // found the quadruplet
             {
-                quadruplets.Add([
-                    arr[first],
-                    arr[second],
-                    arr[left],
-                    arr[right],
-                ]);
+                quadruplets.Add([arr[first], arr[second], arr[left], arr[right]]);
                 left++;
                 right--;
                 while (left < right && arr[left] == arr[left - 1])

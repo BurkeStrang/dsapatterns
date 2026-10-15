@@ -51,9 +51,7 @@ internal static class RearrangeString
             // Check if the previous character can be added back to the list
             if (previousChar != '\0' && charFrequencyMap[previousChar] > 0)
             {
-                charFrequencies.Add(
-                    (previousChar, charFrequencyMap[previousChar])
-                );
+                charFrequencies.Add((previousChar, charFrequencyMap[previousChar]));
             }
 
             // Append the current character to the result string and decrement

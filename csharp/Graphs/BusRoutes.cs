@@ -47,11 +47,7 @@ namespace DsaPatterns.Graphs;
 
 internal static class BusRoutes
 {
-    internal static int NumBusesToDestination(
-        int[][] routes,
-        int source,
-        int target
-    )
+    internal static int NumBusesToDestination(int[][] routes, int source, int target)
     {
         if (source == target)
         {

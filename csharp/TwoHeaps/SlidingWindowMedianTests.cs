@@ -12,12 +12,7 @@ public class SlidingWindowMedianTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindSlidingWindowMedian(
-        string name,
-        int[] nums,
-        int k,
-        double[] expected
-    )
+    public void FindSlidingWindowMedian(string name, int[] nums, int k, double[] expected)
     {
         SlidingWindowMedian solution = new();
 
@@ -25,8 +20,7 @@ public class SlidingWindowMedianTests
 
         Assert.True(
             result.SequenceEqual(expected),
-            $"{name}: got {Shared.Format(result)}, "
-                + $"expected {Shared.Format(expected)}"
+            $"{name}: got {Shared.Format(result)}, " + $"expected {Shared.Format(expected)}"
         );
     }
 }

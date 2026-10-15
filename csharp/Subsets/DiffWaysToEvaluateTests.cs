@@ -11,11 +11,7 @@ public class DiffWaysToEvaluateTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void DiffWaysToEvaluateExpression(
-        string name,
-        string input,
-        int[] want
-    )
+    public void DiffWaysToEvaluateExpression(string name, string input, int[] want)
     {
         List<int> got = DiffWaysToEvaluate.DiffWaysToEvaluateExpression(input);
 

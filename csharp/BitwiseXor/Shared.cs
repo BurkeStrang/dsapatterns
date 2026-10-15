@@ -29,8 +29,6 @@ internal static class Shared
 
     internal static string Format2D(int[][] rows)
     {
-        return "["
-            + string.Join(", ", rows.Select(r => $"[{string.Join(", ", r)}]"))
-            + "]";
+        return "[" + string.Join(", ", rows.Select(r => $"[{string.Join(", ", r)}]")) + "]";
     }
 }

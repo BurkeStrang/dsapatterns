@@ -31,8 +31,7 @@ public class PermutationsTests
         IEnumerable<string> wantRows = want.Select(Shared.Format).Order();
         Assert.True(
             gotRows.SequenceEqual(wantRows),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

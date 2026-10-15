@@ -7,13 +7,7 @@ public class SumOfElementsTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindSumOfElements(
-        string name,
-        int[] nums,
-        int k1,
-        int k2,
-        int want
-    )
+    public void FindSumOfElements(string name, int[] nums, int k1, int k2, int want)
     {
         int got = SumOfElements.FindSumOfElements(nums, k1, k2);
 

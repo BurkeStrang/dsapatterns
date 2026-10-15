@@ -25,10 +25,7 @@ namespace DsaPatterns.MergeIntervals;
 
 internal static class Intersection
 {
-    internal static List<Interval> IntersectingIntervals(
-        Interval[] arr1,
-        Interval[] arr2
-    )
+    internal static List<Interval> IntersectingIntervals(Interval[] arr1, Interval[] arr2)
     {
         List<Interval> result = [];
         int i = 0;
@@ -40,10 +37,7 @@ internal static class Intersection
             // interval
             if (
                 (arr1[i].Start >= arr2[j].Start && arr1[i].Start <= arr2[j].End)
-                || (
-                    arr2[j].Start >= arr1[i].Start
-                    && arr2[j].Start <= arr1[i].End
-                )
+                || (arr2[j].Start >= arr1[i].Start && arr2[j].Start <= arr1[i].End)
             )
             {
                 // store the intersection part

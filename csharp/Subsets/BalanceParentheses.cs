@@ -28,11 +28,7 @@ internal static class BalanceParentheses
                 if (ps.OpenCount < num)
                 {
                     queue.Enqueue(
-                        new ParenthesesString(
-                            ps.Str + "(",
-                            ps.OpenCount + 1,
-                            ps.CloseCount
-                        )
+                        new ParenthesesString(ps.Str + "(", ps.OpenCount + 1, ps.CloseCount)
                     );
                 }
 
@@ -40,11 +36,7 @@ internal static class BalanceParentheses
                 if (ps.OpenCount > ps.CloseCount)
                 {
                     queue.Enqueue(
-                        new ParenthesesString(
-                            ps.Str + ")",
-                            ps.OpenCount,
-                            ps.CloseCount + 1
-                        )
+                        new ParenthesesString(ps.Str + ")", ps.OpenCount, ps.CloseCount + 1)
                     );
                 }
             }

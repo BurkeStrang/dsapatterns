@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.Greedy;
 
 // Given a string s containing 0 to 9 digits, create the largest possible
@@ -86,11 +84,7 @@ internal static class LargestPalindromicNumber
     private static string ReverseString(string s)
     {
         char[] chars = s.ToCharArray();
-        for (
-            int left = 0, right = chars.Length - 1;
-            left < right;
-            left++, right--
-        )
+        for (int left = 0, right = chars.Length - 1; left < right; left++, right--)
         {
             (chars[left], chars[right]) = (chars[right], chars[left]);
         }

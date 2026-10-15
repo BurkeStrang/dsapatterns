@@ -37,11 +37,7 @@ internal static class FindMinMissingPosNum
         // ignored.
         while (i < nums.Length)
         {
-            if (
-                nums[i] > 0
-                && nums[i] <= nums.Length
-                && nums[i] != nums[nums[i] - 1]
-            )
+            if (nums[i] > 0 && nums[i] <= nums.Length && nums[i] != nums[nums[i] - 1])
             {
                 Shared.Swap(nums, i, nums[i] - 1);
             }

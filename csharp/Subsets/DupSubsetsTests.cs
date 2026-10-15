@@ -41,9 +41,6 @@ public class DupSubsetsTests
 
         string gotText = Shared.Format2D(Shared.SortRows(got));
         string wantText = Shared.Format2D(Shared.SortRows(want));
-        Assert.True(
-            gotText == wantText,
-            $"{name}: got {gotText}, want {wantText}"
-        );
+        Assert.True(gotText == wantText, $"{name}: got {gotText}, want {wantText}");
     }
 }

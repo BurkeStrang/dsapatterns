@@ -8,11 +8,7 @@ public class MaxSumTests
         {
             { "simple tree", [1, 2, 3], 6 }, // 2 + 1 + 3
             // 15 + 20 + 7
-            {
-                "tree with negative values",
-                [-10, 9, 20, null, null, 15, 7],
-                42
-            },
+            { "tree with negative values", [-10, 9, 20, null, null, 15, 7], 42 },
         };
 
     [Theory]

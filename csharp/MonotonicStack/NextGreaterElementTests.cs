@@ -14,12 +14,7 @@ public class NextGreaterElementTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindNextGreaterElement(
-        string name,
-        int[] nums1,
-        int[] nums2,
-        int[] want
-    )
+    public void FindNextGreaterElement(string name, int[] nums1, int[] nums2, int[] want)
     {
         int[] got = NextGreaterElement.FindNextGreaterElement(nums1, nums2);
 

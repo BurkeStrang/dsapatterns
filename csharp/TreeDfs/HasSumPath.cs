@@ -46,7 +46,6 @@ internal static class HasSumPath
 
         // recursively call to traverse the left and right sub-tree
         // return true if any of the two recursive call return true
-        return HasPath(root.Left, sum - root.Val)
-            || HasPath(root.Right, sum - root.Val);
+        return HasPath(root.Left, sum - root.Val) || HasPath(root.Right, sum - root.Val);
     }
 }

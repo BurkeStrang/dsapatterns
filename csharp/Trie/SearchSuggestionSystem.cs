@@ -92,10 +92,7 @@ internal partial class Trie
 
 internal static class SearchSuggestionSystem
 {
-    internal static List<List<string>> SuggestedProducts(
-        string[] products,
-        string searchWord
-    )
+    internal static List<List<string>> SuggestedProducts(string[] products, string searchWord)
     {
         Trie trie = new();
         foreach (string product in products)

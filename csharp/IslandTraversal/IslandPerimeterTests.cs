@@ -78,9 +78,7 @@ public class IslandPerimeterTests
     [MemberData(nameof(Cases))]
     public void FindIslandPerimeter(string name, int[][] matrix, int want)
     {
-        int got = IslandPerimeter.FindIslandPerimeter(
-            Shared.CopyMatrix(matrix)
-        );
+        int got = IslandPerimeter.FindIslandPerimeter(Shared.CopyMatrix(matrix));
 
         Assert.True(got == want, $"{name}: got {got}, want {want}");
     }

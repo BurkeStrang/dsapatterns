@@ -38,12 +38,7 @@ public class TaskScheduelingTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void IsSchedulingPossible(
-        string name,
-        int tasks,
-        int[][] prerequisites,
-        bool want
-    )
+    public void IsSchedulingPossible(string name, int tasks, int[][] prerequisites, bool want)
     {
         bool got = TaskSchedueling.IsSchedulingPossible(tasks, prerequisites);
 

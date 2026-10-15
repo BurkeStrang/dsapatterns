@@ -92,10 +92,7 @@ internal static class EvenOddTree
                 for (int i = 0; i < values.Count; i++)
                 {
                     // Even level: values must be odd and strictly increasing
-                    if (
-                        values[i] % 2 == 0
-                        || (i > 0 && values[i] <= values[i - 1])
-                    )
+                    if (values[i] % 2 == 0 || (i > 0 && values[i] <= values[i - 1]))
                     {
                         return false;
                     }
@@ -106,10 +103,7 @@ internal static class EvenOddTree
                 for (int i = 0; i < values.Count; i++)
                 {
                     // Odd level: values must be even and strictly decreasing
-                    if (
-                        values[i] % 2 != 0
-                        || (i > 0 && values[i] >= values[i - 1])
-                    )
+                    if (values[i] % 2 != 0 || (i > 0 && values[i] >= values[i - 1]))
                     {
                         return false;
                     }

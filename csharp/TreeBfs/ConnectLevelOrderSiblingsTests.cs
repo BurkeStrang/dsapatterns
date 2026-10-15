@@ -32,15 +32,12 @@ public class ConnectLevelOrderSiblingsTests
     [MemberData(nameof(Cases))]
     public void Connect(string name, int?[] tree, int[][] want)
     {
-        TreeNode? gotRoot = ConnectLevelOrderSiblings.Connect(
-            Shared.ToTree(tree)
-        );
+        TreeNode? gotRoot = ConnectLevelOrderSiblings.Connect(Shared.ToTree(tree));
 
         List<List<int>> got = LevelOrderNext(gotRoot);
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 

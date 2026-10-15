@@ -31,11 +31,7 @@ public class UniqueAbrevTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void GenerateGeneralizedAbbreviation(
-        string name,
-        string word,
-        string[] want
-    )
+    public void GenerateGeneralizedAbbreviation(string name, string word, string[] want)
     {
         List<string> got = UniqueAbrev.GenerateGeneralizedAbbreviation(word);
 

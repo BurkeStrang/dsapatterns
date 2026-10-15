@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.MonotonicStack;
 
 // Given a non-negative integer represented as a string num and an integer k,

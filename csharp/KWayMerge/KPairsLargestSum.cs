@@ -17,11 +17,7 @@ namespace DsaPatterns.KWayMerge;
 internal static class KPairsLargestSum
 {
     // FindKLargestPairs finds k largest pairs.
-    internal static List<int[]> FindKLargestPairs(
-        int[] nums1,
-        int[] nums2,
-        int k
-    )
+    internal static List<int[]> FindKLargestPairs(int[] nums1, int[] nums2, int k)
     {
         // min-heap of pairs, ordered by their sum
         PriorityQueue<int[], int> minHeap = new();

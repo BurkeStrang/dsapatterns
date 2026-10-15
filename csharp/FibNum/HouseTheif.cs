@@ -37,9 +37,7 @@ internal static class HouseTheif
         }
 
         // steal from current house and skip one to steal from the next house
-        int stealCurrent =
-            wealth[currentIndex]
-            + FindMaxStealRecursive(wealth, currentIndex + 2);
+        int stealCurrent = wealth[currentIndex] + FindMaxStealRecursive(wealth, currentIndex + 2);
         // skip current house to steal from the adjacent house
         int skipCurrent = FindMaxStealRecursive(wealth, currentIndex + 1);
 

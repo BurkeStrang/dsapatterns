@@ -37,12 +37,7 @@ internal static class TripletesSumZero
         return triplets;
     }
 
-    private static void SearchPair(
-        int[] arr,
-        int targetSum,
-        int left,
-        List<List<int>> triplets
-    )
+    private static void SearchPair(int[] arr, int targetSum, int left, List<List<int>> triplets)
     {
         int right = arr.Length - 1;
         while (left < right)

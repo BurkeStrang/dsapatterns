@@ -32,22 +32,13 @@ public class CombinationSumTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindCombinations(
-        string name,
-        int[] candidates,
-        int target,
-        int[][] want
-    )
+    public void FindCombinations(string name, int[] candidates, int target, int[][] want)
     {
-        List<List<int>> got = CombinationSum.FindCombinations(
-            candidates,
-            target
-        );
+        List<List<int>> got = CombinationSum.FindCombinations(candidates, target);
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

@@ -26,12 +26,7 @@ internal static class FactorCombinations
         return result;
     }
 
-    private static void GetAllFactors(
-        int n,
-        int start,
-        List<int> curr,
-        List<List<int>> result
-    )
+    private static void GetAllFactors(int n, int start, List<int> curr, List<List<int>> result)
     {
         for (int i = start; i <= (int)Math.Sqrt(n); i++)
         {

@@ -66,12 +66,7 @@ internal static class NumOfClosed
     }
 
     // IsClosedIslandDfs checks if the island is closed using DFS
-    private static bool IsClosedIslandDfs(
-        int[][] matrix,
-        bool[][] visited,
-        int x,
-        int y
-    )
+    private static bool IsClosedIslandDfs(int[][] matrix, bool[][] visited, int x, int y)
     {
         if (x < 0 || x >= matrix.Length || y < 0 || y >= matrix[0].Length)
         {

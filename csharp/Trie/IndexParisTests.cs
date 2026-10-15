@@ -29,19 +29,13 @@ public class IndexParisTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void IndexPairs(
-        string name,
-        string text,
-        string[] words,
-        int[][] want
-    )
+    public void IndexPairs(string name, string text, string[] words, int[][] want)
     {
         List<int[]> got = IndexParis.IndexPairs(text, words);
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

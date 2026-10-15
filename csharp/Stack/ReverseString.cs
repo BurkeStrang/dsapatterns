@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.Stack;
 
 // Given a string, write a function that uses a stack to reverse the string. The

@@ -50,10 +50,7 @@ internal static class KSmallest
             node.ElementIndex++;
             if (lists[node.ArrayIndex].Length > node.ElementIndex)
             {
-                minHeap.Enqueue(
-                    node,
-                    lists[node.ArrayIndex][node.ElementIndex]
-                );
+                minHeap.Enqueue(node, lists[node.ArrayIndex][node.ElementIndex]);
             }
         }
 

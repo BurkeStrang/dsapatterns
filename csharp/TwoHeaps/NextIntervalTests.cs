@@ -63,9 +63,7 @@ public class NextIntervalTests
     [MemberData(nameof(Cases))]
     public void FindNextInterval(string name, int[][] intervals, int[] want)
     {
-        Interval[] input = intervals
-            .Select(pair => new Interval(pair[0], pair[1]))
-            .ToArray();
+        Interval[] input = intervals.Select(pair => new Interval(pair[0], pair[1])).ToArray();
 
         int[] got = NextInterval.FindNextInterval(input);
 

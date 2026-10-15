@@ -3,11 +3,7 @@ namespace DsaPatterns.KnapsackDp;
 public class CountOfSubsetSumTests
 {
     public static TheoryData<string, int[], int, int> Cases =>
-        new()
-        {
-            { "Example 1", [1, 1, 2, 3], 4, 3 },
-            { "Example 2", [1, 2, 7, 1, 5], 9, 3 },
-        };
+        new() { { "Example 1", [1, 1, 2, 3], 4, 3 }, { "Example 2", [1, 2, 7, 1, 5], 9, 3 } };
 
     [Theory]
     [MemberData(nameof(Cases))]

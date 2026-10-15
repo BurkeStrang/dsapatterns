@@ -7,13 +7,7 @@ public class Knapsack01Tests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void SolveKnapsack(
-        string name,
-        int[] profits,
-        int[] weights,
-        int capacity,
-        int want
-    )
+    public void SolveKnapsack(string name, int[] profits, int[] weights, int capacity, int want)
     {
         int got = Knapsack01.SolveKnapsack(profits, weights, capacity);
 

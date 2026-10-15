@@ -12,12 +12,7 @@ public class WordConcatTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindWordConcatenation(
-        string name,
-        string str,
-        string[] words,
-        int[] want
-    )
+    public void FindWordConcatenation(string name, string str, string[] words, int[] want)
     {
         List<int> got = WordConcat.FindWordConcatenation(str, words);
 

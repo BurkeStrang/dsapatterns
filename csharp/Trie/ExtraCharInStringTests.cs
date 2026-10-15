@@ -12,12 +12,7 @@ public class ExtraCharInStringTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void MinExtraChar(
-        string name,
-        string s,
-        string[] dictionary,
-        int want
-    )
+    public void MinExtraChar(string name, string s, string[] dictionary, int want)
     {
         ExtraCharInString solution = new();
 

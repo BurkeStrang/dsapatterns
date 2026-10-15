@@ -32,13 +32,7 @@ public class BusRoutesTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void NumBusesToDestination(
-        string name,
-        int[][] routes,
-        int source,
-        int target,
-        int want
-    )
+    public void NumBusesToDestination(string name, int[][] routes, int source, int target, int want)
     {
         int got = BusRoutes.NumBusesToDestination(routes, source, target);
 

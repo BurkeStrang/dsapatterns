@@ -30,8 +30,7 @@ internal static class NextInterval
                 int topStart = maxStartHeap.Dequeue();
                 while (
                     maxStartHeap.Count > 0
-                    && intervals[maxStartHeap.Peek()].Start
-                        >= intervals[topEnd].End
+                    && intervals[maxStartHeap.Peek()].Start >= intervals[topEnd].End
                 )
                 {
                     topStart = maxStartHeap.Dequeue();

@@ -22,12 +22,7 @@ public class AllPathsForSumTests
                     [12, 1, 10],
                 ]
             },
-            {
-                "No path",
-                [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1],
-                100,
-                []
-            },
+            { "No path", [5, 4, 8, 11, null, 13, 4, 7, 2, null, null, 5, 1], 100, [] },
             { "Empty tree", [], 0, [] },
         };
 
@@ -35,15 +30,11 @@ public class AllPathsForSumTests
     [MemberData(nameof(Cases))]
     public void FindPaths(string name, int?[] tree, int sum, int[][] want)
     {
-        List<List<int>> got = AllPathsForSum.FindPaths(
-            Shared.ToTree(tree),
-            sum
-        );
+        List<List<int>> got = AllPathsForSum.FindPaths(Shared.ToTree(tree), sum);
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

@@ -6,31 +6,10 @@ public class MaxCapitalTests
         new()
         {
             { "basic example", [0, 1, 2], [1, 2, 3], 2, 1, 6 },
-            {
-                "not enough capital for any project",
-                [5, 10, 15],
-                [1, 2, 3],
-                3,
-                0,
-                0
-            },
-            {
-                "all projects affordable from start",
-                [0, 0, 0],
-                [1, 2, 3],
-                2,
-                0,
-                5
-            },
+            { "not enough capital for any project", [5, 10, 15], [1, 2, 3], 3, 0, 0 },
+            { "all projects affordable from start", [0, 0, 0], [1, 2, 3], 2, 0, 5 },
             { "single project", [0], [5], 1, 0, 5 },
-            {
-                "chain of unlocking projects",
-                [0, 1, 2, 3],
-                [1, 1, 1, 1],
-                4,
-                0,
-                4
-            },
+            { "chain of unlocking projects", [0, 1, 2, 3], [1, 1, 1, 1], 4, 0, 4 },
         };
 
     [Theory]
@@ -51,9 +30,6 @@ public class MaxCapitalTests
             initialCapital
         );
 
-        Assert.True(
-            result == expected,
-            $"{name}: got {result}, expected {expected}"
-        );
+        Assert.True(result == expected, $"{name}: got {result}, expected {expected}");
     }
 }

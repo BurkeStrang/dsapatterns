@@ -22,9 +22,7 @@ internal static class Shared
 
     internal static string Format2D(int[][] rows)
     {
-        IEnumerable<string> parts = rows.Select(row =>
-            $"[{string.Join(", ", row)}]"
-        );
+        IEnumerable<string> parts = rows.Select(row => $"[{string.Join(", ", row)}]");
         return $"[{string.Join(", ", parts)}]";
     }
 }

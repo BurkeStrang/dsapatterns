@@ -33,12 +33,7 @@ public class MinNumReachAllNodesTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindSmallestSetOfVertices(
-        string name,
-        int n,
-        int[][] edges,
-        int[] want
-    )
+    public void FindSmallestSetOfVertices(string name, int n, int[][] edges, int[] want)
     {
         List<int> got = MinNumReachAllNodes.FindSmallestSetOfVertices(n, edges);
 

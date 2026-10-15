@@ -15,10 +15,7 @@ internal static class MaxAreaIsland
                 if (matrix[i][j] == 1) // only if the cell is a land
                 {
                     // we have found an island
-                    biggestIslandArea = Math.Max(
-                        biggestIslandArea,
-                        GetIslandArea(matrix, i, j)
-                    );
+                    biggestIslandArea = Math.Max(biggestIslandArea, GetIslandArea(matrix, i, j));
                 }
             }
         }

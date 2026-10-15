@@ -27,22 +27,13 @@ public class QuadrupleSumToTargetTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void SearchQuadruplets(
-        string name,
-        int[] arr,
-        int target,
-        int[][] want
-    )
+    public void SearchQuadruplets(string name, int[] arr, int target, int[][] want)
     {
-        List<List<int>> got = QuadrupleSumToTarget.SearchQuadruplets(
-            arr,
-            target
-        );
+        List<List<int>> got = QuadrupleSumToTarget.SearchQuadruplets(arr, target);
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

@@ -38,15 +38,9 @@ public class ConflictingAppointmentsTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void CanAttendAllAppointments(
-        string name,
-        int[][] intervals,
-        bool want
-    )
+    public void CanAttendAllAppointments(string name, int[][] intervals, bool want)
     {
-        bool got = ConflictingAppointments.CanAttendAllAppointments(
-            Shared.ToIntervals(intervals)
-        );
+        bool got = ConflictingAppointments.CanAttendAllAppointments(Shared.ToIntervals(intervals));
 
         Assert.True(got == want, $"{name}: got {got}, want {want}");
     }

@@ -44,9 +44,7 @@ public class DistinctIslandsTests
     [MemberData(nameof(Cases))]
     public void FindDistinctIslandsDfs(string name, int[][] matrix, int want)
     {
-        int got = DistinctIslands.FindDistinctIslandsDfs(
-            Shared.CopyMatrix(matrix)
-        );
+        int got = DistinctIslands.FindDistinctIslandsDfs(Shared.CopyMatrix(matrix));
 
         Assert.True(got == want, $"{name}: got {got}, want {want}");
     }

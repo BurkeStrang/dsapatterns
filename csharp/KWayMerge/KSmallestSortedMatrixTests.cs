@@ -19,12 +19,7 @@ public class KSmallestSortedMatrixTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindKthSmallestPoint(
-        string name,
-        int[][] matrix,
-        int k,
-        int want
-    )
+    public void FindKthSmallestPoint(string name, int[][] matrix, int k, int want)
     {
         int got = KSmallestSortedMatrix.FindKthSmallestPoint(matrix, k);
 

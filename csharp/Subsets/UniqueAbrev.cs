@@ -59,13 +59,7 @@ internal static class UniqueAbrev
         {
             // continue abbreviating by incrementing the current abbreviation
             // count
-            GenerateAbbreviationRecursive(
-                word,
-                abWord,
-                start + 1,
-                count + 1,
-                result
-            );
+            GenerateAbbreviationRecursive(word, abWord, start + 1, count + 1, result);
 
             // restart abbreviating, append the count and the current character
             // to the string
@@ -74,13 +68,7 @@ internal static class UniqueAbrev
                 abWord += count;
             }
 
-            GenerateAbbreviationRecursive(
-                word,
-                abWord + word[start],
-                start + 1,
-                0,
-                result
-            );
+            GenerateAbbreviationRecursive(word, abWord + word[start], start + 1, 0, result);
         }
     }
 }

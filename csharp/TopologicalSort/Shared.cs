@@ -7,11 +7,7 @@ internal static class Shared
     // of each [parent, child] edge placed before the child. A graph can have
     // several valid orders, so tests check the order instead of comparing it
     // with one fixed answer.
-    internal static bool IsTopologicalOrder(
-        IReadOnlyList<int> order,
-        int vertices,
-        int[][] edges
-    )
+    internal static bool IsTopologicalOrder(IReadOnlyList<int> order, int vertices, int[][] edges)
     {
         if (!order.Order().SequenceEqual(Enumerable.Range(0, vertices)))
         {

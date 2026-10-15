@@ -27,8 +27,7 @@ internal static class MaxCapital
         {
             // move all affordable projects into the max-profit heap
             while (
-                minCapitalHeap.Count > 0
-                && capitalArr[minCapitalHeap.Peek()] <= availableCapital
+                minCapitalHeap.Count > 0 && capitalArr[minCapitalHeap.Peek()] <= availableCapital
             )
             {
                 int project = minCapitalHeap.Dequeue();

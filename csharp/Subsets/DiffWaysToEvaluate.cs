@@ -28,11 +28,7 @@ internal static class DiffWaysToEvaluate
         List<int> result = [];
         // base case: if the input string is a number, parse and add it to
         // output.
-        if (
-            !input.Contains('+')
-            && !input.Contains('-')
-            && !input.Contains('*')
-        )
+        if (!input.Contains('+') && !input.Contains('-') && !input.Contains('*'))
         {
             result.Add(int.Parse(input));
         }
@@ -45,12 +41,8 @@ internal static class DiffWaysToEvaluate
                 {
                     // break the equation here into two parts and make
                     // recursively calls
-                    List<int> leftParts = DiffWaysToEvaluateExpression(
-                        input[..i]
-                    );
-                    List<int> rightParts = DiffWaysToEvaluateExpression(
-                        input[(i + 1)..]
-                    );
+                    List<int> leftParts = DiffWaysToEvaluateExpression(input[..i]);
+                    List<int> rightParts = DiffWaysToEvaluateExpression(input[(i + 1)..]);
                     foreach (int part1 in leftParts)
                     {
                         foreach (int part2 in rightParts)

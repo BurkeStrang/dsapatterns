@@ -55,9 +55,7 @@ internal static class DutchNationalFlag
                     i++;
                     break;
                 default:
-                    throw new ArgumentException(
-                        "Invalid Integer Must be 0,1,2"
-                    );
+                    throw new ArgumentException("Invalid Integer Must be 0,1,2");
             }
         }
 

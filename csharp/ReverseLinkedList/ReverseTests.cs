@@ -14,9 +14,7 @@ public class ReverseTests
     [MemberData(nameof(Cases))]
     public void ReverseList(string name, int[] head, int[] want)
     {
-        List<int> got = Shared.ToValues(
-            Reverse.ReverseList(Shared.ToList(head))
-        );
+        List<int> got = Shared.ToValues(Reverse.ReverseList(Shared.ToList(head)));
 
         Assert.True(
             got.SequenceEqual(want),

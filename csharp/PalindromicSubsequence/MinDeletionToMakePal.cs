@@ -38,16 +38,11 @@ internal static class MinDeletionToMakePal
 
         for (int startIndex = st.Length - 1; startIndex >= 0; startIndex--)
         {
-            for (
-                int endIndex = startIndex + 1;
-                endIndex < st.Length;
-                endIndex++
-            )
+            for (int endIndex = startIndex + 1; endIndex < st.Length; endIndex++)
             {
                 if (st[startIndex] == st[endIndex])
                 {
-                    dp[startIndex, endIndex] =
-                        2 + dp[startIndex + 1, endIndex - 1];
+                    dp[startIndex, endIndex] = 2 + dp[startIndex + 1, endIndex - 1];
                 }
                 else
                 {

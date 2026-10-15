@@ -74,8 +74,7 @@ internal static class FloodFill
         {
             int mx = x + move[0];
             int my = y + move[1];
-            bool matched =
-                mx >= 0 && mx < m && my >= 0 && my < n && matrix[mx][my] == 1;
+            bool matched = mx >= 0 && mx < m && my >= 0 && my < n && matrix[mx][my] == 1;
             if (matched)
             {
                 FloodFillDfs(matrix, mx, my, newColor);

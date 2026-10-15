@@ -11,12 +11,7 @@ public class StringAnagramsTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindStringAnagrams(
-        string name,
-        string str,
-        string pattern,
-        int[] want
-    )
+    public void FindStringAnagrams(string name, string str, string pattern, int[] want)
     {
         List<int> got = StringAnagrams.FindStringAnagrams(str, pattern);
 

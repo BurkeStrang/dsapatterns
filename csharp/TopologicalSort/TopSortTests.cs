@@ -39,8 +39,7 @@ public class TopSortTests
 
         Assert.True(
             Shared.IsTopologicalOrder(got, vertices, edges),
-            $"{name}: got {Shared.Format(got)}, "
-                + $"want something like {Shared.Format(want)}"
+            $"{name}: got {Shared.Format(got)}, " + $"want something like {Shared.Format(want)}"
         );
     }
 }

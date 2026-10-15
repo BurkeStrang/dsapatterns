@@ -59,18 +59,8 @@ internal static class CountPathsSum
         map[currentPathSum] = map.GetValueOrDefault(currentPathSum) + 1;
 
         // Counting the number of paths from the left and right subtrees.
-        pathCount += CountPathsPrefixSum(
-            node.Left,
-            targetSum,
-            map,
-            currentPathSum
-        );
-        pathCount += CountPathsPrefixSum(
-            node.Right,
-            targetSum,
-            map,
-            currentPathSum
-        );
+        pathCount += CountPathsPrefixSum(node.Left, targetSum, map, currentPathSum);
+        pathCount += CountPathsPrefixSum(node.Right, targetSum, map, currentPathSum);
 
         // Removing the current path sum from the map for backtracking.
         // 'currentPathSum' is the prefix sum up to the current node. When we

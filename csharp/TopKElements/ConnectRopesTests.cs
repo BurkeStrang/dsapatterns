@@ -12,11 +12,7 @@ public class ConnectRopesTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void MinimumCostToConnectRopes(
-        string name,
-        int[] ropeLengths,
-        int want
-    )
+    public void MinimumCostToConnectRopes(string name, int[] ropeLengths, int want)
     {
         int got = ConnectRopes.MinimumCostToConnectRopes(ropeLengths);
 

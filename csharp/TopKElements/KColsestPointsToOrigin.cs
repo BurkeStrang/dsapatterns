@@ -32,10 +32,7 @@ internal static class KColsestPointsToOrigin
         // top point from heap and add the point from the input array
         for (int i = k; i < points.Length; i++)
         {
-            if (
-                points[i].DistFromOrigin()
-                < maxPointHeap.Peek().DistFromOrigin()
-            )
+            if (points[i].DistFromOrigin() < maxPointHeap.Peek().DistFromOrigin())
             {
                 maxPointHeap.Dequeue();
                 maxPointHeap.Enqueue(points[i], points[i].DistFromOrigin());

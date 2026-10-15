@@ -17,9 +17,7 @@ public class RotateLinkedListTests
     [MemberData(nameof(Cases))]
     public void Rotate(string name, int[] head, int rotations, int[] want)
     {
-        List<int> got = Shared.ToValues(
-            RotateLinkedList.Rotate(Shared.ToList(head), rotations)
-        );
+        List<int> got = Shared.ToValues(RotateLinkedList.Rotate(Shared.ToList(head), rotations));
 
         Assert.True(
             got.SequenceEqual(want),

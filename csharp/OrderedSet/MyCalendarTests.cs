@@ -10,7 +10,7 @@ public class MyCalendarTests
                 [
                     [10, 20],
                     [15, 25],
-                    [20, 30]
+                    [20, 30],
                 ],
                 [true, false, true]
             },
@@ -19,7 +19,7 @@ public class MyCalendarTests
                 [
                     [5, 10],
                     [10, 15],
-                    [5, 15]
+                    [5, 15],
                 ],
                 [true, true, false]
             },
@@ -28,10 +28,10 @@ public class MyCalendarTests
                 [
                     [8, 13],
                     [13, 17],
-                    [17, 20]
+                    [17, 20],
                 ],
                 [true, true, true]
-            }
+            },
         };
 
     [Theory]
@@ -42,9 +42,9 @@ public class MyCalendarTests
 
         Assert.True(
             want.SequenceEqual(got),
-            $"{name} FAILED\n" +
-            $"Want: [{string.Join(", ", want)}]\n" +
-            $"Got:   [{string.Join(", ", got)}]"
+            $"{name} FAILED\n"
+                + $"Want: [{string.Join(", ", want)}]\n"
+                + $"Got:   [{string.Join(", ", got)}]"
         );
     }
 }

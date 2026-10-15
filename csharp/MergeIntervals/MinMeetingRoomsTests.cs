@@ -48,9 +48,7 @@ public class MinMeetingRoomsTests
     [MemberData(nameof(Cases))]
     public void FindMinimumMeetingRooms(string name, int[][] meetings, int want)
     {
-        Meeting[] input = meetings
-            .Select(m => new Meeting(m[0], m[1]))
-            .ToArray();
+        Meeting[] input = meetings.Select(m => new Meeting(m[0], m[1])).ToArray();
 
         int got = MinMeetingRooms.FindMinimumMeetingRooms(input);
 

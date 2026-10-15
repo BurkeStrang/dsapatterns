@@ -3,7 +3,7 @@
 [*.cs]
 indent_style = space
 indent_size = 4
-max_line_length = 80
+max_line_length = 100
 
 # Style
 csharp_style_namespace_declarations = file_scoped:warning

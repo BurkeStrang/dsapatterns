@@ -62,34 +62,22 @@ internal static class HasCycle
 
         visited[x][y] = true;
 
-        if (
-            x + 1 != prevX
-            && DfsCycle(matrix, visited, x + 1, y, x, y, orgChar)
-        )
+        if (x + 1 != prevX && DfsCycle(matrix, visited, x + 1, y, x, y, orgChar))
         {
             return true;
         }
 
-        if (
-            x - 1 != prevX
-            && DfsCycle(matrix, visited, x - 1, y, x, y, orgChar)
-        )
+        if (x - 1 != prevX && DfsCycle(matrix, visited, x - 1, y, x, y, orgChar))
         {
             return true;
         }
 
-        if (
-            y + 1 != prevY
-            && DfsCycle(matrix, visited, x, y + 1, x, y, orgChar)
-        )
+        if (y + 1 != prevY && DfsCycle(matrix, visited, x, y + 1, x, y, orgChar))
         {
             return true;
         }
 
-        if (
-            y - 1 != prevY
-            && DfsCycle(matrix, visited, x, y - 1, x, y, orgChar)
-        )
+        if (y - 1 != prevY && DfsCycle(matrix, visited, x, y - 1, x, y, orgChar))
         {
             return true;
         }

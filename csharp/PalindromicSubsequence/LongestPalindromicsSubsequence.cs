@@ -29,11 +29,7 @@ internal static class LongestPalindromicsSubsequence
         return FindLpsLengthRecursive(st, 0, st.Length - 1);
     }
 
-    private static int FindLpsLengthRecursive(
-        string st,
-        int startIndex,
-        int endIndex
-    )
+    private static int FindLpsLengthRecursive(string st, int startIndex, int endIndex)
     {
         if (startIndex > endIndex)
         {

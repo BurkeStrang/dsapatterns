@@ -23,11 +23,7 @@ internal static class CountOfSubsetSum
         return CountSubsetsRecursive(num, sum, 0);
     }
 
-    private static int CountSubsetsRecursive(
-        int[] num,
-        int sum,
-        int currentIndex
-    )
+    private static int CountSubsetsRecursive(int[] num, int sum, int currentIndex)
     {
         // base checks
         if (sum == 0)
@@ -46,11 +42,7 @@ internal static class CountOfSubsetSum
         int sum1 = 0;
         if (num[currentIndex] <= sum)
         {
-            sum1 = CountSubsetsRecursive(
-                num,
-                sum - num[currentIndex],
-                currentIndex + 1
-            );
+            sum1 = CountSubsetsRecursive(num, sum - num[currentIndex], currentIndex + 1);
         }
 
         // recursive call after excluding the number at the currentIndex

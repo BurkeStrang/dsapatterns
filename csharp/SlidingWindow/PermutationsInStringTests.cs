@@ -13,12 +13,7 @@ public class PermutationsInStringTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindPermutation(
-        string name,
-        string str,
-        string pattern,
-        bool want
-    )
+    public void FindPermutation(string name, string str, string pattern, bool want)
     {
         bool got = PermutationsInString.FindPermutation(str, pattern);
 

@@ -20,20 +20,13 @@ public class KPairsLargestSumTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindKLargestPairs(
-        string name,
-        int[] nums1,
-        int[] nums2,
-        int k,
-        int[][] want
-    )
+    public void FindKLargestPairs(string name, int[] nums1, int[] nums2, int k, int[][] want)
     {
         List<int[]> got = KPairsLargestSum.FindKLargestPairs(nums1, nums2, k);
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

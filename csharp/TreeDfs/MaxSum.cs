@@ -34,23 +34,19 @@ internal class MaxSum
         }
 
         int maxPathSumFromLeft = FindMaximumPathSumRecursive(currentNode.Left);
-        int maxPathSumFromRight = FindMaximumPathSumRecursive(
-            currentNode.Right
-        );
+        int maxPathSumFromRight = FindMaximumPathSumRecursive(currentNode.Right);
 
         // ignore paths with negative sums
         maxPathSumFromLeft = Math.Max(maxPathSumFromLeft, 0);
         maxPathSumFromRight = Math.Max(maxPathSumFromRight, 0);
 
         // local maximum sum
-        int localMaximumSum =
-            maxPathSumFromLeft + maxPathSumFromRight + currentNode.Val;
+        int localMaximumSum = maxPathSumFromLeft + maxPathSumFromRight + currentNode.Val;
 
         // update the global maximum sum
         globalMaximumSum = Math.Max(globalMaximumSum, localMaximumSum);
 
         // return the maximum sum of any path from the current node
-        return Math.Max(maxPathSumFromLeft, maxPathSumFromRight)
-            + currentNode.Val;
+        return Math.Max(maxPathSumFromLeft, maxPathSumFromRight) + currentNode.Val;
     }
 }

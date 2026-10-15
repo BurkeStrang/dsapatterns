@@ -65,14 +65,7 @@ public class FloodFillTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void Fill(
-        string name,
-        int[][] matrix,
-        int x,
-        int y,
-        int newColor,
-        int[][] want
-    )
+    public void Fill(string name, int[][] matrix, int x, int y, int newColor, int[][] want)
     {
         // Copy matrix to avoid modifying shared test cases
         int[][] input = Shared.CopyMatrix(matrix);
@@ -81,8 +74,7 @@ public class FloodFillTests
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

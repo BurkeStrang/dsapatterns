@@ -68,9 +68,7 @@ public class MergeIntervalsTests
     [MemberData(nameof(Cases))]
     public void Merge(string name, int[][] intervals, int[][] want)
     {
-        List<Interval> got = MergeIntervals.Merge(
-            Shared.ToIntervals(intervals)
-        );
+        List<Interval> got = MergeIntervals.Merge(Shared.ToIntervals(intervals));
 
         Assert.True(
             got.SequenceEqual(Shared.ToIntervals(want)),

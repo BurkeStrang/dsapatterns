@@ -33,8 +33,7 @@ internal static class ValidPalindrome2
             if (input[left] != input[right])
             {
                 // Check if either substring is a palindrome
-                return IsPalindrome(input, left + 1, right)
-                    || IsPalindrome(input, left, right - 1);
+                return IsPalindrome(input, left + 1, right) || IsPalindrome(input, left, right - 1);
             }
 
             left++;

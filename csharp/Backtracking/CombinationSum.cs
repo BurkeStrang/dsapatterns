@@ -27,10 +27,7 @@ namespace DsaPatterns.Backtracking;
 
 internal static class CombinationSum
 {
-    internal static List<List<int>> FindCombinations(
-        int[] candidates,
-        int target
-    )
+    internal static List<List<int>> FindCombinations(int[] candidates, int target)
     {
         List<List<int>> res = [];
         Backtrack(candidates, 0, target, [], res);

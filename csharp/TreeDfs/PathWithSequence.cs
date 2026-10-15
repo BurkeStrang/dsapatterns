@@ -15,21 +15,14 @@ internal static class PathWithSequence
         return FindPathRecursive(root, sequence, 0);
     }
 
-    private static bool FindPathRecursive(
-        TreeNode? currentNode,
-        int[] sequence,
-        int sequenceIndex
-    )
+    private static bool FindPathRecursive(TreeNode? currentNode, int[] sequence, int sequenceIndex)
     {
         if (currentNode == null)
         {
             return false;
         }
 
-        if (
-            sequenceIndex >= sequence.Length
-            || currentNode.Val != sequence[sequenceIndex]
-        )
+        if (sequenceIndex >= sequence.Length || currentNode.Val != sequence[sequenceIndex])
         {
             return false;
         }
@@ -48,10 +41,6 @@ internal static class PathWithSequence
         // recursively call to traverse the left and right sub-tree
         // return true if any of the two recursive call return true
         return FindPathRecursive(currentNode.Left, sequence, sequenceIndex + 1)
-            || FindPathRecursive(
-                currentNode.Right,
-                sequence,
-                sequenceIndex + 1
-            );
+            || FindPathRecursive(currentNode.Right, sequence, sequenceIndex + 1);
     }
 }

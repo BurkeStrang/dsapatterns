@@ -37,30 +37,16 @@ internal static class AllPathsForSum
 
         // if the current node is a leaf and its value is equal to sum, save
         // the current path
-        if (
-            currentNode.Val == sum
-            && currentNode.Left == null
-            && currentNode.Right == null
-        )
+        if (currentNode.Val == sum && currentNode.Left == null && currentNode.Right == null)
         {
             allPaths.Add([.. currentPath]);
         }
         else
         {
             // traverse the left sub-tree
-            FindPathsRecursive(
-                currentNode.Left,
-                sum - currentNode.Val,
-                currentPath,
-                allPaths
-            );
+            FindPathsRecursive(currentNode.Left, sum - currentNode.Val, currentPath, allPaths);
             // traverse the right sub-tree
-            FindPathsRecursive(
-                currentNode.Right,
-                sum - currentNode.Val,
-                currentPath,
-                allPaths
-            );
+            FindPathsRecursive(currentNode.Right, sum - currentNode.Val, currentPath, allPaths);
         }
 
         // remove the current node from the path to backtrack, we need to

@@ -73,26 +73,16 @@ public class KColsestPointsToOriginTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindClosestPoints(
-        string name,
-        int[][] points,
-        int k,
-        int[][] want
-    )
+    public void FindClosestPoints(string name, int[][] points, int k, int[][] want)
     {
-        Point[] got = KColsestPointsToOrigin.FindClosestPoints(
-            ToPoints(points),
-            k
-        );
+        Point[] got = KColsestPointsToOrigin.FindClosestPoints(ToPoints(points), k);
 
         // the points can come back in any order
         IEnumerable<string> gotPoints = got.Select(p => $"({p.X},{p.Y})");
-        IEnumerable<string> wantPoints = ToPoints(want)
-            .Select(p => $"({p.X},{p.Y})");
+        IEnumerable<string> wantPoints = ToPoints(want).Select(p => $"({p.X},{p.Y})");
         Assert.True(
             gotPoints.Order().SequenceEqual(wantPoints.Order()),
-            $"{name}: got {Shared.Format(gotPoints)}, "
-                + $"want {Shared.Format(wantPoints)}"
+            $"{name}: got {Shared.Format(gotPoints)}, " + $"want {Shared.Format(wantPoints)}"
         );
     }
 

@@ -45,23 +45,13 @@ internal static class UniqueBst
         for (int i = start; i <= end; i++)
         {
             // making 'i' root of the tree
-            List<TreeNode?> leftSubtrees = FindUniqueTreesRecursive(
-                start,
-                i - 1
-            );
-            List<TreeNode?> rightSubtrees = FindUniqueTreesRecursive(
-                i + 1,
-                end
-            );
+            List<TreeNode?> leftSubtrees = FindUniqueTreesRecursive(start, i - 1);
+            List<TreeNode?> rightSubtrees = FindUniqueTreesRecursive(i + 1, end);
             foreach (TreeNode? leftTree in leftSubtrees)
             {
                 foreach (TreeNode? rightTree in rightSubtrees)
                 {
-                    TreeNode root = new(i)
-                    {
-                        Left = leftTree,
-                        Right = rightTree,
-                    };
+                    TreeNode root = new(i) { Left = leftTree, Right = rightTree };
                     result.Add(root);
                 }
             }

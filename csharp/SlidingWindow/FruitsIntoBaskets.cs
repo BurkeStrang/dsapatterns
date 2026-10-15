@@ -45,8 +45,7 @@ internal static class FruitsIntoBaskets
         for (int windowEnd = 0; windowEnd < arr.Length; windowEnd++)
         {
             char rightFruit = arr[windowEnd];
-            fruitFrequencyMap[rightFruit] =
-                fruitFrequencyMap.GetValueOrDefault(rightFruit) + 1;
+            fruitFrequencyMap[rightFruit] = fruitFrequencyMap.GetValueOrDefault(rightFruit) + 1;
             // shrink the sliding window, until we're left with '2' fruits in
             // the frequency map
             while (fruitFrequencyMap.Count > 2)

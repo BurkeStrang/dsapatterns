@@ -40,10 +40,7 @@ namespace DsaPatterns.TopologicalSort;
 
 internal static class TaskSchedulingAll
 {
-    internal static List<List<int>> PrintOrders(
-        int tasks,
-        int[][] prerequisites
-    )
+    internal static List<List<int>> PrintOrders(int tasks, int[][] prerequisites)
     {
         List<List<int>> orders = [];
         List<int> sortedOrder = [];
@@ -111,13 +108,7 @@ internal static class TaskSchedulingAll
                         sourcesForNextCall.Enqueue(child);
                 }
 
-                PrintAllTopologicalSorts(
-                    graph,
-                    inDegree,
-                    sourcesForNextCall,
-                    sortedOrder,
-                    orders
-                );
+                PrintAllTopologicalSorts(graph, inDegree, sourcesForNextCall, sortedOrder, orders);
 
                 sortedOrder.Remove(vertex);
                 foreach (int child in children)

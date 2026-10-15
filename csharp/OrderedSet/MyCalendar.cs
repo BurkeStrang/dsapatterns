@@ -1,4 +1,5 @@
 namespace DsaPatterns.OrderedSet;
+
 // Given a 2D array nums of size N x 2.
 // nums[i] = [starti, endi],
 // where starti is the starting time of the event and end
@@ -24,22 +25,18 @@ namespace DsaPatterns.OrderedSet;
 // Example 3:
 // Input: [[8, 13],[13, 17], [17, 20]]
 // Expected Output: [true, true, true]
-// Justification: All events are booked without any overlap, as each event starts exactly when the previous one ends.
+// Justification: All events are booked without any overlap,
+// as each event starts exactly when the previous one ends.
 // Constraints:
 //
 // 0 <= start < end <= 109
 // At most 1000 calls will be made to book.
 
-
 internal static class MyCalendar
 {
     private class IntervalComparer : IComparer<(int Start, int End)>
     {
-        public int Compare
-        (
-            (int Start, int End) x,
-            (int Start, int End) y
-        )
+        public int Compare((int Start, int End) x, (int Start, int End) y)
         {
             return x.Start.CompareTo(y.Start);
         }
@@ -71,8 +68,10 @@ internal static class MyCalendar
                 }
             }
 
-            if ((lower is null || lower.Value.End <= curStart) &&
-                (higher is null || curEnd <= higher.Value.Start))
+            if (
+                (lower is null || lower.Value.End <= curStart)
+                && (higher is null || curEnd <= higher.Value.Start)
+            )
             {
                 bookings.Add((curStart, curEnd));
                 results.Add(true);
@@ -86,5 +85,3 @@ internal static class MyCalendar
         return results;
     }
 }
-
-

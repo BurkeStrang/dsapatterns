@@ -79,14 +79,11 @@ internal static class SumOfSumArrayMin
                 // subarrays ending at minIndex, and (currentIndex - minIndex)
                 // gives the count of subarrays starting at minIndex that can
                 // extend until currentIndex.
-                long countSubarrays =
-                    (long)(minIndex - previousIndex)
-                    * (currentIndex - minIndex);
+                long countSubarrays = (long)(minIndex - previousIndex) * (currentIndex - minIndex);
 
                 // Add the contribution of arr[minIndex] for these subarrays to
                 // the result.
-                result =
-                    (result + (arr[minIndex] * countSubarrays % Mod)) % Mod;
+                result = (result + (arr[minIndex] * countSubarrays % Mod)) % Mod;
             }
 
             // Push the current index onto the stack for further processing.

@@ -39,14 +39,11 @@ public class ZigZagTraversalTests
     [MemberData(nameof(Cases))]
     public void TraverseZigZag(string name, int?[] tree, int[][] want)
     {
-        List<List<int>> got = ZigZagTraversal.TraverseZigZag(
-            Shared.ToTree(tree)
-        );
+        List<List<int>> got = ZigZagTraversal.TraverseZigZag(Shared.ToTree(tree));
 
         Assert.True(
             Shared.Format2D(got) == Shared.Format2D(want),
-            $"{name}: got {Shared.Format2D(got)}, "
-                + $"want {Shared.Format2D(want)}"
+            $"{name}: got {Shared.Format2D(got)}, " + $"want {Shared.Format2D(want)}"
         );
     }
 }

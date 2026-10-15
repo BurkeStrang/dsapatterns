@@ -38,12 +38,7 @@ public class ReconstructSquenceTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void CanConstructSequence(
-        string name,
-        int[] org,
-        int[][] seqs,
-        bool want
-    )
+    public void CanConstructSequence(string name, int[] org, int[][] seqs, bool want)
     {
         bool got = ReconstructSequence.CanConstruct(org, seqs);
 

@@ -12,12 +12,7 @@ public class MaxDistinctElementsTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindMaximumDistinctElements(
-        string name,
-        int[] nums,
-        int k,
-        int want
-    )
+    public void FindMaximumDistinctElements(string name, int[] nums, int k, int want)
     {
         int got = MaxDistinctElements.FindMaximumDistinctElements(nums, k);
 

@@ -45,20 +45,13 @@ internal static class PalindromicPartition
         // populate isPalindrome table
         for (int startIndex = st.Length - 1; startIndex >= 0; startIndex--)
         {
-            for (
-                int endIndex = startIndex + 1;
-                endIndex < st.Length;
-                endIndex++
-            )
+            for (int endIndex = startIndex + 1; endIndex < st.Length; endIndex++)
             {
                 if (st[startIndex] == st[endIndex])
                 {
                     // if it's a two-character string or if the remaining
                     // string is a palindrome too
-                    if (
-                        endIndex - startIndex == 1
-                        || isPalindrome[startIndex + 1, endIndex - 1]
-                    )
+                    if (endIndex - startIndex == 1 || isPalindrome[startIndex + 1, endIndex - 1])
                     {
                         isPalindrome[startIndex, endIndex] = true;
                     }
@@ -73,11 +66,7 @@ internal static class PalindromicPartition
         for (int startIndex = st.Length - 1; startIndex >= 0; startIndex--)
         {
             int minCuts = st.Length; // maximum cuts
-            for (
-                int endIndex = st.Length - 1;
-                endIndex >= startIndex;
-                endIndex--
-            )
+            for (int endIndex = st.Length - 1; endIndex >= startIndex; endIndex--)
             {
                 if (isPalindrome[startIndex, endIndex])
                 {

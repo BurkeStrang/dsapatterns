@@ -61,12 +61,7 @@ internal static class InfiniteArray
         return BinarySearch(reader, key, start, end);
     }
 
-    private static int BinarySearch(
-        ArrayReader reader,
-        int key,
-        int start,
-        int end
-    )
+    private static int BinarySearch(ArrayReader reader, int key, int start, int end)
     {
         while (start <= end)
         {

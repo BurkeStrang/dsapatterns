@@ -35,12 +35,7 @@ internal static class MinSubsetSumDiff
         return CanPartitionMinRecursive(num, 0, 0, 0);
     }
 
-    private static int CanPartitionMinRecursive(
-        int[] num,
-        int currentIndex,
-        int sum1,
-        int sum2
-    )
+    private static int CanPartitionMinRecursive(int[] num, int currentIndex, int sum1, int sum2)
     {
         // Base check
         if (currentIndex == num.Length)
@@ -50,21 +45,11 @@ internal static class MinSubsetSumDiff
 
         // Recursive call after including the number at the currentIndex in the
         // first set
-        int diff1 = CanPartitionMinRecursive(
-            num,
-            currentIndex + 1,
-            sum1 + num[currentIndex],
-            sum2
-        );
+        int diff1 = CanPartitionMinRecursive(num, currentIndex + 1, sum1 + num[currentIndex], sum2);
 
         // Recursive call after including the number at the currentIndex in the
         // second set
-        int diff2 = CanPartitionMinRecursive(
-            num,
-            currentIndex + 1,
-            sum1,
-            sum2 + num[currentIndex]
-        );
+        int diff2 = CanPartitionMinRecursive(num, currentIndex + 1, sum1, sum2 + num[currentIndex]);
 
         return Math.Min(diff1, diff2);
     }

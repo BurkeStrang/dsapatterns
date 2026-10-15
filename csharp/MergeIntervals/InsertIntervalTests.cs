@@ -48,12 +48,7 @@ public class InsertIntervalTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void Insert(
-        string name,
-        int[][] intervals,
-        int[] newInterval,
-        int[][] want
-    )
+    public void Insert(string name, int[][] intervals, int[] newInterval, int[][] want)
     {
         List<Interval> got = InsertInterval.Insert(
             Shared.ToIntervals(intervals),

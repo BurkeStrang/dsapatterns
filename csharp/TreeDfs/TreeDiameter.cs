@@ -22,24 +22,15 @@ internal static class TreeDiameter
         return treeDiameter;
     }
 
-    private static int CalculateHeight(
-        TreeNode? currentNode,
-        ref int treeDiameter
-    )
+    private static int CalculateHeight(TreeNode? currentNode, ref int treeDiameter)
     {
         if (currentNode == null)
         {
             return 0;
         }
 
-        int leftTreeHeight = CalculateHeight(
-            currentNode.Left,
-            ref treeDiameter
-        );
-        int rightTreeHeight = CalculateHeight(
-            currentNode.Right,
-            ref treeDiameter
-        );
+        int leftTreeHeight = CalculateHeight(currentNode.Left, ref treeDiameter);
+        int rightTreeHeight = CalculateHeight(currentNode.Right, ref treeDiameter);
 
         // if the current node doesn't have a left or right subtree, we can't
         // have a path passing through it, since we need a leaf node on each

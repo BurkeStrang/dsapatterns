@@ -16,9 +16,7 @@ public class ReverseKSublistTests
     [MemberData(nameof(Cases))]
     public void ReverseKSub(string name, int[] head, int k, int[] want)
     {
-        List<int> got = Shared.ToValues(
-            ReverseKSublist.ReverseKSub(Shared.ToList(head), k)
-        );
+        List<int> got = Shared.ToValues(ReverseKSublist.ReverseKSub(Shared.ToList(head), k));
 
         Assert.True(
             got.SequenceEqual(want),

@@ -20,12 +20,7 @@ public class CeilingTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void SearchCeilingOfANumber(
-        string name,
-        int[] arr,
-        int key,
-        int want
-    )
+    public void SearchCeilingOfANumber(string name, int[] arr, int key, int want)
     {
         int got = Ceiling.SearchCeilingOfANumber(arr, key);
 

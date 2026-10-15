@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.TopKElements;
 
 // Given a string and a number ‘K’,

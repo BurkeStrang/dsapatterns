@@ -7,9 +7,7 @@ internal static class Shared
     // priorities turns it into a max-heap.
     internal static PriorityQueue<int, int> NewMaxHeap()
     {
-        return new PriorityQueue<int, int>(
-            Comparer<int>.Create((a, b) => b.CompareTo(a))
-        );
+        return new PriorityQueue<int, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
     }
 
     internal static string Format<T>(IEnumerable<T> items)

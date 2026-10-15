@@ -86,17 +86,9 @@ public class TaskScheduelAllTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void PrintOrders(
-        string name,
-        int tasks,
-        int[][] prerequisites,
-        int[][] want
-    )
+    public void PrintOrders(string name, int tasks, int[][] prerequisites, int[][] want)
     {
-        List<List<int>> got = TaskSchedulingAll.PrintOrders(
-            tasks,
-            prerequisites
-        );
+        List<List<int>> got = TaskSchedulingAll.PrintOrders(tasks, prerequisites);
 
         List<string> gotOrders = got.Select(Shared.Format).Order().ToList();
         List<string> wantOrders = want.Select(Shared.Format).Order().ToList();

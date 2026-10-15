@@ -40,8 +40,7 @@ internal static class WordConcat
         Dictionary<string, int> wordFrequencyMap = [];
         foreach (string word in words)
         {
-            wordFrequencyMap[word] =
-                wordFrequencyMap.GetValueOrDefault(word) + 1;
+            wordFrequencyMap[word] = wordFrequencyMap.GetValueOrDefault(word) + 1;
         }
 
         List<int> resultIndices = [];

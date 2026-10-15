@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.Stack;
 
 // Given a positive integer n, write a function that returns its binary

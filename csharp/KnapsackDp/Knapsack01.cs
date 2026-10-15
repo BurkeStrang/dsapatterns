@@ -50,18 +50,10 @@ namespace DsaPatterns.KnapsackDp;
 
 internal static class Knapsack01
 {
-    internal static int SolveKnapsack(
-        int[] profits,
-        int[] weights,
-        int capacity
-    )
+    internal static int SolveKnapsack(int[] profits, int[] weights, int capacity)
     {
         // basic checks
-        if (
-            capacity <= 0
-            || profits.Length == 0
-            || weights.Length != profits.Length
-        )
+        if (capacity <= 0 || profits.Length == 0 || weights.Length != profits.Length)
         {
             return 0;
         }

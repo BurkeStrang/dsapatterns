@@ -20,11 +20,7 @@ namespace DsaPatterns.MergeIntervals;
 // Output: [5,7]
 // Explanation: All employees are free between [5,7].
 
-internal record struct EmployeeInterval(
-    Interval Interval,
-    int EmployeeIndex,
-    int IntervalIndex
-);
+internal record struct EmployeeInterval(Interval Interval, int EmployeeIndex, int IntervalIndex);
 
 internal static class EmployeeFreeTime
 {
@@ -37,10 +33,7 @@ internal static class EmployeeFreeTime
         // insert the first interval of each employee to the queue
         for (int i = 0; i < schedule.Length; i++)
         {
-            minHeap.Enqueue(
-                new EmployeeInterval(schedule[i][0], i, 0),
-                schedule[i][0].Start
-            );
+            minHeap.Enqueue(new EmployeeInterval(schedule[i][0], i, 0), schedule[i][0].Start);
         }
 
         Interval previousInterval = minHeap.Peek().Interval;
@@ -51,9 +44,7 @@ internal static class EmployeeFreeTime
             // insert a free interval
             if (previousInterval.End < queueTop.Interval.Start)
             {
-                result.Add(
-                    new Interval(previousInterval.End, queueTop.Interval.Start)
-                );
+                result.Add(new Interval(previousInterval.End, queueTop.Interval.Start));
                 previousInterval = queueTop.Interval;
             }
             else if (previousInterval.End < queueTop.Interval.End)

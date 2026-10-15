@@ -43,12 +43,7 @@ public class TaskScheduelOrderTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindOrder(
-        string name,
-        int tasks,
-        int[][] prerequisites,
-        int[] want
-    )
+    public void FindOrder(string name, int tasks, int[][] prerequisites, int[] want)
     {
         List<int> got = TaskScheduelOrder.FindOrder(tasks, prerequisites);
 
@@ -58,8 +53,7 @@ public class TaskScheduelOrderTests
                 : Shared.IsTopologicalOrder(got, tasks, prerequisites);
         Assert.True(
             ok,
-            $"{name}: got {Shared.Format(got)}, "
-                + $"want something like {Shared.Format(want)}"
+            $"{name}: got {Shared.Format(got)}, " + $"want something like {Shared.Format(want)}"
         );
     }
 }

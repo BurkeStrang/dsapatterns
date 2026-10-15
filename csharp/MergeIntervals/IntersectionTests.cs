@@ -41,12 +41,7 @@ public class IntersectionTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void IntersectingIntervals(
-        string name,
-        int[][] arr1,
-        int[][] arr2,
-        int[][] want
-    )
+    public void IntersectingIntervals(string name, int[][] arr1, int[][] arr2, int[][] want)
     {
         List<Interval> got = Intersection.IntersectingIntervals(
             Shared.ToIntervals(arr1),

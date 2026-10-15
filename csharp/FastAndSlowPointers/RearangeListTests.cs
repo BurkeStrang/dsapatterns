@@ -15,9 +15,7 @@ public class RearangeListTests
     [MemberData(nameof(Cases))]
     public void Rearange(string name, int[] head, int[] want)
     {
-        List<int> got = Shared.ToValues(
-            RearangeList.Rearange(Shared.ToList(head))
-        );
+        List<int> got = Shared.ToValues(RearangeList.Rearange(Shared.ToList(head)));
 
         Assert.True(
             got.SequenceEqual(want),

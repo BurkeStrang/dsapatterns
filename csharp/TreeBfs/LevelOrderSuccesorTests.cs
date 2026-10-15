@@ -18,10 +18,7 @@ public class LevelOrderSuccesorTests
     [MemberData(nameof(Cases))]
     public void FindSuccessor(string name, int?[] tree, int key, int want)
     {
-        TreeNode? successor = LevelOrderSuccesor.FindSuccessor(
-            Shared.ToTree(tree),
-            key
-        );
+        TreeNode? successor = LevelOrderSuccesor.FindSuccessor(Shared.ToTree(tree), key);
 
         int got = successor?.Val ?? 0;
         Assert.True(got == want, $"{name}: got {got}, want {want}");

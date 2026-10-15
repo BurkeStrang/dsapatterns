@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.MonotonicStack;
 
 // You are given a string s consisting of lowercase English letters. A duplicate

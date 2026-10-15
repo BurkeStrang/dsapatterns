@@ -14,19 +14,13 @@ public class TopKFrequentTests
 
     [Theory]
     [MemberData(nameof(Cases))]
-    public void FindTopKFrequentNumbers(
-        string name,
-        int[] nums,
-        int k,
-        int[] valid
-    )
+    public void FindTopKFrequentNumbers(string name, int[] nums, int k, int[] valid)
     {
         int[] got = TopKFrequent.FindTopKFrequentNumbers(nums, k);
 
         Assert.True(
             got.Length == k && got.All(valid.Contains),
-            $"{name}: got {Shared.Format(got)}, "
-                + $"want {k} of {Shared.Format(valid)}"
+            $"{name}: got {Shared.Format(got)}, " + $"want {k} of {Shared.Format(valid)}"
         );
     }
 }

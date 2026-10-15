@@ -2,8 +2,7 @@ namespace DsaPatterns.Greedy;
 
 public class MinAddToMakeParenTests
 {
-    public static TheoryData<string, string, int> Cases =>
-        new() { { "Example 1", "(()", 1 } };
+    public static TheoryData<string, string, int> Cases => new() { { "Example 1", "(()", 1 } };
 
     [Theory]
     [MemberData(nameof(Cases))]

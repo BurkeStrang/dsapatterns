@@ -40,8 +40,7 @@ internal static class MaxSubstringKReplace
         for (int windowEnd = 0; windowEnd < str.Length; windowEnd++)
         {
             char rightChar = str[windowEnd];
-            letterFrequencyMap[rightChar] =
-                letterFrequencyMap.GetValueOrDefault(rightChar) + 1;
+            letterFrequencyMap[rightChar] = letterFrequencyMap.GetValueOrDefault(rightChar) + 1;
             // we don't need to place the maxRepeatLetterCount under the below
             // 'if', see the explanation in the 'Solution' section above.
             if (maxRepeatLetterCount < letterFrequencyMap[rightChar])

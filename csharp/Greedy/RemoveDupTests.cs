@@ -3,11 +3,7 @@ namespace DsaPatterns.Greedy;
 public class RemoveDupTests
 {
     public static TheoryData<string, string, string> Cases =>
-        new()
-        {
-            { "Example 1", "babac", "abc" },
-            { "Example 2", "zabccde", "zabcde" },
-        };
+        new() { { "Example 1", "babac", "abc" }, { "Example 2", "zabccde", "zabcde" } };
 
     [Theory]
     [MemberData(nameof(Cases))]

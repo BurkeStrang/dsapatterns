@@ -58,17 +58,10 @@ public class MergeSimiliarItemsTests
     {
         var got = MergeSimilarItems.Merge(items1, items2);
 
-        string gotText = string.Join(
-            ", ",
-            got.Select(g => $"[{g[0]}, {g[1]}]")
-        );
-        string wantText = string.Join(
-            ", ",
-            want.Select(w => $"[{w[0]}, {w[1]}]")
-        );
+        string gotText = string.Join(", ", got.Select(g => $"[{g[0]}, {g[1]}]"));
+        string wantText = string.Join(", ", want.Select(w => $"[{w[0]}, {w[1]}]"));
         Assert.True(
-            got.Count == want.Length
-                && got.All(g => want.Any(w => w[0] == g[0] && w[1] == g[1])),
+            got.Count == want.Length && got.All(g => want.Any(w => w[0] == g[0] && w[1] == g[1])),
             $"{name}: got {gotText}, want {wantText}"
         );
     }

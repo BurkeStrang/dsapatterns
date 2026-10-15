@@ -68,11 +68,7 @@ internal static class CycleInCircle
         return false;
     }
 
-    private static int FindNextIndex(
-        int[] arr,
-        bool isForward,
-        int currentIndex
-    )
+    private static int FindNextIndex(int[] arr, bool isForward, int currentIndex)
     {
         bool direction = arr[currentIndex] >= 0;
         if (isForward != direction)

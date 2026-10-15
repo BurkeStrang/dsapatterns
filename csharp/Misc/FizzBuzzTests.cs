@@ -37,8 +37,7 @@ public class FizzBuzzTests
 
         Assert.True(
             got.SequenceEqual(want),
-            $"{name}: got [{string.Join(", ", got)}], "
-                + $"want [{string.Join(", ", want)}]"
+            $"{name}: got [{string.Join(", ", got)}], " + $"want [{string.Join(", ", want)}]"
         );
     }
 }

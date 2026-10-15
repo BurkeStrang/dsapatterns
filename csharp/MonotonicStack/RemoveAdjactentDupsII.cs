@@ -1,5 +1,3 @@
-using System.Text;
-
 namespace DsaPatterns.MonotonicStack;
 
 // You are given a string s and an integer k. Your task is to remove groups of

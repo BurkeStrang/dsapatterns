@@ -39,8 +39,7 @@ internal static class LongestSubstringWithKChars
         for (int windowEnd = 0; windowEnd < str.Length; windowEnd++)
         {
             char rightChar = str[windowEnd];
-            charFrequencyMap[rightChar] =
-                charFrequencyMap.GetValueOrDefault(rightChar) + 1;
+            charFrequencyMap[rightChar] = charFrequencyMap.GetValueOrDefault(rightChar) + 1;
             // shrink the sliding window, until we are left with 'k' distinct
             // characters in the frequency map
             while (charFrequencyMap.Count > k)

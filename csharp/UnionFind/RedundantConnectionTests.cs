@@ -46,9 +46,6 @@ public class RedundantConnectionTests
         int[] got = RedundantConnection.FindRedundantConnection(edges);
         string gotText = string.Join(",", got);
         string wantText = string.Join(",", want);
-        Assert.True(
-            got.SequenceEqual(want),
-            $"{name}: got {gotText}, want {wantText}"
-        );
+        Assert.True(got.SequenceEqual(want), $"{name}: got {gotText}, want {wantText}");
     }
 }

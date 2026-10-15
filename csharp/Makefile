@@ -17,8 +17,8 @@ fmt:
 
 lint:
 	dotnet build -warnaserror --no-incremental
-	@long=$$(git ls-files -co --exclude-standard '*.cs' | xargs awk 'length($$0) > 80 { print FILENAME ":" FNR ": " length($$0) " chars" }'); \
-	if [ -n "$$long" ]; then echo "Lines over 80 characters:"; echo "$$long"; exit 1; fi
+	@long=$$(git ls-files -co --exclude-standard '*.cs' | xargs awk 'length($$0) > 100 { print FILENAME ":" FNR ": " length($$0) " chars" }'); \
+	if [ -n "$$long" ]; then echo "Lines over 100 characters:"; echo "$$long"; exit 1; fi
 
 check: lint test fmt
 

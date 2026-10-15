@@ -55,9 +55,7 @@ internal static class RemoveDup
                 // Has Result
                 // Is Smaller
                 // Can Remove Last
-                while (
-                    result.Count > 0 && c < result[^1] && count[result[^1]] > 0
-                )
+                while (result.Count > 0 && c < result[^1] && count[result[^1]] > 0)
                 {
                     present.Remove(result[^1]);
                     result.RemoveAt(result.Count - 1);

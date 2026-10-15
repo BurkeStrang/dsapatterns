@@ -31,11 +31,7 @@ internal static class FindFirstKNums
         // Phase 1: Rearrange elements to their correct positions
         while (i < nums.Length)
         {
-            if (
-                nums[i] > 0
-                && nums[i] <= nums.Length
-                && nums[i] != nums[nums[i] - 1]
-            )
+            if (nums[i] > 0 && nums[i] <= nums.Length && nums[i] != nums[nums[i] - 1])
             {
                 // Swap elements to their correct positions
                 Shared.Swap(nums, i, nums[i] - 1);
