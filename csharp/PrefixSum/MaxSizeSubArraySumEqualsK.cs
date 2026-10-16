@@ -28,6 +28,7 @@ internal static class MaxSizeSubArraySumEqualsK
 {
     internal static int Find(int[] nums, int k)
     {
+        // WriteLine($"Input Array: {string.Join(", ", nums)}, Target Sum: {k}");
         // Create a dictionary to store cumulative sums and their earliest indices
         Dictionary<int, int> cumMap = [];
         int cumSum = 0; // Initialize cumulative sum
@@ -49,8 +50,10 @@ internal static class MaxSizeSubArraySumEqualsK
             // Store the cumulative sum and its index
             if (!cumMap.ContainsKey(cumSum))
                 cumMap[cumSum] = i;
+            // WriteLine($"Index: {i}, Cumulative Sum: {cumSum}, Max Length: {maxLen}");
+            // WriteLine($"Cumulative Map: {string.Join(", ", cumMap.Select(kv => $"{kv.Key}:{kv.Value}"))}");
+            // WriteLine("--------------------------------------------------");
         }
-
         return maxLen; // Return the maximum lengt
     }
 }
